@@ -9,7 +9,8 @@ import Home from '../Pages/Home'
 import { motion } from 'framer-motion'
 import { AnimatePresence } from 'framer-motion'
 import { useSelector } from 'react-redux'
-
+import SignUp from './SignUp'
+import AdminPage from '../Pages/Adminpages/AdminPage'
 function AnimatedRoutes() {
     const { menu } = useSelector(state => state.header)
 
@@ -27,6 +28,9 @@ function AnimatedRoutes() {
                     <Route path='/Hakkinda' element={<About />} />
 
                     <Route path='/İletişim' element={<Iletişim />} />
+                    <Route path='/auth' element={<SignUp/>}/>
+                    <Route path='/admin' element={<AdminPage/>}/>
+
                 </Routes>
                 <Footer />
             </Router>

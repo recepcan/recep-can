@@ -50,10 +50,9 @@ function Header() {
         min-[600px]:fixed max-[600px]:h-[50px]'>
 
             <Link to="/">
-                <div className='text-[#343A40] shadow-lg shadow-gray-400 font-serif   flex text-center tracking-wider  items-center justify-center text-3xl rounded-md font-bold p-1 max-[600px]:h-[30px] max-[600px]:text-base
-                 dark:text-white transition-colors duration-300 ' >
-                     RECEP <span className='dark:text-[#3aafa9] p-2'> CAN</span>
-                </div>
+            <div className='flex items-center'>
+            <h1 className='bg-gradient-to-r from-purple-500 via-purple-600 to-pink-600  text-white p-3 rounded-2xl text-3xl font-bold font-sans'>Recep Can's</h1><span className='font-bold text-4xl font-sans text-black'> Blog</span>
+            </div>
             </Link>
 
 
