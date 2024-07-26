@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import profilFoto from '../../public/profilFoto.jpg'
 import profil from '../../public/profil.jpeg'
-import recepProfil from '../../public/recepProfil.jpeg'
 function ThreeDCard() {
     const [isFlipped, setIsFlipped] = useState(true);
 

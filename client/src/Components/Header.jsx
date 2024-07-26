@@ -50,7 +50,7 @@ function Header() {
         min-[600px]:fixed max-[600px]:h-[50px]'>
 
             <Link to="/">
-                <div className='text-purple-900   font-serif   flex text-center tracking-wider  items-center justify-center text-3xl rounded-md font-bold p-2 max-[600px]:h-[30px] max-[600px]:text-base
+                <div className='text-[#343A40] shadow-lg shadow-gray-400 font-serif   flex text-center tracking-wider  items-center justify-center text-3xl rounded-md font-bold p-1 max-[600px]:h-[30px] max-[600px]:text-base
                  dark:text-white transition-colors duration-300 ' >
                      RECEP <span className='dark:text-[#3aafa9] p-2'> CAN</span>
                 </div>
@@ -97,7 +97,7 @@ function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 2 }}
-                        className='text-black dark:text-white' onClick={setMod} >{darkMode ? <BiSolidSun color='orange' size={20} /> : <GiMoon className='text-purple-900 ' size={20} />}
+                        className='text-black dark:text-white p-2 border-2  dark:border-green-500 shadow-lg shadow-gray-400  m-2 rounded-lg' onClick={setMod} >{darkMode ? <BiSolidSun color='orange' size={20} /> : <GiMoon className='text-gray-900 ' size={20} />}
                     </motion.button>
 
                     <motion.div
