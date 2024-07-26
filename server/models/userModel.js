@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 // Kullanıcı şeması oluşturma
 const userSchema = new mongoose.Schema({
@@ -37,6 +37,5 @@ const userSchema = new mongoose.Schema({
 
 
 // Kullanıcı modelini oluşturma
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
+ const User = mongoose.model('User', userSchema);
+export default   User;
