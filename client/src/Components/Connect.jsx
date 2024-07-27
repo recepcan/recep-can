@@ -25,10 +25,12 @@ function Connect() {
         </div>
 
 
-        <div className='w-1/2 h-full  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-500 dark:border border-green-500 bg-gray-100 dark:bg-[#17252a] '>
+        <div className='w-1/2 h-full  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-400 hover:shadow-gray-600 transition-all dark:border border-green-500 bg-gray-100 dark:bg-[#17252a] '>
 
           
-            <h1 className='text-5xl bg-clip-text dark:text-transparent bg-gradient-to-br from-green-100 via-green-500 to-green-700'>Send me an email</h1>
+            <h1 className='text-5xl bg-clip-text dark:text-transparent bg-gradient-to-br from-green-100 via-green-500 to-green-700'>
+            Send me an email
+            </h1>
             <input type="text" placeholder='Name&Surname' className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
 
             <input type="text" placeholder='E-mail' className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
@@ -39,7 +41,8 @@ function Connect() {
         placeholder="Gradient border input"/>
       
     </div>*/}
-            <textarea name="" placeholder='Your Message' id="" className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100'></textarea>
+            <textarea name="" placeholder='Your Message' id="" className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100'>
+            </textarea>
             <button className='p-5 text-xl w-1/2 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
               Send</button>
           {/*  */}
