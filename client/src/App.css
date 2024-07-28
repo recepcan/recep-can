@@ -10,9 +10,9 @@
   box-shadow: none !important;
 }
 .dark .active{
-    color:#3aafa9;
+    color:#22c55e;
     background-color: transparent;
-   border: 2px solid #3aafa9;
+   border: 2px solid #22c55e;
 
 }
 ::-webkit-scrollbar {

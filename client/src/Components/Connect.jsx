@@ -4,7 +4,7 @@ import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-ic
 function Connect() {
   return (
     <div className='w-full min-h-[800px]  flex flex-col items-center bg-gray-100 dark:bg-gray-900 '>
-      <h1 className='text-7xl font-serif tracking-wide leading-tight from-[#0c0b10]  via-[#3aafa9] to-sky-300 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
+      <h1 className='text-7xl font-sans tracking-wide leading-tight from-[#0c0b10]  via-[#3aafa9] to-sky-300 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
         Let's Connect</h1>
       <hr className='w-[90%] my-10 dark:border-green-500 border-black' />
       <div className=' w-[90%] h-full flex space-x-2'>
@@ -12,7 +12,7 @@ function Connect() {
         <div className='w-1/2 h-full p-5 flex flex-col space-y-10 rounded-xl text-start   border-gray-400'>
 
          
-            <h1 className='text-6xl  tracking-wide leading-tight font-extrabold 
+            <h1 className='text-6xl  tracking-wide leading-tight font-extrabold font-sans
            bg-gradient-to-br from-[#0c0b10]  via-[#3aafa9] to-[#3aafa99e] bg-clip-text text-transparent dark:bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-900'>
              GET IN TOUCH <span className='float-right '> WITH US</span>
              </h1>

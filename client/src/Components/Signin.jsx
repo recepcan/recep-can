@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
-function SignUp() {
+import { AiFillGoogleCircle } from 'react-icons/ai'
+import {Link, useNavigate} from 'react-router-dom'
+
+
+function SignIn() {
 const navigate=useNavigate()
-    const [formdata, setformData] = useState({username:"",email:"",password:""})
+    const [formdata, setformData] = useState({email:"",password:""})
 const handleChange=(e)=>{
           setformData({...formdata,[e.target.id]:e.target.value.trim()})
 }
 const handleSubmit = async (e)=>{
+
+
     e.preventDefault();
 try {
-  const res=  await fetch('/api/auth/signup',{
+  const res=  await fetch('/api/auth/sign-in',{
         method:"POST",
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(formdata)
@@ -21,33 +26,37 @@ if(data.success===false){
 }
 
 if(res.ok){
-    navigate('/sign-in')
+    navigate('/admin')
 }
+
 
 } catch (error) {
     console.log(error)
 }
+
+
+
+}
+const googleAuth =(e)=>{
+e.preventDefault()
 }
     return (
 
-        <div className='w-full p-10 space-x-5 min-h-[800px]  bg-gray-100 flex items-center justify-center'>
+        <div className='w-full p-10 space-x-5 min-h-[800px] font-sans bg-gray-100 flex items-center justify-center'>
 
 
             <div className="w-1/3  h-[600px] p-10 bg-gray-100 flex  flex-col items-center justify-center ">
             <div className='flex  items-center justify-start'>
             <h1 className='bg-gradient-to-br from-green-300 via-teal-500 to-green-900  text-white p-5 rounded-2xl text-3xl font-bold font-sans'>Recep Can's</h1><span className='font-bold text-5xl font-sans'> Blog</span>
              </div>
-             <h2 className='p-5  text-lg font-bold font-sans'>This is a demo project. you can sign up with your email and password or with google</h2>
+             <h2 className='p-5  text-lg font-bold font-sans'>This is a demo project. you can sign in with your email and password or with google</h2>
      
             </div>
-            <div className="w-1/2 h-[600px] p-10  flex items-center justify-center ">
-                <form className='flex  flex-col h-full items-center justify-evenly w-2/3 gap-5  shadow-gray-400 p-5 rounded-lg bg-gray-100' onSubmit={handleSubmit}>
+            <div className="w-1/2 h-[400px] p-10  flex items-center justify-center ">
+                <form className='flex  flex-col h-full  justify-evenly w-2/3 gap-5  shadow-gray-400 p-5 rounded-lg bg-gray-100' >
                    
                     <div className='space-y-3'>
-                        <div className='text-sm font-bold'>
-                            your username
-                            <input id='username' onChange={handleChange} className='p-3  border-2 rounded-lg bg-gray-100 outline-none w-full' type="text" placeholder='username' />
-                        </div>
+                        
                         <div className='text-sm font-bold'>
                             your email
                             <input id='email' onChange={handleChange} className='p-3  border-2 rounded-lg bg-gray-100 outline-none w-full' type="email" placeholder='email' />
@@ -58,12 +67,19 @@ if(res.ok){
                             <input id='password' onChange={handleChange} className='p-3  border-2 rounded-lg bg-gray-100 outline-none w-full' type="password" placeholder='password' />
                         </div>
                     </div>
-                    <button className='bg-gradient-to-br from-green-300 via-teal-500 to-green-900 w-full p-5 rounded-lg  text-white hover:bg-sky-500 transition-all'>SignUp</button>
+                    <button onClick={handleSubmit} className='bg-gradient-to-br hover:bg-gradient-to-tr font-bold from-green-300 via-teal-500 to-green-900 w-full p-5 rounded-lg  text-white hover:bg-sky-500 transition-all'>
+                    SignIn
+                    </button>
+                    <button onClick={googleAuth} className=' flex items-center justify-center font-bold hover:bg-gradient-to-tr  bg-gradient-to-br  from-yellow-500 via-orange-500 to-red-500 w-full p-2 rounded-lg  text-white hover:bg-sky-500 transition-all'>
+                    Countinue with Google <AiFillGoogleCircle className=' m-2' size={30}/>
+                    </button>
+                    <Link to='/forgot-password' className='text-blue-600 text-sm'>Şifremi unuttum</Link>
+                    
                 </form>
             </div>
-
+           
         </div>
     )
 }
 
-export default SignUp
+export default SignIn

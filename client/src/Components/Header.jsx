@@ -33,10 +33,10 @@ function Header() {
 
     const handleMouseLeave = () => {
         // Menü dışında bir yere tıklanırsa ve bu tıklama menüyü içermiyorsa, menüyü kapat
-       
-            dispatch(ddremove())
-        
-      };
+
+        dispatch(ddremove())
+
+    };
 
 
     return (
@@ -50,21 +50,21 @@ function Header() {
         min-[600px]:fixed max-[600px]:h-[50px]'>
 
             <Link to="/">
-            <div className='flex items-center'>
-            <h1 className='bg-gradient-to-r from-purple-500 via-purple-600 to-pink-600  text-white p-3 rounded-2xl text-3xl font-bold font-sans'>Recep Can's</h1><span className='font-bold text-4xl font-sans text-black'> Blog</span>
-            </div>
+                <div className='flex items-center'>
+                    <h1 className='bg-gradient-to-br from-green-300 via-teal-500 to-green-900  text-white p-3 rounded-2xl text-3xl font-bold font-sans'>Recep Can's</h1><span className='font-bold text-4xl font-sans dark:text-white text-black'> Blog</span>
+                </div>
             </Link>
 
 
             <div className='flex items-center'>
 
-                <div className='flex items-center justify-around text-center gap-3 text-sm max-[600px]:hidden transition-all  duration-300'
+                <div className='flex items-center justify-around text-center space-x-5 text-sm max-[600px]:hidden transition-all  duration-300'
                 >
                     {
 
                         (language ? Links : LinksEnglish).map((x, index) => {
                             return (
-                                <div className={`hover:text-black border-gray-950 dark:hover:text-purple-500   transition-colors duration-300`}
+                                <div className={`hover:text-black shadow-md shadow-gray-400 rounded-lg  border-gray-950 dark:hover:text-green-500   transition-all `}
                                     key={index}
                                     ref={itemRefs[index]}
                                     onMouseEnter={handleMouseEnter(index)}
@@ -89,14 +89,15 @@ function Header() {
                 </div>
 
                 <div className=' flex items-center justify-center gap-5' >
-                  {/*  <button onClick={() => dispatch(changeLanguage())}> <FaFlagCheckered color='red' size={20} /></button>*/}
+                    {/*  <button onClick={() => dispatch(changeLanguage())}> <FaFlagCheckered color='red' size={20} /></button>*/}
 
                     <motion.button
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 2 }}
-                        className='text-black dark:text-white p-2 border-2  dark:border-green-500 shadow-lg shadow-gray-400  m-2 rounded-lg' onClick={setMod} >{darkMode ? <BiSolidSun color='orange' size={20} /> : <GiMoon className='text-gray-900 ' size={20} />}
+                        className='text-black dark:text-white p-2 border-2  dark:border-green-500 shadow-lg shadow-gray-400  m-5 rounded-lg' onClick={setMod} >
+                        {darkMode ? <BiSolidSun color='orange' size={20} /> : <GiMoon className='text-gray-900 ' size={20} />}
                     </motion.button>
 
                     <motion.div

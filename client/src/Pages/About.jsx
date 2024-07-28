@@ -41,7 +41,7 @@ function About() {
 
           <div className='w-full p-10 flex min-[650px]:h-screen items-center justify-center'>
 
-            <div className=' w-2/3 p-10 rounded-lg shadow-lg shadow-gray-400   hover:shadow-gray-600 transition-all dark:bg-[#17252a] bg-gray-200 space-y-5 flex flex-col items-start text-left justify-center'>
+            <div className=' w-2/3 p-10 rounded-lg shadow-md shadow-gray-400   hover:shadow-gray-600 transition-all dark:bg-[#17252a]  space-y-5 flex flex-col items-start text-left justify-center'>
               {/*  <ProfilCard />    
                  <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  
        */}
@@ -52,7 +52,7 @@ function About() {
               <p className=' text-lg font-mono font-semibold'>React is my playground. I thrive on creating interactive and responsive web applications that provide an exceptional user experience. From component design to state management, I've got React covered.</p>
 
               <div className='flex m-10 w-full h-20  space-x-10'>
-                <button className='p-5 text-xl w-56 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
+                <button className='p-5 text-xl w-56 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500 to-green-900 '>
                   Get In Touch</button>
                 <button className='p-5 text-xl w-56 rounded-lg bg-transparent border-2 border-green-500 hover:border-none hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
                   view my works</button>
@@ -74,7 +74,7 @@ function About() {
 
 
           <div className='w-full flex flex-col items-center space-y-10  h-[700px]'>
-            <h1 className='text-5xl  bg-clip-text text-transparent  from-[#0c0b10]  via-[#3aafa9] to-sky-300 bg-gradient-to-br font-bold font-serif z-10 dark:text-shadow-lg  dark:text-transparent  dark:from-green-100 dark:via-green-500 dark:to-green-700'>
+            <h1 className='text-5xl  bg-clip-text text-transparent  from-[#0c0b10]  via-[#3aafa9] to-sky-300 bg-gradient-to-tr font-bold font-sans z-10 dark:text-shadow-lg  dark:text-transparent  dark:from-green-100 dark:via-green-500 dark:to-green-700'>
               Technologies I Am Using
             </h1>
 

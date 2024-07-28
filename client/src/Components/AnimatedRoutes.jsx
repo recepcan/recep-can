@@ -11,6 +11,7 @@ import { AnimatePresence } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import SignUp from './SignUp'
 import AdminPage from '../Pages/Adminpages/AdminPage'
+import SignIn from './Signin'
 function AnimatedRoutes() {
     const { menu } = useSelector(state => state.header)
 
@@ -28,7 +29,8 @@ function AnimatedRoutes() {
                     <Route path='/Hakkinda' element={<About />} />
 
                     <Route path='/İletişim' element={<Iletişim />} />
-                    <Route path='/auth' element={<SignUp/>}/>
+                    <Route path='/sign-up' element={<SignUp/>}/>
+                    <Route path='/sign-in' element={<SignIn/>}/>
                     <Route path='/admin' element={<AdminPage/>}/>
 
                 </Routes>
