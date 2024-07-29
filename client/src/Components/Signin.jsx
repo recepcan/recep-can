@@ -1,19 +1,27 @@
 import React, { useState } from 'react'
 import { AiFillGoogleCircle } from 'react-icons/ai'
 import {Link, useNavigate} from 'react-router-dom'
-
+import {useDispatch,useSelector} from 'react-redux'
+import { signInFailure, signInStart, signInSuccess } from '../store/user/userSlice'
+import { toast } from 'react-toastify'
 
 function SignIn() {
+    const dispatch=useDispatch()
+    const{error:errorMessage,loading}= useSelector(state=>state.user)
+
 const navigate=useNavigate()
     const [formdata, setformData] = useState({email:"",password:""})
 const handleChange=(e)=>{
           setformData({...formdata,[e.target.id]:e.target.value.trim()})
 }
 const handleSubmit = async (e)=>{
-
-
     e.preventDefault();
-try {
+if(!email || !password){
+return dispatch(signInFailure(toast.error('Lütfen bütün alanları doldurun')))
+}
+
+    try {
+        dispatch(signInStart())
   const res=  await fetch('/api/auth/sign-in',{
         method:"POST",
         headers:{'Content-Type':'application/json'},
@@ -22,16 +30,17 @@ try {
     })
     const data = await res.json()
 if(data.success===false){
-    return console.log(data.message)
+    dispatch(signInFailure(toast.error(data.message)))
 }
 
 if(res.ok){
+    dispatch(signInSuccess(data))
     navigate('/admin')
 }
 
 
 } catch (error) {
-    console.log(error)
+    dispatch(signInFailure(toast.error(error)))
 }
 
 
@@ -52,7 +61,7 @@ e.preventDefault()
              <h2 className='p-5  text-lg font-bold font-sans'>This is a demo project. you can sign in with your email and password or with google</h2>
      
             </div>
-            <div className="w-1/2 h-[400px] p-10  flex items-center justify-center ">
+            <div className="w-1/2 h-[400px] p-10  flex flex-col items-center justify-center ">
                 <form className='flex  flex-col h-full  justify-evenly w-2/3 gap-5  shadow-gray-400 p-5 rounded-lg bg-gray-100' >
                    
                     <div className='space-y-3'>
@@ -67,15 +76,16 @@ e.preventDefault()
                             <input id='password' onChange={handleChange} className='p-3  border-2 rounded-lg bg-gray-100 outline-none w-full' type="password" placeholder='password' />
                         </div>
                     </div>
-                    <button onClick={handleSubmit} className='bg-gradient-to-br hover:bg-gradient-to-tr font-bold from-green-300 via-teal-500 to-green-900 w-full p-5 rounded-lg  text-white hover:bg-sky-500 transition-all'>
-                    SignIn
+                    <button disabled={loading} onClick={handleSubmit} className='bg-gradient-to-br hover:bg-gradient-to-tr font-bold from-green-300 via-teal-500 to-green-900 w-full p-5 rounded-lg  text-white hover:bg-sky-500 transition-all'>
+                    {loading ? '...' : 'SignIn '}
                     </button>
-                    <button onClick={googleAuth} className=' flex items-center justify-center font-bold hover:bg-gradient-to-tr  bg-gradient-to-br  from-yellow-500 via-orange-500 to-red-500 w-full p-2 rounded-lg  text-white hover:bg-sky-500 transition-all'>
-                    Countinue with Google <AiFillGoogleCircle className=' m-2' size={30}/>
-                    </button>
+                    
                     <Link to='/forgot-password' className='text-blue-600 text-sm'>Şifremi unuttum</Link>
                     
                 </form>
+                <button disabled={loading} onClick={googleAuth} className=' flex items-center justify-center font-bold hover:bg-gradient-to-tr  bg-gradient-to-br  from-yellow-500 via-orange-500 to-red-500 w-full p-2 rounded-lg  text-white hover:bg-sky-500 transition-all'>
+                {loading ? '...' : ' Countinue with Google '}  <AiFillGoogleCircle className=' m-2' size={30}/>
+                    </button>
             </div>
            
         </div>

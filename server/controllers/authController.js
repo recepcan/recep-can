@@ -2,6 +2,10 @@ import User from '../models/userModel.js'
 import bcrypt from 'bcryptjs'
 import { errorHandler } from '../utils/error.js'
 import jwt from 'jsonwebtoken'
+
+
+
+
 export const signUp = async (req, res, next) => {
     const { username, email, password } = req.body
 
@@ -33,8 +37,7 @@ export const signUp = async (req, res, next) => {
 
 
 
-
-export const signin = async (req, res, next) => {
+  export const signIn = async (req, res, next) => {
     const { email, password } = req.body;
   
     if (!email || !password || email === '' || password === '') {

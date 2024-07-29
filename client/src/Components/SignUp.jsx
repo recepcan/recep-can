@@ -9,7 +9,7 @@ const handleChange=(e)=>{
 const handleSubmit = async (e)=>{
     e.preventDefault();
 try {
-  const res=  await fetch('/api/auth/signup',{
+  const res=  await fetch('/api/auth/sign-up',{
         method:"POST",
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(formdata)
