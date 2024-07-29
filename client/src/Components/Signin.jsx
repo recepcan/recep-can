@@ -4,6 +4,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import {useDispatch,useSelector} from 'react-redux'
 import { signInFailure, signInStart, signInSuccess } from '../store/user/userSlice'
 import { toast } from 'react-toastify'
+import Oauth from './Oauth'
 
 function SignIn() {
     const dispatch=useDispatch()
@@ -46,9 +47,7 @@ if(res.ok){
 
 
 }
-const googleAuth =(e)=>{
-e.preventDefault()
-}
+
     return (
 
         <div className='w-full p-10 space-x-5 min-h-[800px] font-sans bg-gray-100 flex items-center justify-center'>
@@ -80,12 +79,12 @@ e.preventDefault()
                     {loading ? '...' : 'SignIn '}
                     </button>
                     
+                    <Oauth/>
+
                     <Link to='/forgot-password' className='text-blue-600 text-sm'>Şifremi unuttum</Link>
                     
                 </form>
-                <button disabled={loading} onClick={googleAuth} className=' flex items-center justify-center font-bold hover:bg-gradient-to-tr  bg-gradient-to-br  from-yellow-500 via-orange-500 to-red-500 w-full p-2 rounded-lg  text-white hover:bg-sky-500 transition-all'>
-                {loading ? '...' : ' Countinue with Google '}  <AiFillGoogleCircle className=' m-2' size={30}/>
-                    </button>
+               
             </div>
            
         </div>

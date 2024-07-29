@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import Oauth from './Oauth'
 function SignUp() {
 const navigate=useNavigate()
     const [formdata, setformData] = useState({username:"",email:"",password:""})
@@ -59,7 +60,8 @@ if(res.ok){
                         </div>
                     </div>
                     <button className='bg-gradient-to-br from-green-300 via-teal-500 to-green-900 w-full p-5 rounded-lg  text-white hover:bg-sky-500 transition-all'>SignUp</button>
-                </form>
+              <Oauth/>
+                    </form>
             </div>
 
         </div>
