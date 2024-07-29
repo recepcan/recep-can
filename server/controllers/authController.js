@@ -4,8 +4,6 @@ import { errorHandler } from '../utils/error.js'
 import jwt from 'jsonwebtoken'
 
 
-
-
 export const signUp = async (req, res, next) => {
     const { username, email, password } = req.body
 
