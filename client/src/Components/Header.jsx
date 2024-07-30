@@ -10,6 +10,8 @@ import { motion } from 'framer-motion'
 import Dropdown from './Dropdown';
 
 function Header() {
+    const location = useLocation()
+    console.log(location.pathname)
     const { Links, LinksEnglish, language, menu, darkMode, dropdown } = useSelector(state => state.header)
     const dispatch = useDispatch()
 
@@ -104,7 +106,8 @@ function Header() {
                         className=' min-[600px]:hidden text-black dark:text-white' onClick={() => dispatch(toggleMenu())}>
                         <AiOutlineMenu size={20} />
                     </motion.div>
-                </div>
+                   
+                     </div>
 
 
             </div>
