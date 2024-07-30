@@ -10,9 +10,9 @@ import { motion } from 'framer-motion'
 import { AnimatePresence } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import SignUp from './SignUp'
-import AdminPage from '../Pages/Adminpages/AdminPage'
 import SignIn from './Signin'
 import PrivateRoute from './PrivateRoute'
+import AdminPage from '../Pages/Adminpages/AdminPage'
 function AnimatedRoutes() {
     const { menu } = useSelector(state => state.header)
 
