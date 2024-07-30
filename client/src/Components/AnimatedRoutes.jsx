@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux'
 import SignUp from './SignUp'
 import AdminPage from '../Pages/Adminpages/AdminPage'
 import SignIn from './Signin'
+import PrivateRoute from './PrivateRoute'
 function AnimatedRoutes() {
     const { menu } = useSelector(state => state.header)
 
@@ -31,7 +32,9 @@ function AnimatedRoutes() {
                     <Route path='/İletişim' element={<Iletişim />} />
                     <Route path='/sign-up' element={<SignUp/>}/>
                     <Route path='/sign-in' element={<SignIn/>}/>
+                    <Route element={<PrivateRoute/>}>
                     <Route path='/admin' element={<AdminPage/>}/>
+                    </Route>
 
                 </Routes>
                 <Footer />

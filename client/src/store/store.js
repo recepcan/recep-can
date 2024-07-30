@@ -1,6 +1,6 @@
 import headerReducer from './headerSlice'
 import HomeReducer from './HomeSlice'
-import userReducer from './user/userSlice.js'
+import userReducer from './user/userSlice'
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
