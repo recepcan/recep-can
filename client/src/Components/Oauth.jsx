@@ -11,11 +11,9 @@ function Oauth() {
     const auth = getAuth(app)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const googleAuth = async (e) => {
-        e.preventDefault()
+    const googleAuth  = async () =>{
         const provider = new GoogleAuthProvider()
         provider.setCustomParameters({ prompt: 'select_account' })
-    
         try {
             const resultsFromGoogle = await signInWithPopup(auth, provider)
             const res = await fetch('/api/auth/google', {
@@ -29,11 +27,12 @@ function Oauth() {
                 })
             const data = await res.json()
             if (res.ok){
-                dispatch(signInSuccess(toast.success(data)))
+                dispatch(signInSuccess(data))
+                toast.success(data)
                 navigate('/admin')
             }
         } catch (error) {
-           dispatch(signInFailure( toast.error(error)))
+            toast.error(error);
         }
     } 
     
