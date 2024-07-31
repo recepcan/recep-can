@@ -99,7 +99,7 @@ function Header() {
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 2 }}
                         className='text-black dark:text-white p-2 border-2  dark:border-green-500 shadow-lg shadow-gray-400  m-5 rounded-lg' onClick={setMod} >
-                        {darkMode ? <BiSolidSun color='orange' size={20} /> : <GiMoon className='text-gray-900 ' size={20} />}
+                        {darkMode ?  <BiSolidSun color='orange' size={20} />: <GiMoon className='text-gray-900 ' size={20} /> }
                     </motion.button>
 
                     <motion.div

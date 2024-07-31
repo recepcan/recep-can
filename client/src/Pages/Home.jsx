@@ -13,9 +13,10 @@ function Home() {
       animate={{ opacity: 1 }}
       exit={{opacity:0}}
       transition={{ duration: .5 }}
-      className='dark:text-white  transition-colors duration-500 w-full
+      className='dark:text-white  transition-colors duration-500 w-full relative
      flex items-center justify-center  dark:bg-gray-900 min-h-screen'
     >
+    
       <Hizmetler/>
     </motion.div>
   )

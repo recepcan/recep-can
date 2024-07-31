@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 import DashSidebar from './DashSidebar';
 import { signInFailure, signInSuccess, signoutSuccess } from '../../store/user/userSlice';
 import { toast } from 'react-toastify';
+import AdminHomeComponent from './AdminHomeComponent';
+import AdminAboutComponent from './AdminAboutComponent';
+import AdminContactComponent from './AdminContactComponent';
 
 
 
@@ -25,16 +28,16 @@ function AdminPage() {
   }, [location.search]);
 
   return (
-    <div className='min-h-screen relative bg-gray-100 flex items-center justify-center '>
-     <div>
+    <div className='min-h-screen border-2 pt-20 border-yellow-400 relative bg-gray-100 flex   '>
+     <div className='w-1/4 border-2 border-red-400 block h-[700px] top-20 left-5 '>
       <DashSidebar/>
       </div>
 
 
-      <div>
-      {tab==='about' &&  "hello from about"} 
-      {tab==='home' &&  "hello from home"} 
-      {tab==='contact' &&  "hello from contact"} 
+      <div className='w-3/4   border-2 border-black'>
+      {tab==='about' && (<AdminAboutComponent/>) } 
+      {tab==='home' &&  (<AdminHomeComponent/>)} 
+      {tab==='contact' &&  (<AdminContactComponent/>)} 
       </div>
     </div>
   )

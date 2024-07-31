@@ -35,7 +35,7 @@ function DashSidebar() {
 
       console.log(currentUser.isAdmin)
     return (
-        <div className='w-1/4 h-[700px] flex  flex-col bg-white absolute space-y-5  left-5 top-20 rounded-lg  p-10  shadow-lg shadow-gray-400'>
+        <div className='w-full h-full flex  flex-col bg-white  space-y-5   rounded-lg  p-10  shadow-lg shadow-gray-400'>
        <div className='flex items-center justify-center space-x-5 bg-gray-50 rounded-lg p-3'>
        <h1>{currentUser.email}</h1> 
        <img src={currentUser.profilePicture} className='w-10 h-10 rounded-full' />   

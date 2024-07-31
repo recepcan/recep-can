@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
 import Header from '../Components/Header'
 import Iletişim from '../Pages/Iletişim'
 import ToggleMenu from '../Components/ToggleMenu'
@@ -13,13 +13,18 @@ import SignUp from './SignUp'
 import SignIn from './Signin'
 import PrivateRoute from './PrivateRoute'
 import AdminPage from '../Pages/Adminpages/AdminPage'
+import Modal from './Modal'
 function AnimatedRoutes() {
     const { menu } = useSelector(state => state.header)
+    const { modal } = useSelector(state => state.modal)
 
     return (
         <AnimatePresence>
             <Router>
                 <Header />
+                {
+modal && <Modal/>
+                }
 
                 {
                     menu && <ToggleMenu />
@@ -30,10 +35,10 @@ function AnimatedRoutes() {
                     <Route path='/Hakkinda' element={<About />} />
 
                     <Route path='/İletişim' element={<Iletişim />} />
-                    <Route path='/sign-up' element={<SignUp/>}/>
-                    <Route path='/sign-in' element={<SignIn/>}/>
-                    <Route element={<PrivateRoute/>}>
-                    <Route path='/admin' element={<AdminPage/>}/>
+                    <Route path='/sign-up' element={<SignUp />} />
+                    <Route path='/sign-in' element={<SignIn />} />
+                    <Route element={<PrivateRoute />}>
+                        <Route path='/admin' element={<AdminPage />} />
                     </Route>
 
                 </Routes>
