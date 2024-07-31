@@ -1,9 +1,10 @@
 import React from 'react'
+import CreatePost from './CreatePost'
 
 export default function AdminHomeComponent() {
   return (
-    <div className='bg-sky-300 h-[700px] w-full'>
-    AdminHomeComponent
+    <div className='bg-gray-100 min-h-[700px] w-full'>
+    <CreatePost/>
     </div>
   )
 }

@@ -4,15 +4,17 @@ import { FaReact ,FaEdit} from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux';
 import { modalAction } from '../store/modalSlice';
 function Hizmetler() {
-    const [rotation, setRotation] = useState(0);
+    
     const {currentUser}=useSelector(state=>state.user)
+
     const dispatch=useDispatch()
+
+    const [rotation, setRotation] = useState(0);
     const handleScroll = () => {
         const scrollTop = window.scrollY;
         setRotation(scrollTop % 120);
       };
 
-const {modal}=useSelector(state=>state.modal)
 
       useEffect(() => {
         window.addEventListener('scroll', handleScroll);

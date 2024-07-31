@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import AdminHomeComponent from './AdminHomeComponent';
 import AdminAboutComponent from './AdminAboutComponent';
 import AdminContactComponent from './AdminContactComponent';
+import AdminPostsComponent from './AdminPostsComponent';
 
 
 
@@ -28,16 +29,17 @@ function AdminPage() {
   }, [location.search]);
 
   return (
-    <div className='min-h-screen border-2 pt-20 border-yellow-400 relative bg-gray-100 flex   '>
-     <div className='w-1/4 border-2 border-red-400 block h-[700px] top-20 left-5 '>
+    <div className='min-h-screen  pt-20 border-yellow-400 relative bg-gray-100 flex   '>
+     <div className='w-1/4  border-red-400 block h-[700px] top-20 left-5 '>
       <DashSidebar/>
       </div>
 
 
-      <div className='w-3/4   border-2 border-black'>
+      <div className='w-3/4    border-black'>
       {tab==='about' && (<AdminAboutComponent/>) } 
       {tab==='home' &&  (<AdminHomeComponent/>)} 
       {tab==='contact' &&  (<AdminContactComponent/>)} 
+      {tab==='posts' &&  (<AdminPostsComponent />)} 
       </div>
     </div>
   )
