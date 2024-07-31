@@ -8,7 +8,7 @@ import Oauth from './Oauth'
 
 function SignIn() {
     const dispatch=useDispatch()
-    const{error:errorMessage,loading}= useSelector(state=>state.user)
+    const{error:errorMessage,loading,currentUser}= useSelector(state=>state.user)
 
 const navigate=useNavigate()
     const [formdata, setformData] = useState({email:"",password:""})
@@ -38,6 +38,13 @@ if(res.ok){
     dispatch(signInSuccess(data))
     navigate('/admin')
 }
+
+// if(res.ok && currentUser.isAdmin){
+//     dispatch(signInSuccess(data))
+//     navigate('/')
+// }
+
+
 
 
 } catch (error) {
