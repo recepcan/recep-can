@@ -36,7 +36,7 @@ if(data.success===false){
 
 if(res.ok){
     dispatch(signInSuccess(data))
-    navigate('/admin')
+    navigate('/')
 }
 
 // if(res.ok && currentUser.isAdmin){

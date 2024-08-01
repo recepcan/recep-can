@@ -14,6 +14,9 @@ import SignIn from './Signin'
 import PrivateRoute from './PrivateRoute'
 import AdminPage from '../Pages/Adminpages/AdminPage'
 import Modal from './Modal'
+import CreatePost from '../Pages/Adminpages/CreatePost'
+import UpdatePost from '../Pages/Adminpages/UpdatePost'
+import Projects from '../Pages/Projects'
 function AnimatedRoutes() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
@@ -23,7 +26,7 @@ function AnimatedRoutes() {
             <Router>
                 <Header />
                 {
-modal && <Modal/>
+                    modal && <Modal />
                 }
 
                 {
@@ -35,10 +38,15 @@ modal && <Modal/>
                     <Route path='/Hakkinda' element={<About />} />
 
                     <Route path='/İletişim' element={<Iletişim />} />
+                    
+                    <Route path='/post/:postSlug' element={<Projects/>} />
+
                     <Route path='/sign-up' element={<SignUp />} />
                     <Route path='/sign-in' element={<SignIn />} />
                     <Route element={<PrivateRoute />}>
                         <Route path='/admin' element={<AdminPage />} />
+                        <Route path='/create-post' element={<CreatePost />} />
+                        <Route path='/update-post/:postId' element={<UpdatePost />} />
                     </Route>
 
                 </Routes>

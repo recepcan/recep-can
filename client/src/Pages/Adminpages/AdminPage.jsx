@@ -10,6 +10,7 @@ import AdminHomeComponent from './AdminHomeComponent';
 import AdminAboutComponent from './AdminAboutComponent';
 import AdminContactComponent from './AdminContactComponent';
 import AdminPostsComponent from './AdminPostsComponent';
+import AdminUpdatePostComponent from './UpdatePost';
 
 
 
@@ -29,7 +30,7 @@ function AdminPage() {
   }, [location.search]);
 
   return (
-    <div className='min-h-screen  pt-20 border-yellow-400 relative bg-gray-100 flex   '>
+    <div className='min-h-screen w-full  pt-20 border-yellow-400 relative bg-gray-100 flex   '>
      <div className='w-1/4  border-red-400 block h-[700px] top-20 left-5 '>
       <DashSidebar/>
       </div>
@@ -40,6 +41,7 @@ function AdminPage() {
       {tab==='home' &&  (<AdminHomeComponent/>)} 
       {tab==='contact' &&  (<AdminContactComponent/>)} 
       {tab==='posts' &&  (<AdminPostsComponent />)} 
+      {tab===`updatePost` &&  (<AdminUpdatePostComponent />)} 
       </div>
     </div>
   )

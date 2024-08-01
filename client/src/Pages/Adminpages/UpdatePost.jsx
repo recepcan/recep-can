@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import {useSelector} from 'react-redux'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import {
@@ -10,20 +11,40 @@ import {
 import { app } from '../../firebase.js';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { useNavigate ,useParams} from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-
-
-
-function CreatePost() {
+function UpdatePost() {
+  const {postId}=useParams()
     const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
 //   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
 //   const [publishError, setPublishError] = useState(null);
-
+const {currentUser}=useSelector(state=>state.user)
   const navigate = useNavigate();
+  useEffect(() => {
+    try {
+      const fetchPost = async () => {
+        const res = await fetch(`/api/post/getposts?postId=${postId}`);
+        const data = await res.json();
+        if (!res.ok) {
+          console.log(data.message);
+          toast.error(data.message);
+          return;
+        }
+        if (res.ok) {
+          toast.error(null);
+          setFormData(data.posts[0]);
+        }
+      };
+
+      fetchPost();
+    } catch (error) {
+      console.log(error.message);
+      toast.error(error.message)
+    }
+  }, [postId]);
 
   const handleUpdloadImage = async () => {
     try {
@@ -64,8 +85,8 @@ function CreatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/post/create', {
-        method: 'POST',
+      const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -78,25 +99,25 @@ function CreatePost() {
       }
 
       if (res.ok) {
-      
-        navigate(`/admin?tab=posts`);
+       
+        navigate(`/post/${data.slug}`);
       }
     } catch (error) {
-      toast.error(error.message,'Something went wrong');
+      toast.error('Something went wrong',error.message);
     }
   };
-console.log(formData)
+
 
 
     return (
         <div className='p-3 max-w-3xl mx-auto min-h-screen pt-20'>
-            <h1 className='text-center text-3xl my-7 font-semibold'> Create a Post</h1>
+            <h1 className='text-center text-3xl my-7 font-semibold'> Update Post</h1>
 
             <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
 
-                <input onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' className='flex-1 p-2  rounded-lg  font-bold outline-1' />
+                <input value={formData.title} onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' className='flex-1 p-2  rounded-lg  font-bold outline-1' />
                 <div className='border-4 gap-4 flex justify-between items-center border-teal-500 border-dotted p-3 '>
-                    <input onChange={(e)=>setFile(e.target.files[0])} type="file" accept='image/*' className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500' />
+                    <input  onChange={(e)=>setFile(e.target.files[0])} type="file" accept='image/*' className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500' />
                     <button type='button' onClick={handleUpdloadImage} disabled={imageUploadProgress} className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> {
                         imageUploadProgress? (
                             <div className='w-16 h-16'> 
@@ -114,15 +135,15 @@ console.log(formData)
                       
                             </div>  )
                     }
-                <ReactQuill theme='snow' placeholder='write on the line' className='h-72 mb-12' onChange={
+                <ReactQuill value={formData.content} theme='snow' placeholder='write on the line' className='h-72 mb-12' onChange={
                     (value)=>{
                         setFormData({...formData,content:value})
                     }
                 }/>
-                <button  type='submit ' className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> Publish</button>
+                <button  type='submit ' className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> Update</button>
             </form>
         </div>
     )
 }
 
-export default CreatePost
+export default UpdatePost

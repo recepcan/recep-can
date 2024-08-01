@@ -26,6 +26,12 @@ export const headerSlice = createSlice({
         to: '/İletişim',
        
       },
+      {
+        id: 'admin',
+        name: 'admin',
+        to: '/admin',
+       
+      },
   
     ],
     isActive: false,

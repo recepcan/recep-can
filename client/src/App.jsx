@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div
-   
     className='font-mono  relative   bg-zinc-100 selection:text-white selection:bg-blue-500  dark:text-white 
     transition-colors duration-500 dark:bg-gray-900' >
       {/*darkMode &&

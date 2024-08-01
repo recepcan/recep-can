@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
+import { AiFillCloseCircle } from 'react-icons/ai';
 // import { set } from 'mongoose';
 
 export default function DashPosts() {
@@ -48,6 +49,8 @@ export default function DashPosts() {
     }
   };
 
+ 
+
   const handleDeletePost = async () => {
     setShowModal(false);
     try {
@@ -69,12 +72,12 @@ export default function DashPosts() {
       console.log(error.message);
     }
   };
-
+console.log(showModal,"modal")
   return (
-    <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+    <div className='table-auto  overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
-          <div hoverable className='shadow-md'>
+          <div  className='shadow-md '>
             <div className='flex justify-evenly bg-gray-300 rounded-tl-lg rounded-tr-lg'>
               <div  className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold rounded-tl-lg '>Date updated</div>
               <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold  '>Post image</div>
@@ -87,7 +90,7 @@ export default function DashPosts() {
             </div>
             {userPosts.map((post) => (
               <div className='divide-y '>
-                <div className='bg-white items-center  border-red-600 grid grid-cols-6 h-32 justify-center dark:border-gray-700 dark:bg-gray-800'>
+                <div className='bg-white items-center border-b  border-gray-300 grid grid-cols-6 h-32 justify-center dark:border-gray-700 dark:bg-gray-800'>
                   <div className='  h-24  border-black flex items-center justify-center'>
                     {new Date(post.updatedAt).toLocaleDateString()}
                   </div>
@@ -144,30 +147,32 @@ export default function DashPosts() {
       ) : (
         <p>You have no posts yet!</p>
       )}
+      { showModal &&
       <div
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        popup
-        size='md'
+        className='flex items-center justify-center  rounded-lg p-2 absolute min-h-svh left-0 right-0 bottom-0 top-0 z-50  bg-black/50'
+     
       >
+      
         <div />
-        <div>
+        <div className='bg-gray-200 p-20 relative rounded-lg  border-2 border-sky-500'>
+        <button className='text-red-500 text-3xl absolute right-2 top-2'   onClick={()=>setShowModal(false)}> <AiFillCloseCircle/></button>
           <div className='text-center'>
             <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
               Are you sure you want to delete this post?
             </h3>
             <div className='flex justify-center gap-4'>
-              <button color='failure' onClick={handleDeletePost}>
+              <button className='bg-red-400 rounded-lg p-2 ' onClick={handleDeletePost}>
                 Yes, I'm sure
               </button>
-              <button color='gray' onClick={() => setShowModal(false)}>
+              <button className='bg-sky-400 rounded-lg p-2 ' onClick={() => setShowModal(false)}>
                 No, cancel
               </button>
             </div>
           </div>
         </div>
       </div>
+      }
     </div>
   );
 }

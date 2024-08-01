@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.post-content h1{
+    font-size: 2rem;
+    font-weight: bolder;
+font-family: sans-serif;
+margin: 1.5rem 0;
+}
+
+.post-content h2{
+    font-size: 1.4rem;
+    font-weight: bold;
+font-family: sans-serif;
+margin: 1.5rem 0;
+}
+.post-content li{
+    list-style: circle;
+    
+}
