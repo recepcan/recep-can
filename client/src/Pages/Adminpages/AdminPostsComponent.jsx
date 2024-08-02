@@ -24,7 +24,7 @@ export default function DashPosts() {
           }
         }
       } catch (error) {
-       toast.error(error.message);
+        toast.error(error.message);
       }
     };
     if (currentUser.isAdmin) {
@@ -50,7 +50,7 @@ export default function DashPosts() {
     }
   };
 
- 
+
 
   const handleDeletePost = async () => {
     setShowModal(false);
@@ -73,19 +73,35 @@ export default function DashPosts() {
       toast.error(error.message);
     }
   };
-console.log(showModal,"modal")
+ 
   return (
     <div className=' md:mx-auto scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <div className='flex flex-col items-center justify-center'>
-          <div  className='shadow-md '>
+          <div className='shadow-md '>
             <div className='flex justify-evenly bg-gray-300 rounded-tl-lg rounded-tr-lg'>
-              <div  className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold rounded-tl-lg '>Date updated</div>
-              <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold  '>Post image</div>
-              <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold  '>Post title</div>
-              <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold  '>Category</div>
-              <div className='p-5 w-1/6 bg-red-700 flex text-white hover:bg-red-500  transition-all items-center justify-center font-extrabold'>Delete</div>
-              <div className='p-5 w-1/6 bg-sky-700 flex  text-white hover:bg-sky-400 transition-all items-center justify-center font-extrabold rounded-tr-lg '>
+              <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white 
+              transition-all  flex items-center justify-center font-extrabold rounded-tl-lg '>
+                Date updated
+              </div>
+              <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white
+               transition-all  flex items-center justify-center font-extrabold  '>
+                Post image
+              </div>
+              <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white
+               transition-all  flex items-center justify-center font-extrabold  '>
+                Post title
+              </div>
+              <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white
+               transition-all  flex items-center justify-center font-extrabold  '>
+                Category
+              </div>
+              <div className='p-5 w-1/6 bg-red-700 flex text-white
+               hover:bg-red-500  transition-all items-center justify-center font-extrabold'>
+                Delete
+              </div>
+              <div className='p-5 w-1/6 bg-sky-700 flex  text-white
+               hover:bg-sky-400 transition-all items-center justify-center font-extrabold rounded-tr-lg '>
                 <span>Edit</span>
               </div>
             </div>
@@ -149,31 +165,31 @@ console.log(showModal,"modal")
       ) : (
         <p>You have no posts yet!</p>
       )}
-      { showModal &&
-      <div
-        className='flex items-center justify-center  rounded-lg p-2 absolute min-h-svh left-0 right-0 bottom-0 top-0 z-50  bg-black/50'
-     
-      >
-      
-        <div />
-        <div className='bg-gray-200 p-20 relative rounded-lg  border-2 border-sky-500'>
-        <button className='text-red-500 text-3xl absolute right-2 top-2'   onClick={()=>setShowModal(false)}> <AiFillCloseCircle/></button>
-          <div className='text-center'>
-            <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
-            <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-              Are you sure you want to delete this post?
-            </h3>
-            <div className='flex justify-center gap-4'>
-              <button className='bg-red-400 rounded-lg p-2 ' onClick={handleDeletePost}>
-                Yes, I'm sure
-              </button>
-              <button className='bg-sky-400 rounded-lg p-2 ' onClick={() => setShowModal(false)}>
-                No, cancel
-              </button>
+      {showModal &&
+        <div
+          className='flex items-center justify-center  rounded-lg p-2 absolute min-h-svh left-0 right-0 bottom-0 top-0 z-50  bg-black/50'
+
+        >
+
+          <div />
+          <div className='bg-gray-200 p-20 relative rounded-lg  border-2 border-sky-500'>
+            <button className='text-red-500 text-3xl absolute right-2 top-2' onClick={() => setShowModal(false)}> <AiFillCloseCircle /></button>
+            <div className='text-center'>
+              <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
+              <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
+                Are you sure you want to delete this post?
+              </h3>
+              <div className='flex justify-center gap-4'>
+                <button className='bg-red-600 rounded-lg p-2 text-white font-sans font-bold' onClick={handleDeletePost}>
+                  Yes, I'm sure
+                </button>
+                <button className='bg-sky-600 rounded-lg p-2 text-white font-sans font-bold' onClick={() => setShowModal(false)}>
+                  No, cancel
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       }
     </div>
   );

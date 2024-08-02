@@ -3,7 +3,7 @@ import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-ic
 
 function Connect() {
   return (
-    <div className='w-full min-h-[800px]  flex flex-col items-center bg-gray-100 dark:bg-gray-900 '>
+    <div className='w-full min-h-[800px]  flex flex-col items-center bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
       <h1 className='text-7xl font-sans tracking-wide leading-tight from-[#0c0b10]  via-[#3aafa9] to-sky-300 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
         Let's Connect</h1>
       <hr className='w-[90%] my-10 dark:border-green-500 border-black' />
@@ -13,7 +13,7 @@ function Connect() {
 
          
             <h1 className='text-6xl  tracking-wide leading-tight font-extrabold font-sans
-           bg-gradient-to-br from-[#0c0b10]  via-[#3aafa9] to-[#3aafa99e] bg-clip-text text-transparent dark:bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-900'>
+           dark:text-white'>
              GET IN TOUCH <span className='float-right '> WITH US</span>
              </h1>
 

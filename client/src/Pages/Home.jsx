@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 import Hizmetler from '../Components/hizmetler'
+import GetPosts from '../Components/GetPosts'
 
 
 
@@ -14,10 +15,15 @@ function Home() {
       exit={{opacity:0}}
       transition={{ duration: .5 }}
       className='dark:text-white  transition-colors duration-500 w-full relative
-     flex items-center justify-center  dark:bg-gray-900 min-h-screen'
+     flex flex-col items-center justify-center  dark:bg-gray-900 min-h-screen'
     >
     
       <Hizmetler/>
+      <div className='bg-gradient-to-b from-gray-100 via-teal-100  to-gray-100 text-center dark:from-gray-900 dark:via-green-950 dark:to-gray-900'>
+      <h1 className='p-10 text-5xl font-semibold font-mono bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500'>Recent Posts</h1>
+      <GetPosts limit={12}/>
+      </div>
+
     </motion.div>
   )
 }

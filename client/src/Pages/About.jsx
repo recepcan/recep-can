@@ -73,7 +73,7 @@ function About() {
           {/*<Hizmetler /> */}
 
 
-          <div className='w-full flex flex-col items-center space-y-10  h-[700px]'>
+          <div className='w-full flex flex-col items-center space-y-10  h-[700px] bg-gradient-to-t from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-900 dark:to-gray-900'>
             <h1 className='text-5xl  bg-clip-text text-transparent  from-[#0c0b10]  via-[#3aafa9] to-sky-300 bg-gradient-to-tr font-bold font-sans z-10 dark:text-shadow-lg  dark:text-transparent  dark:from-green-100 dark:via-green-500 dark:to-green-700'>
               Technologies I Am Using
             </h1>
@@ -90,8 +90,7 @@ function About() {
 
 
 
-          <Connect />
-
+         
 
 
         </div>

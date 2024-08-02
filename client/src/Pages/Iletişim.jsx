@@ -16,7 +16,7 @@ function Iletişim() {
       className='  dark:text-white  transition-colors duration-500 w-full
      flex items-center justify-center min-h-screen dark:bg-gray-900'>
      
-        <div className='mt-28'>
+        <div className='mt-28 '>
         <Connect />
 
         </div>

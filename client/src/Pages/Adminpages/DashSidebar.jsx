@@ -42,21 +42,21 @@ function DashSidebar() {
        </div>
        
         <h1 className='text-3xl text-red-500 font-bold'>Pages </h1>
-            <NavLink className='  p-4 rounded-lg shadow-lg  shadow-gray-400' to='/admin?tab=home' >
+            <NavLink className='  p-4 rounded-lg  shadow-sm  shadow-gray-400 bg-gray-50'   to='/admin?tab=home' >
 
                 Home
             </NavLink>
 
-            <NavLink className=' p-4 rounded-lg shadow-lg shadow-gray-400' to='/admin?tab=about'>
+            <NavLink className=' p-4 rounded-lg  shadow-sm shadow-gray-400 bg-gray-50'   to='/admin?tab=about'>
 
                 About
             </NavLink>
 
-            <NavLink className=' p-4 rounded-lg shadow-lg shadow-gray-400' to='/admin?tab=contact'>
+            <NavLink className=' p-4 rounded-lg  shadow-sm shadow-gray-400 bg-gray-50'   to='/admin?tab=contact'>
 
                 contact
             </NavLink>
-            <NavLink className=' p-4 rounded-lg shadow-lg shadow-gray-400' to='/admin?tab=posts'>
+            <NavLink className=' p-4 rounded-lg  shadow-sm shadow-gray-400 bg-gray-50'   to='/admin?tab=posts'>
 
                 Posts
             </NavLink>
