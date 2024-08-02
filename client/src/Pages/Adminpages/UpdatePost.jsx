@@ -29,7 +29,7 @@ const {currentUser}=useSelector(state=>state.user)
         const res = await fetch(`/api/post/getposts?postId=${postId}`);
         const data = await res.json();
         if (!res.ok) {
-          console.log(data.message);
+          
           toast.error(data.message);
           return;
         }
@@ -41,7 +41,7 @@ const {currentUser}=useSelector(state=>state.user)
 
       fetchPost();
     } catch (error) {
-      console.log(error.message);
+     
       toast.error(error.message)
     }
   }, [postId]);
@@ -65,7 +65,7 @@ const {currentUser}=useSelector(state=>state.user)
           setImageUploadProgress(progress.toFixed(0));
         },
         (error) => {
-          toast.error('Image upload failed');
+          toast.error('Image upload failed',error.message);
           setImageUploadProgress(null);
         },
         () => {

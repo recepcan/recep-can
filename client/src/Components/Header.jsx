@@ -8,27 +8,28 @@ import { GiMoon } from 'react-icons/gi';
 import { BiSolidSun } from 'react-icons/bi';
 import { motion } from 'framer-motion'
 import Dropdown from './Dropdown';
+import {Links} from '../store/Links.js'
 
 function Header() {
-    const location = useLocation()
-    console.log(location.pathname)
-    const { Links, LinksEnglish, language, menu, darkMode, dropdown } = useSelector(state => state.header)
+  
+    
+    const {  menu, darkMode, dropdown } = useSelector(state => state.header)
     const dispatch = useDispatch()
 
     const setMod = () => {
         document.body.classList.toggle('dark');
         dispatch(toggledarkMode())
-        console.log(document.body)
+        
 
     }
-    const itemRefs = Links.map(() => useRef(null));
+    // const itemRefs = Links?.map(() => useRef(null));
 
     const [hoveredItem, setHoveredItem] = useState({ name: '' });
 
     const handleMouseEnter = (index) => {
         return () => {
             dispatch(ddAdd())
-            const name = itemRefs[index].current.textContent;
+            // const name = itemRefs[index].current.textContent;
             setHoveredItem({ name });
         };
     };
@@ -64,17 +65,17 @@ function Header() {
                 >
                     {
 
-                        (language ? Links : LinksEnglish).map((x, index) => {
+                        Links?.map((item, index) => {
                             return (
                                 <div className={`hover:text-black shadow-md shadow-gray-400 rounded-lg  border-gray-950 dark:hover:text-green-500   transition-all `}
                                     key={index}
-                                    ref={itemRefs[index]}
+                                    // ref={itemRefs[index]}
                                     onMouseEnter={handleMouseEnter(index)}
                                     onMouseLeave={handleMouseLeave}
                                 >
-                                    <NavLink id={x.id} to={x.to} >
+                                    <NavLink id={item.id} to={item.to} >
                                         <div className="p-2 box-border h-full transition-colors duration-300"  >
-                                            {x.name}
+                                            {item.name}
                                         </div>
                                     </NavLink>
 

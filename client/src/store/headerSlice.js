@@ -7,7 +7,7 @@ export const headerSlice = createSlice({
     darkMode: false,
     language: true,
     menu: false,
-    Links: [
+    Links:[
       {
         id: 'Anasayfa',
         name: 'Anasayfa',
@@ -31,9 +31,10 @@ export const headerSlice = createSlice({
         name: 'admin',
         to: '/admin',
        
-      },
+      }
   
-    ],
+    ]
+    ,
     isActive: false,
     dropdown: false,
     dropdownItems: [

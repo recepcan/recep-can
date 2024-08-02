@@ -30,15 +30,17 @@ function AdminPage() {
   }, [location.search]);
 
   return (
-    <div className='min-h-screen w-full  pt-20 border-yellow-400 relative bg-gray-100 flex   '>
-     <div className='w-1/4  border-red-400 block h-[700px] top-20 left-5 '>
+    <div className='min-h-screen w-full space-x-2 px-3  pt-20 border-yellow-400 relative bg-gray-100 flex   '>
+     <div className='w-1/5  border-red-400 block h-[700px]  '>
       <DashSidebar/>
       </div>
 
 
-      <div className='w-3/4    border-black'>
+      <div className='flex-1   border-black'>
+      {tab==='home' &&  (<AdminHomeComponent/>)}
+      {tab==='' &&  (<AdminHomeComponent/>)} 
       {tab==='about' && (<AdminAboutComponent/>) } 
-      {tab==='home' &&  (<AdminHomeComponent/>)} 
+   
       {tab==='contact' &&  (<AdminContactComponent/>)} 
       {tab==='posts' &&  (<AdminPostsComponent />)} 
       {tab===`updatePost` &&  (<AdminUpdatePostComponent />)} 

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { toast } from 'react-toastify';
 // import { set } from 'mongoose';
 
 export default function DashPosts() {
@@ -18,12 +19,12 @@ export default function DashPosts() {
         const data = await res.json();
         if (res.ok) {
           setUserPosts(data.posts);
-          if (data.posts.length < 9) {
+          if (data.posts.length < 6) {
             setShowMore(false);
           }
         }
       } catch (error) {
-        console.log(error.message);
+       toast.error(error.message);
       }
     };
     if (currentUser.isAdmin) {
@@ -45,7 +46,7 @@ export default function DashPosts() {
         }
       }
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -62,28 +63,28 @@ export default function DashPosts() {
       );
       const data = await res.json();
       if (!res.ok) {
-        console.log(data.message);
+        toast.error(data.message);
       } else {
         setUserPosts((prev) =>
           prev.filter((post) => post._id !== postIdToDelete)
         );
       }
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.message);
     }
   };
 console.log(showModal,"modal")
   return (
-    <div className='table-auto  overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+    <div className=' md:mx-auto scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {currentUser.isAdmin && userPosts.length > 0 ? (
-        <>
+        <div className='flex flex-col items-center justify-center'>
           <div  className='shadow-md '>
             <div className='flex justify-evenly bg-gray-300 rounded-tl-lg rounded-tr-lg'>
               <div  className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold rounded-tl-lg '>Date updated</div>
               <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold  '>Post image</div>
               <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold  '>Post title</div>
               <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white transition-all  flex items-center justify-center font-extrabold  '>Category</div>
-              <div className='p-5 w-1/6 bg-red-600 flex text-white hover:bg-red-400  transition-all items-center justify-center font-extrabold'>Delete</div>
+              <div className='p-5 w-1/6 bg-red-700 flex text-white hover:bg-red-500  transition-all items-center justify-center font-extrabold'>Delete</div>
               <div className='p-5 w-1/6 bg-sky-700 flex  text-white hover:bg-sky-400 transition-all items-center justify-center font-extrabold rounded-tr-lg '>
                 <span>Edit</span>
               </div>
@@ -91,7 +92,7 @@ console.log(showModal,"modal")
             {userPosts.map((post) => (
               <div className='divide-y '>
                 <div className='bg-white items-center border-b  border-gray-300 grid grid-cols-6 h-32 justify-center dark:border-gray-700 dark:bg-gray-800'>
-                  <div className='  h-24  border-black flex items-center justify-center'>
+                  <div className=' h-24  border-black flex items-center justify-center'>
                     {new Date(post.updatedAt).toLocaleDateString()}
                   </div>
                   <div className=' h-24   border-black flex items-center justify-center'>
@@ -105,7 +106,7 @@ console.log(showModal,"modal")
                   </div>
                   <div className='h-24   border-black flex items-center justify-center'>
                     <Link
-                      className='font-medium text-gray-900 dark:text-white  overflow-hidden border border-black'
+                      className='font-medium text-gray-900 dark:text-white  overflow-hidden  border-black'
                       to={`/post/${post.slug}`}
                     >
                       {post.title}
@@ -138,12 +139,13 @@ console.log(showModal,"modal")
           {showMore && (
             <button
               onClick={handleShowMore}
-              className='w-full text-teal-500 self-center text-sm py-7'
+              className='w-1/3 text-white font-semibold mt-2
+              font-mono self-center text-2xl p-4 rounded-xl bg-cyan-700 '
             >
               Show more
             </button>
           )}
-        </>
+        </div>
       ) : (
         <p>You have no posts yet!</p>
       )}

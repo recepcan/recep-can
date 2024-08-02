@@ -35,10 +35,10 @@ function DashSidebar() {
 
       console.log(currentUser.isAdmin)
     return (
-        <div className='w-full h-full flex  flex-col bg-white  space-y-5   rounded-lg  p-10  shadow-lg shadow-gray-400'>
-       <div className='flex items-center justify-center space-x-5 bg-gray-50 rounded-lg p-3'>
-       <h1>{currentUser.email}</h1> 
-       <img src={currentUser.profilePicture} className='w-10 h-10 rounded-full' />   
+        <div className='w-full h-full flex  flex-col bg-white  space-y-5   rounded-lg  p-5 shadow-lg shadow-gray-400'>
+       <div className='flex items-center justify-between bg-gray-50 rounded-lg p-3'>
+       <h1 className='text-xs'>{currentUser.email}</h1> 
+       <img src={currentUser.profilePicture} className='w-6 h-6 rounded-full' />   
        </div>
        
         <h1 className='text-3xl text-red-500 font-bold'>Pages </h1>
@@ -60,7 +60,7 @@ function DashSidebar() {
 
                 Posts
             </NavLink>
-            {location.pathname=='/admin' && <button onClick={handleSignout} className='  bg-sky-200 text-sky-800 font-semibold p-2 rounded-lg'>SignOut</button>
+            {location.pathname=='/admin' && <button onClick={handleSignout} className='  text-white  bg-cyan-700  font-semibold p-2 rounded-lg'>SignOut</button>
             }
         </div>
     )
