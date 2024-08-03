@@ -25,7 +25,7 @@ function Connect() {
         </div>
 
 
-        <div className='w-1/2 h-full  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-400 hover:shadow-gray-600 transition-all dark:border border-green-500 bg-gray-100 dark:bg-[#17252a] '>
+        <div className='w-1/2 h-full  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-400 hover:shadow-gray-600 transition-all dark:border border-green-500 bg-white dark:bg-[#17252a] '>
 
           
             <h1 className='text-5xl bg-clip-text dark:text-transparent bg-gradient-to-br from-green-100 via-green-500 to-green-700'>

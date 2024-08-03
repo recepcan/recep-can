@@ -48,7 +48,7 @@ function Header() {
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
 
-            className='w-full  flex  items-center justify-around  h-[70px] z-50   backdrop-blur-md  bg-white/30  text-[#6666]     
+            className='w-full  flex  items-center justify-around  h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
             dark:bg-black/30 dark:text-white dark:border-b border-green-500  rounded-b-3xl transition-colors duration-300
         min-[600px]:fixed max-[600px]:h-[50px]'>
 
@@ -67,14 +67,14 @@ function Header() {
 
                         Links?.map((item, index) => {
                             return (
-                                <div className={`hover:text-black shadow-md shadow-gray-400 rounded-lg  border-gray-950 dark:hover:text-green-500   transition-all `}
+                                <div className={`hover:text-black shadow-md shadow-gray-400 rounded-lg border-2 border-white dark:hover:text-green-500   transition-all `}
                                     key={index}
                                     // ref={itemRefs[index]}
                                     onMouseEnter={handleMouseEnter(index)}
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     <NavLink id={item.id} to={item.to} >
-                                        <div className="p-2 box-border h-full transition-colors duration-300"  >
+                                        <div className="p-2 box-border h-full transition-colors duration-300 font-extrabold text-md font-mono"  >
                                             {item.name}
                                         </div>
                                     </NavLink>

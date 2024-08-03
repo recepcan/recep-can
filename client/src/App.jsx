@@ -6,7 +6,7 @@ function App() {
   return (
     <div
     className='font-mono  relative   bg-zinc-100 selection:text-white selection:bg-blue-500  dark:text-white 
-    transition-colors duration-500 dark:bg-gray-900' >
+    transition-colors duration-500 dark:bg-gray-900 ' >
       {/*darkMode &&
         <img src={bgtransparentgüncel} className='w-[950px] h-[80vh] fixed right-1 top-32  z-0  border-red-300' alt="" />
 

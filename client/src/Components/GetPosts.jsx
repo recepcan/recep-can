@@ -34,7 +34,7 @@ function GetPosts({limit}) {
       }, []);
     
   return (
-    <div className='w-full flex justify-center items-center flex-wrap p-5 gap-5'>
+    <div className='w-full flex   items-center justify-center flex-wrap p-5 gap-5'>
     {
         recentPosts ? 
         recentPosts.map((post,i)=>(

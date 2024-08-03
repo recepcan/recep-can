@@ -14,7 +14,7 @@ function Items() {
          dark:hover:bg-transparent transition-all duration-300 '
           key={index}>
           <div className='w-full h-full relative preserve-3d rounded-lg group-hover:my-rotate-y-180
-           duration-1000 dark:border border-green-900 dark:bg-gray-900  bg-white/55  shadow-lg shadow-gray-400 '>
+           duration-1000 dark:border border-green-900 dark:bg-gray-900  bg-white  shadow-lg shadow-gray-400 '>
             <div className='absolute w-full h-full backface-hidden flex flex-col items-center justify-center  '> 
               <div className='group-hover:-translate-y-4 text-9xl transition-all'>
                 {element.icon}

@@ -13,7 +13,7 @@
 .dark .active{
     color:#22c55e;
     background-color: transparent;
-   border: 2px solid #22c55e;
+   /* border: 2px solid #22c55e; */
 
 }
 ::-webkit-scrollbar {
