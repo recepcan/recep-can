@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import Oauth from './Oauth'
 
 function SignIn() {
+
     const dispatch=useDispatch()
     const{error:errorMessage,loading,currentUser}= useSelector(state=>state.user)
 
@@ -36,7 +37,7 @@ if(data.success===false){
 
 if(res.ok){
     dispatch(signInSuccess(data))
-    navigate('/')
+    navigate(currentUser.isAdmin ? '/admin ': '/')
 }
 
 // if(res.ok && currentUser.isAdmin){
