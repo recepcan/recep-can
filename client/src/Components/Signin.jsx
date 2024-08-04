@@ -57,7 +57,7 @@ if(res.ok){
 
     return (
 
-        <div className='w-full p-10 space-x-5 min-h-[800px] font-sans bg-gray-100 flex items-center justify-center'>
+        <div className='w-full p-10 space-x-5 min-h-screen font-sans bg-gray-100 flex items-center justify-center'>
 
 
             <div className="w-1/3  h-[600px] p-10 bg-gray-100 flex  flex-col items-center justify-center ">

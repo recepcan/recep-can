@@ -39,7 +39,7 @@ function GetPosts({limit}) {
         recentPosts ? 
         recentPosts.map((post,i)=>(
            <Link to={`/post/${post.slug}`} key={i}>
-           <div className='w-96 min-h-[450px]  relative group flex flex-col items-center justify-between rounded-lg bg-white dark:bg-gray-900  shadow-lg shadow-gray-400 p-10'>
+           <div className='w-96 min-h-[450px]  relative group flex flex-col items-center justify-between rounded-lg bg-white dark:bg-gray-900  shadow-lg shadow-gray-400 p-10 dark:border border-white'>
            <img className='w-72 h-72 rounded-xl object-cover group-hover:scale-105 transition-all ' src={post.image} alt={post.title} />
            <div className='text-2xl font-mono font-semibold line-clamp-3 bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500'>{post.title}</div>
            <div className='line-clamp-3 absolute text-sm right-4 bottom-4'>{post.category}</div>

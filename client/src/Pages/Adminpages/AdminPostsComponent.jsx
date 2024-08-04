@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { toast } from 'react-toastify';
@@ -75,10 +75,10 @@ export default function DashPosts() {
   };
  
   return (
-    <div className=' md:mx-auto scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+    <div className='flex-1  border-black '>
       {currentUser.isAdmin && userPosts.length > 0 ? (
-        <div className='flex flex-col items-center justify-center'>
-          <div className='shadow-md '>
+        <div className='flex  border-red-500 flex-col   w-full'>
+          <div className='shadow-md flex-1   border-red-500'>
             <div className='flex justify-evenly bg-gray-300 rounded-tl-lg rounded-tr-lg'>
               <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white 
               transition-all  flex items-center justify-center font-extrabold rounded-tl-lg '>
@@ -147,6 +147,7 @@ export default function DashPosts() {
                     >
                       <span>Edit</span>
                     </Link>
+                    
                   </div>
                 </div>
               </div>

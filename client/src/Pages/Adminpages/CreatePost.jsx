@@ -10,7 +10,7 @@ import {
 import { app } from '../../firebase.js';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 
 
@@ -85,7 +85,6 @@ function CreatePost() {
       toast.error(error.message,'Something went wrong');
     }
   };
-console.log(formData)
 
 
     return (
@@ -121,6 +120,7 @@ console.log(formData)
                 }/>
                 <button  type='submit ' className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> Publish</button>
             </form>
+            
         </div>
     )
 }

@@ -1,7 +1,10 @@
-import AnimatedRoutes from './Components/AnimatedRoutes'
+import AnimatedRoutes from './Components/Layout'
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
+
 import './App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Layout from './Components/Layout';
 function App() {
   return (
     <div
@@ -12,7 +15,9 @@ function App() {
 
 
       */}
-      <AnimatedRoutes/>
+      <Router>
+      <Layout/>
+      </Router>
       <ToastContainer/>
     </div>
   )
