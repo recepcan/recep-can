@@ -1,6 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import profil from '../../public/profil.jpeg'
+import { toast } from 'react-toastify';
+import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 function AboutCard() {
+  const textId=useParams()
+  const {currentUser}=useSelector(state=>state.user)
+  const [text, setText] = useState(null);
+  const fetchTextById = async () => {
+    try {
+      const response = await fetch(`/api/text/texts/66b124be8e2076ecbe826a24`); // "/api/texts/66b124be8e2076ecbe826a24" gibi
+      if (!response.ok) {
+        toast.error('Network response was not ok');
+      }
+      const text = await response.json();
+      return text;
+    } catch (error) {
+      toast.error('There has been a problem with your fetch operation:', error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchTextById();
+        setText(result);
+      } catch (err) {
+        toast.error(err.message);
+      } 
+    };
+
+    fetchData();
+  }, []);
+
+
   return (
     <div className='w-full px-10 pt-0  border-black  flex min-[650px]:h-screen items-center justify-center'>
 
@@ -9,16 +43,22 @@ function AboutCard() {
          <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  
 */}
 
-      <h1 className='text-6xl  tracking-wide leading-tight font-extrabold bg-gradient-to-b from-[#0c0b10]  via-[#3aafa9] bg-clip-text text-transparent dark:bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-900'>Hello , i'm Recep, a passionate front-end developer, 
-      <span className='font-extrabold dark:text-white text-black'>specializing in TypeScript, React, and Next.js.</span></h1>
+      <h1 className='text-6xl  tracking-wide leading-tight font-extrabold bg-gradient-to-b from-[#0c0b10]  to-[#3aafa9] bg-clip-text text-transparent dark:bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-900'>
+      {text&&text.title}
+      </h1>
 
-      <p className=' text-lg font-mono font-semibold'>React is my playground. I thrive on creating interactive and responsive web applications that provide an exceptional user experience. From component design to state management, I've got React covered.</p>
+      <p className=' text-lg font-mono font-semibold'>{text&&text.content}</p>
 
       <div className='flex m-10 w-full h-20  space-x-10'>
         <button className='p-5 text-xl w-56 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500 to-green-900 '>
           Get In Touch</button>
         <button className='p-5 text-xl w-56 rounded-lg bg-transparent border-2 border-green-500 hover:border-none hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
           view my works</button>
+          {
+            currentUser&& currentUser.isAdmin &&<Link to={`/update-text/66b124be8e2076ecbe826a24`}>
+            <button className='p-5 bg-sky-500 rounded-lg font-semibold text-white text-xl '>edit</button>
+            </Link>
+          }
       </div>
     </div>
 

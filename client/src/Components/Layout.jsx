@@ -17,6 +17,8 @@ import Modal from './Modal'
 import CreatePost from '../Pages/Adminpages/CreatePost'
 import UpdatePost from '../Pages/Adminpages/UpdatePost'
 import Projects from '../Pages/Projects'
+import UpdateText from '../Pages/UpdateText'
+import TextsPage from '../Pages/TextsPage'
 function Layout() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
@@ -47,10 +49,13 @@ function Layout() {
 
                 <Route path='/sign-up' element={<SignUp />} />
                 <Route path='/sign-in' element={<SignIn />} />
+                <Route path='/texts/:id' element={<TextsPage />} />
+
                 <Route element={<PrivateRoute />}>
                 <Route path='/admin' element={<AdminPage />} />
                 <Route path='/create-post' element={<CreatePost />} />
                 <Route path='/update-post/:postId' element={<UpdatePost />} />
+                <Route path='/update-text/66b124be8e2076ecbe826a24' element={<UpdateText/>} />
               </Route>
 
             </Routes>

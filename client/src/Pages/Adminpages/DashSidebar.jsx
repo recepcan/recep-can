@@ -60,6 +60,10 @@ function DashSidebar() {
 
                 Posts
             </NavLink>
+            <NavLink className=' p-4 rounded-lg  shadow-sm shadow-gray-400 bg-gray-50'   to='/admin?tab=texts'>
+
+                Texts
+            </NavLink>
             {location.pathname=='/admin' && <button onClick={handleSignout} className='  text-white  bg-cyan-700  font-semibold p-2 rounded-lg'>SignOut</button>
             }
         </div>

@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import userRoutes from './routes/userRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import postRoutes from './routes/postRoutes.js'
+import TextRoutes from './routes/TextRoutes.js'
 import cookieParser from 'cookie-parser'
 const app = express()
 app.use(express.json())
@@ -20,6 +21,7 @@ mongoose.connect(process.env.MONGO_URI).then(
 app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/post', postRoutes)
+app.use('/api/text', TextRoutes)
 
 
 

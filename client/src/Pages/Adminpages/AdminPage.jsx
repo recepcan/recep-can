@@ -11,6 +11,7 @@ import AdminAboutComponent from './AdminAboutComponent';
 import AdminContactComponent from './AdminContactComponent';
 import AdminPostsComponent from './AdminPostsComponent';
 import AdminUpdatePostComponent from './UpdatePost';
+import AdminTextsComponent from './AdminTextsComponent';
 
 
 
@@ -45,6 +46,7 @@ function AdminPage() {
       {tab==='contact' &&  (<AdminContactComponent/>)} 
       {tab==='posts' &&  (<AdminPostsComponent />)} 
       {tab===`updatePost` &&  (<AdminUpdatePostComponent />)} 
+      {tab===`texts` &&  (<AdminTextsComponent />)} 
       </div>
     </div>
   )
