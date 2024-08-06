@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill'
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function Text() {
-
+const userId=useParams()
   
-
+const currentUser =useSelector(state=>state.user)
   const [formData, setFormData] = useState({});
 
 
@@ -16,7 +17,7 @@ function Text() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/text/texts/create', {
+      const res = await fetch(`/api/text/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +31,7 @@ function Text() {
       }
 
       if (res.ok) {
-      
+      toast.success('create success')
         navigate(`/admin?tab=texts`);
       }
     } catch (error) {
@@ -41,7 +42,7 @@ function Text() {
 
 
   return (
-    <div className='p-3 max-w-3xl mx-auto min-h-screen pt-20'>
+    <div className='p-3 max-w-3xl mx-auto min-h-screen pt-20 bg-sky-300'>
     <h1 className='text-center text-3xl my-7 font-semibold'> Create a text</h1>
 
     <form className='flex flex-col gap-4' onSubmit={handleSubmit}>

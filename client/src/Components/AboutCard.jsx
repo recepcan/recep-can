@@ -6,34 +6,24 @@ import { useSelector } from 'react-redux';
 function AboutCard() {
   const textId=useParams()
   const {currentUser}=useSelector(state=>state.user)
-  const [text, setText] = useState(null);
-  const fetchTextById = async () => {
-    try {
-      const response = await fetch(`/api/text/texts/66b124be8e2076ecbe826a24`); // "/api/texts/66b124be8e2076ecbe826a24" gibi
-      if (!response.ok) {
-        toast.error('Network response was not ok');
-      }
-      const text = await response.json();
-      return text;
-    } catch (error) {
-      toast.error('There has been a problem with your fetch operation:', error);
-      return null;
-    }
-  };
-
+  const [text, setText] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetchTextById();
-        setText(result);
-      } catch (err) {
-        toast.error(err.message);
-      } 
-    };
-
-    fetchData();
-  }, []);
-
+      const fetchPosts = async () => {
+        try {
+          const res = await fetch(`/api/text/getTexts?textId=66b124be8e2076ecbe826a24`);
+          const data = await res.json();
+          if (res.ok) {
+            setText(data.texts[0]);
+            console.log(data.texts[0])
+          }
+        } catch (error) {
+          toast.error(error.message);
+        }
+      };
+      if (currentUser.isAdmin) {
+        fetchPosts();
+      }
+    }, [text._id]);
 
   return (
     <div className='w-full px-10 pt-0  border-black  flex min-[650px]:h-screen items-center justify-center'>

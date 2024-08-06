@@ -11,7 +11,7 @@ import ThreeDCard from '../Components/ThreeDCard'
 import Elements from '../Components/Elements'
 import Connect from '../Components/Connect'
 import AboutCard from '../Components/AboutCard'
-import Text from './Text'
+import Text from './CreateText'
 // import Hizmetler from '../Components/Hizmetler'
 
 function About() {

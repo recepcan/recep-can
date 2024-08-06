@@ -22,6 +22,9 @@ function UpdatePost() {
   const [formData, setFormData] = useState({});
 //   const [publishError, setPublishError] = useState(null);
 const {currentUser}=useSelector(state=>state.user)
+
+
+
   const navigate = useNavigate();
   useEffect(() => {
     try {
@@ -34,8 +37,9 @@ const {currentUser}=useSelector(state=>state.user)
           return;
         }
         if (res.ok) {
-          toast.error(null);
+          toast.success('veri çekme başarılı');
           setFormData(data.posts[0]);
+          console.log(data.posts[0])
         }
       };
 
@@ -45,6 +49,10 @@ const {currentUser}=useSelector(state=>state.user)
       toast.error(error.message)
     }
   }, [postId]);
+
+
+
+
 
   const handleUpdloadImage = async () => {
     try {
@@ -82,6 +90,9 @@ const {currentUser}=useSelector(state=>state.user)
      toast.error(error);
     }
   };
+
+
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -99,7 +110,7 @@ const {currentUser}=useSelector(state=>state.user)
       }
 
       if (res.ok) {
-       
+       console.log(res)
         navigate(`/post/${data.slug}`);
       }
     } catch (error) {
