@@ -1,7 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Connect() {
+
+  const navigate = useNavigate();
+  const [formdata, setformData] = useState({ email: "",message:"",name:"" });
+  console.log(formdata);
+
+  const handleChange = (e) => {
+      setformData({ ...formdata, [e.target.id]: e.target.value.trim() });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { email, name, message } = formdata;
+  
+    if (!email || !name || !message) {
+      return toast.error('Lütfen bütün alanları doldurun');
+    }
+  
+    try {
+      const res = await fetch('/api/contact/message', {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formdata)
+      });
+  
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        const data = await res.json();
+  
+        if (!res.ok || data.success === false) {
+          return toast.error(data.message || "Bir hata oluştu");
+        }
+  
+        toast.success(data.message || "Mesajınız başarıyla iletildi");
+        navigate('/');
+      } else {
+        throw new Error("Sunucu JSON formatında bir yanıt döndürmedi.");
+      }
+  
+    } catch (error) {
+      toast.error("Bir hata oluştu: " + error.message);
+    }
+  };
+
+
+
   return (
     <div className='w-full min-h-[800px]  flex flex-col items-center bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
       <h1 className='text-7xl font-sans tracking-wide leading-tight from-[#0c0b10]  via-[#3aafa9] to-sky-300 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
@@ -31,9 +78,21 @@ function Connect() {
             <h1 className='text-5xl bg-clip-text dark:text-transparent bg-gradient-to-br from-green-100 via-green-500 to-green-700'>
             Send me an email
             </h1>
-            <input type="text" placeholder='Name&Surname' className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
+            <input 
+            onChange={handleChange}
+            type="text"
+             name='name'
+              id='name'
+             placeholder='Name&Surname'
+              className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
 
-            <input type="text" placeholder='E-mail' className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
+            <input 
+            onChange={handleChange}
+            type="email"
+            name="email"
+            id="email"
+            placeholder='email' 
+            className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
             {/*     <div className="relative p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 rounded-md">
       <input
         type="text"
@@ -41,9 +100,17 @@ function Connect() {
         placeholder="Gradient border input"/>
       
     </div>*/}
-            <textarea name="" placeholder='Your Message' id="" className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100'>
+            <textarea 
+            type='text'
+            name="message"
+            id='message'
+            onChange={handleChange}
+             placeholder='Your Message' 
+             className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100'>
             </textarea>
-            <button className='p-5 text-xl w-1/2 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
+            <button 
+            onClick={handleSubmit}
+            className='p-5 text-xl w-1/2 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
               Send</button>
           {/*  */}
 

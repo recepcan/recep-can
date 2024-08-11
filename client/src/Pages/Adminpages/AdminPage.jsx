@@ -31,14 +31,14 @@ function AdminPage() {
   }, [location.search]);
 
   return (
-    <div className='min-h-screen w-full space-x-2 p-3 box-border 
+    <div className='min-h-screen w-full  box-border 
      border-yellow-400 relative bg-gray-100 flex   '>
-     <div className='w-1/5  border-red-400  min-h-full '>
+     <div className='w-1/5  border-red-400  min-h-screen '>
       <DashSidebar/>
       </div>
 
 
-      <div className='flex-1  min-h-full box-border border-black '>
+      <div className='flex-1  min-h-full box-border p-2 max-h-screen overflow-y-auto bg-white border-black '>
       {tab==='home' &&  (<AdminHomeComponent/>)}
       {tab==='' &&  (<AdminHomeComponent/>)} 
       {tab==='about' && (<AdminAboutComponent/>) } 

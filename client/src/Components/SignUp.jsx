@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import Oauth from './Oauth'
+import { toast } from 'react-toastify'
 function SignUp() {
 const navigate=useNavigate()
     const [formdata, setformData] = useState({username:"",email:"",password:""})
@@ -18,7 +19,7 @@ try {
     })
     const data = await res.json()
 if(data.success===false){
-    return console.log(data.message)
+    return toast.error(data.message)
 }
 
 if(res.ok){
@@ -26,7 +27,7 @@ if(res.ok){
 }
 
 } catch (error) {
-    console.log(error)
+    toast.error(error)
 }
 }
     return (

@@ -2,36 +2,36 @@ import User from '../models/userModel.js';
 import bcryptjs from 'bcryptjs';
 import { errorHandler } from '../utils/error.js';
 import jwt from 'jsonwebtoken';
+import nodemailer from 'nodemailer'
+// export const signUp = async (req, res, next) => {
+//   const { username, email, password } = req.body;
 
-export const signUp = async (req, res, next) => {
-  const { username, email, password } = req.body;
+//   if (
+//     !username ||
+//     !email ||
+//     !password ||
+//     username === '' ||
+//     email === '' ||
+//     password === ''
+//   ) {
+//     next(errorHandler(400, 'All fields are required'));
+//   }
 
-  if (
-    !username ||
-    !email ||
-    !password ||
-    username === '' ||
-    email === '' ||
-    password === ''
-  ) {
-    next(errorHandler(400, 'All fields are required'));
-  }
+//   const hashedPassword = bcryptjs.hashSync(password, 10);
 
-  const hashedPassword = bcryptjs.hashSync(password, 10);
+//   const newUser = new User({
+//     username,
+//     email,
+//     password: hashedPassword,
+//   });
 
-  const newUser = new User({
-    username,
-    email,
-    password: hashedPassword,
-  });
-
-  try {
-    await newUser.save();
-    res.json('Signup successful');
-  } catch (error) {
-    next(error);
-  }
-};
+//   try {
+//     await newUser.save();
+//     res.json('Signup successful');
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 export const signIn = async (req, res, next) => {
   const { email, password } = req.body;
@@ -62,6 +62,8 @@ export const signIn = async (req, res, next) => {
         httpOnly: true,
       })
       .json(rest);
+
+      redirect('/')
   } catch (error) {
     next(error);
   }
@@ -83,7 +85,12 @@ export const google = async (req, res, next) => {
           httpOnly: true,
         })
         .json(rest);
-    } else {
+    }else if(!user){
+      console.log("there is no account the name of ...")
+      redirect('/')
+    }
+    
+    else {
       const generatedPassword =
         Math.random().toString(36).slice(-8) +
         Math.random().toString(36).slice(-8);
@@ -123,5 +130,84 @@ export const signOut = (req, res, next) => {
       .json('User has been signed out');
   } catch (error) {
     next(error);
+  }
+};
+
+
+export const forgotPassword = async (req, res, next) => {
+  const { email } = req.body;
+  try {
+      const user = await User.findOne({ email });
+      if (!user) {
+          return res.status(404).json({ message: "User not found" });
+      }
+      if(!user.isAdmin){
+        return res.status(404).json({ message: "User not admin" });
+      }
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+
+  
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'recepcn61@gmail.com', // Gmail adresiniz
+          pass: process.env.GMAIL_PASS     // Google'dan aldığınız uygulama parolası
+        }
+      });
+    
+      const mailOptions = {
+        from: 'recepcn61@gmail.com', // Gönderen e-posta adresi
+        to:'recepcn61@gmail.com',   // Alıcı e-posta adresi
+        subject: 'Reset Password',    // E-posta konusu
+        text:'bu bağlantıyı takip ederek şifreyi yenileyebilirsiniz' , // Düz metin içeriği
+        html: `bu bağlantıyı takip ederek şifreyi yenileyebilirsiniz:  http://localhost:5173/reset-password/${user._id}/${token}` // HTML içeriği
+      };
+      
+      // E-postayı gönder
+        transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return next(error);
+        }
+        else{
+          console.log('Mesaj gönderildi: %s', info.messageId);
+        res.send({status:'success'})
+        redirect('/sign-in')
+        }
+      });
+  } catch (error) {
+      next(error);
+  }
+};
+
+
+export const resetPassword = async (req, res, next) => {
+  const { id, token } = req.params;
+  const { password } = req.body;
+
+  try {
+    // Token'ı doğrula
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // Yeni şifreyi hashle
+    const newPassword = await bcryptjs.hash(password, 10);
+
+    // Kullanıcının şifresini güncelle
+    const updatedUser = await User.findByIdAndUpdate(
+      id, 
+      { password: newPassword },
+      { new: true } // Güncellenmiş kullanıcıyı döndür
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    if(!updatedUser.isAdmin){
+      return res.status(404).json({ message: "User not admin" });
+    }
+
+    res.status(200).json({ message: 'Password updated successfully' });
+
+  } catch (error) {
+    next(error); // Hata oluşursa bir sonraki hata işleyiciye iletin
   }
 };

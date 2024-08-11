@@ -12,9 +12,9 @@
         index:true
       },
       {
-        id: 'İletişim',
-        name: 'İletişim',
-        to: '/İletişim',
+        id: 'Contact',
+        name: 'Contact',
+        to: '/contact',
        
       },
       {

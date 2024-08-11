@@ -97,7 +97,7 @@ const {currentUser}=useSelector(state=>state.user)
     e.preventDefault();
     try {
       const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },

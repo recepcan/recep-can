@@ -5,6 +5,7 @@ import userRoutes from './routes/userRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import postRoutes from './routes/postRoutes.js'
 import TextRoutes from './routes/TextRoutes.js'
+import contactRoutes from './routes/contactRoutes.js'
 import cookieParser from 'cookie-parser'
 const app = express()
 app.use(express.json())
@@ -22,6 +23,7 @@ app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/post', postRoutes)
 app.use('/api/text', TextRoutes)
+app.use('/api/contact',contactRoutes)
 
 
 

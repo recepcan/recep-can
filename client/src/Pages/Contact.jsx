@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 import Form from '../Components/Form'
 import Connect from '../Components/Connect'
 
-function Iletişim() {
-  const { language } = useSelector(state => state.header)
+function Contact() {
+  
 
   return (
     <motion.div
@@ -36,4 +36,4 @@ function Iletişim() {
   )
 }
 
-export default Iletişim
+export default Contact

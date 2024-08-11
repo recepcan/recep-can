@@ -50,9 +50,9 @@ function Hizmetler() {
             </p>
           </div>
           
-          {currentUser && currentUser.isAdmin && 
+          {/*currentUser && currentUser.isAdmin && 
             ( <button className='absolute -top-5 -right-5 p-2 bg-sky-500 w-10 h-10 rounded-full' onClick={()=>dispatch(modalAction())}> <FaEdit /> </button>)
-          }
+          */}
         
           </div>
       </div>

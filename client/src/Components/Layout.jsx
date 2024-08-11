@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './Header'
-import Iletişim from '../Pages/Iletişim'
+import Iletişim from '../Pages/Contact'
 import ToggleMenu from './ToggleMenu'
 import Footer from './Footer'
 import About from '../Pages/About'
@@ -20,6 +20,9 @@ import Projects from '../Pages/Projects'
 import UpdateText from '../Pages/UpdateText'
 import TextsPage from '../Pages/TextsPage'
 import Text from '../Pages/CreateText'
+import ForgotPassword from '../Pages/ForgotPassword'
+import ResetPassword from '../Pages/ResetPassword'
+import Contact from '../Pages/Contact'
 function Layout() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
@@ -44,12 +47,14 @@ function Layout() {
 
                 <Route path='/Hakkinda' element={<About />} />
 
-                <Route path='/İletişim' element={<Iletişim />} />
+                <Route path='/contact' element={<Contact />} />
 
                 <Route path='/post/:postSlug' element={<Projects />} />
 
-                <Route path='/sign-up' element={<SignUp />} />
-                <Route path='/sign-in' element={<SignIn />} />
+{ /*                <Route path='/sign-up' element={<SignUp />} /> */} 
+               <Route path='/sign-in' element={<SignIn />} />
+               <Route path='/forgot-password' element={<ForgotPassword/>} />
+               <Route path='/reset-password/:id/:token' element={<ResetPassword/>} />
                 <Route path='/texts/:textId' element={<TextsPage />} />
                 
 

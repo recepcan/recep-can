@@ -39,15 +39,6 @@ if(res.ok){
     dispatch(signInSuccess(data))
     navigate(currentUser.isAdmin ? '/admin ': '/')
 }
-
-// if(res.ok && currentUser.isAdmin){
-//     dispatch(signInSuccess(data))
-//     navigate('/')
-// }
-
-
-
-
 } catch (error) {
     dispatch(signInFailure(toast.error(error)))
 }
@@ -89,7 +80,7 @@ if(res.ok){
                     
                     <Oauth/>
 
-                    <Link to='/forgot-password' className='text-blue-600 text-sm'>Şifremi unuttum</Link>
+                    <Link to='/forgot-password' className='text-blue-600 text-sm'>Forgot Password</Link>
                     
                 </form>
                

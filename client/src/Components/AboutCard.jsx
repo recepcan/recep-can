@@ -20,10 +20,9 @@ function AboutCard() {
           toast.error(error.message);
         }
       };
-      if (currentUser.isAdmin) {
         fetchPosts();
-      }
-    }, [text._id]);
+      
+    }, [textId]);
 
   return (
     <div className='w-full px-10 pt-0  border-black  flex min-[650px]:h-screen items-center justify-center'>
@@ -44,11 +43,11 @@ function AboutCard() {
           Get In Touch</button>
         <button className='p-5 text-xl w-56 rounded-lg bg-transparent border-2 border-green-500 hover:border-none hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
           view my works</button>
-          {
+          {/*
             currentUser&& currentUser.isAdmin &&<Link to={`/update-text/66b124be8e2076ecbe826a24`}>
             <button className='p-5 bg-sky-500 rounded-lg font-semibold text-white text-xl '>edit</button>
             </Link>
-          }
+          */}
       </div>
     </div>
 
