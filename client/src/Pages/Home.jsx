@@ -19,7 +19,7 @@ function Home() {
     >
  
       <Hizmetler/>
-      <div className='  bg-gradient-to-t  from-gray-100 via-green-200  to-gray-100 text-center dark:from-gray-900 dark:via-teal-900 dark:to-gray-900'>
+      <div className='  bg-gradient-to-t  from-gray-100 via-green-200  to-gray-100 text-center dark:from-gray-900 dark:via-green-950 dark:to-gray-900'>
       <h1 className='p-10 text-5xl font-semibold font-mono bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500'>Recent Posts</h1>
       <GetPosts limit={6}/>
       </div>

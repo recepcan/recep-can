@@ -105,8 +105,8 @@ export default function DashPosts() {
                 <span>Edit</span>
               </div>
             </div>
-            {userPosts.map((post) => (
-              <div className='divide-y '>
+            {userPosts.map((post,index) => (
+              <div key={index} className='divide-y '>
                 <div className='bg-white items-center border-b  border-gray-300 grid grid-cols-6 h-32 justify-center dark:border-gray-700 dark:bg-gray-800'>
                   <div className=' h-24  border-black flex items-center justify-center'>
                     {new Date(post.updatedAt).toLocaleDateString()}

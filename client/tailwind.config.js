@@ -45,6 +45,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       colors: {
       dark: {
         DEFAULT: '#333333',
@@ -52,6 +55,7 @@ export default {
       }, 
       'serif': ['Playfair Display', 'serif'],
       'sans': ['Poppins', 'sans-serif'],
+      
     },
     textShadow: {
       'sm': '1px 1px 2px rgba(0, 0, 0, 0.5)',

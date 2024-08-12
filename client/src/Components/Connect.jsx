@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import ReCAPTCHA from "react-google-recaptcha";
 function Connect() {
-
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setverified(true)
+  }
+  const [verified, setverified] = useState(false)
   const navigate = useNavigate();
   const [formdata, setformData] = useState({ email: "",message:"",name:"" });
   console.log(formdata);
@@ -49,6 +53,7 @@ function Connect() {
 
 
 
+
   return (
     <div className='w-full min-h-[800px]  flex flex-col items-center bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
       <h1 className='text-7xl font-sans tracking-wide leading-tight from-[#0c0b10]  via-[#3aafa9] to-sky-300 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
@@ -59,9 +64,9 @@ function Connect() {
         <div className='w-1/2 h-full p-5 flex flex-col space-y-10 rounded-xl text-start   border-gray-400'>
 
          
-            <h1 className='text-6xl  tracking-wide leading-tight font-extrabold font-sans
+            <h1 className='text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter text-[#101010]
            dark:text-white'>
-             GET IN TOUCH <span className='float-right '> WITH US</span>
+             GET IN TOUCH WITH US
              </h1>
 
             <p className='text-lg font-mono font-semibold'>
@@ -109,9 +114,14 @@ function Connect() {
              className='w-full p-5 m-3 rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100'>
             </textarea>
             <button 
+            disabled={!verified}
             onClick={handleSubmit}
             className='p-5 text-xl w-1/2 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
               Send</button>
+              <ReCAPTCHA
+              sitekey= "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              onChange={onChange}
+            />,
           {/*  */}
 
         </div>

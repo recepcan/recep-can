@@ -6,8 +6,8 @@ import { Outlet } from 'react-router-dom'
 export default function AdminHomeComponent() {
   return (
     <>
-    <div className='bg-white w-full  min-h-full flex-1 p-5 space-y-5 rounded-lg'>
-      <div className='w-full h-16  p-3 rounded-sm mb-5 shadow-md shadow-gray-400'>
+    <div className='bg-white w-full  min-h-full flex-1  space-y-5 rounded-lg'>
+      <div className='w-full h-16  p-3 bg-[#1a2e44] text-white rounded-sm mb-5 shadow-md shadow-gray-400'>
         <h1>This is the Home page component. You can manage the home page in here</h1>
       </div>
       <div className='w-full flex items-center justify-between  h-full '>

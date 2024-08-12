@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { FaFlagCheckered } from "react-icons/fa";
+import { FaFlagCheckered, FaMoon } from "react-icons/fa";
 import { changeLanguage, ddAdd, ddremove, toggleMenu, toggledarkMode } from '../store/headerSlice';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { GiMoon } from 'react-icons/gi';
@@ -9,7 +9,7 @@ import { BiSolidSun } from 'react-icons/bi';
 import { motion } from 'framer-motion'
 import Dropdown from './Dropdown';
 import {Links} from '../store/Links.js'
-
+import { IoMoonSharp } from "react-icons/io5";
 function Header() {
   
     
@@ -87,26 +87,27 @@ function Header() {
                     }
 
 
-                    {/*dropdown && <Dropdown hoveredItem={hoveredItem} />*/}
+                    
 
                 </div>
 
                 <div className=' flex items-center justify-center gap-5' >
-                    {/*  <button onClick={() => dispatch(changeLanguage())}> <FaFlagCheckered color='red' size={20} /></button>*/}
+                 
 
-                    <motion.button
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 2 }}
-                        className='text-black dark:text-white p-2 border-2  dark:border-green-500 shadow-lg shadow-gray-400  m-5 rounded-lg' onClick={setMod} >
-                        {darkMode ?  <BiSolidSun color='orange' size={20} />: <GiMoon className='text-gray-900 ' size={20} /> }
-                    </motion.button>
+                    <button   
+                        className=' pl-5    rounded-lg' 
+                        onClick={setMod} >
+                        {darkMode 
+                        ? 
+                         <BiSolidSun className='text-orange-400 text-3xl'  /> 
+                         : 
+                         <FaMoon className='text-black text-2xl' />}
+                    </button>
 
-                    <motion.div
+                    <div
                         className=' min-[600px]:hidden text-black dark:text-white' onClick={() => dispatch(toggleMenu())}>
                         <AiOutlineMenu size={20} />
-                    </motion.div>
+                    </div>
                    
                      </div>
 
@@ -117,3 +118,5 @@ function Header() {
 }
 
 export default Header 
+   {/*  <button onClick={() => dispatch(changeLanguage())}> <FaFlagCheckered color='red' size={20} /></button>*/}
+   {/*dropdown && <Dropdown hoveredItem={hoveredItem} />*/}
