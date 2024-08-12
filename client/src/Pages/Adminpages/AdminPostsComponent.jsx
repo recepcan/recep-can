@@ -1,54 +1,68 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { toast } from 'react-toastify';
+import { fetchPosts } from '../../store/postSlice';
 // import { set } from 'mongoose';
 
 export default function DashPosts() {
   const { currentUser } = useSelector((state) => state.user);
-  const [userPosts, setUserPosts] = useState([]);
+  // const [userPosts, setUserPosts] = useState([]);
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState('');
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`);
-        const data = await res.json();
-        if (res.ok) {
-          setUserPosts(data.posts);
-          if (data.posts.length < 6) {
-            setShowMore(false);
-          }
-        }
-      } catch (error) {
-        toast.error(error.message);
-      }
-    };
-    if (currentUser.isAdmin) {
-      fetchPosts();
-    }
-  }, [currentUser._id]);
 
-  const handleShowMore = async () => {
-    const startIndex = userPosts.length;
-    try {
-      const res = await fetch(
-        `/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
-      );
-      const data = await res.json();
-      if (res.ok) {
-        setUserPosts((prev) => [...prev, ...data.posts]);
-        if (data.posts.length < 9) {
-          setShowMore(false);
-        }
-      }
-    } catch (error) {
-      toast.error(error.message);
+
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector(state => state.posts);
+ 
+
+  useEffect(() => {
+    if (currentUser && currentUser._id) {
+      dispatch(fetchPosts(currentUser));
+
     }
-  };
+    if (data.posts.length < 6) {
+                 setShowMore(false);
+               }
+  }, [dispatch, currentUser]);
+
+  console.log('Component data:', data); 
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    toast.error(error);
+    return <div>Error: {error}</div>;
+  }
+
+  if (data.length === 0) {
+    return <div>No posts available</div>;
+  }
+
+  // const handleShowMore =  () => {
+
+    
+  //   const startIndex = data.posts.length;
+  //   try {
+  //     const res = await fetch(
+  //       `/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
+  //     );
+  //     const data = await res.json();
+  //     if (res.ok) {
+  //       // data.posts((prev) => [...prev, ...data.posts]);
+  //       if (data.posts.length < 9) {
+  //         setShowMore(false);
+  //       }
+  //     }
+  //   } catch (error) {
+  //     toast.error(error.message);
+  //   }
+  // };
 
 
 
@@ -65,9 +79,13 @@ export default function DashPosts() {
       if (!res.ok) {
         toast.error(data.message);
       } else {
-        setUserPosts((prev) =>
-          prev.filter((post) => post._id !== postIdToDelete)
-        );
+        if (currentUser && currentUser._id) {
+          dispatch(fetchPosts(currentUser));
+    
+        }
+        // setUserPosts((prev) =>
+        //   prev.filter((post) => post._id !== postIdToDelete)
+        // );
       }
     } catch (error) {
       toast.error(error.message);
@@ -76,7 +94,7 @@ export default function DashPosts() {
  
   return (
     <div className='flex-1  border-black '>
-      {currentUser.isAdmin && userPosts.length > 0 ? (
+      {currentUser.isAdmin && data.posts.length > 0 ? (
         <div className='flex  border-red-500 flex-col   w-full'>
           <div className='shadow-md flex-1   border-red-500'>
             <div className='flex justify-evenly bg-gray-300 rounded-tl-lg rounded-tr-lg'>
@@ -105,7 +123,7 @@ export default function DashPosts() {
                 <span>Edit</span>
               </div>
             </div>
-            {userPosts.map((post,index) => (
+            {data?.posts?.map((post,index) => (
               <div key={index} className='divide-y '>
                 <div className='bg-white items-center border-b  border-gray-300 grid grid-cols-6 h-32 justify-center dark:border-gray-700 dark:bg-gray-800'>
                   <div className=' h-24  border-black flex items-center justify-center'>
@@ -153,7 +171,7 @@ export default function DashPosts() {
               </div>
             ))}
           </div>
-          {showMore && (
+          {/* showMore && (
             <button
               onClick={handleShowMore}
               className='w-1/3 text-white font-semibold mt-2
@@ -161,7 +179,7 @@ export default function DashPosts() {
             >
               Show more
             </button>
-          )}
+          )*/ }
         </div>
       ) : (
         <p>You have no posts yet!</p>

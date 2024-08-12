@@ -39,7 +39,7 @@ function Oauth() {
 
     return (
         <button type='button' disabled={loading} onClick={googleAuth} className=' flex items-center justify-center font-bold hover:bg-gradient-to-tr  bg-gradient-to-br  from-yellow-500 via-orange-500 to-red-500 w-full p-2 rounded-lg  text-white hover:bg-sky-500 transition-all'>
-            {loading ? '...' : ' Countinue with Google '}  <AiFillGoogleCircle className='w-8 h-8 m-2'  />
+            Countinue with Google  <AiFillGoogleCircle className='w-8 h-8 m-2'  />
         </button>
     )
 }

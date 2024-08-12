@@ -61,9 +61,8 @@ export const signIn = async (req, res, next) => {
       .cookie('access_token', token, {
         httpOnly: true,
       })
-      .json(rest);
-
-      redirect('/')
+      .json(rest)
+      
   } catch (error) {
     next(error);
   }

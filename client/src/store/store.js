@@ -1,6 +1,8 @@
 import headerReducer from './headerSlice'
 import HomeReducer from './HomeSlice'
 import modalSlice from './modalSlice';
+import postSlice from './postSlice';
+import textsSlice from './textsSlice';
 import userReducer from './user/userSlice'
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
@@ -10,7 +12,9 @@ const rootReducer = combineReducers({
   header:headerReducer,
     Home:HomeReducer,
     user:userReducer,
-    modal:modalSlice
+    modal:modalSlice,
+    texts:textsSlice,
+    posts:postSlice
 });
 
 const persistConfig = {

@@ -9,6 +9,13 @@ import contactRoutes from './routes/contactRoutes.js'
 import cookieParser from 'cookie-parser'
 const app = express()
 app.use(express.json())
+
+import cors from 'cors'
+
+
+// Tüm istekler için CORS'u etkinleştir
+app.use(cors());
+
 dotenv.config()
 app.use(cookieParser())
 mongoose.connect(process.env.MONGO_URI).then(

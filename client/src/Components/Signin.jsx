@@ -24,7 +24,7 @@ return dispatch(signInFailure(toast.error('Lütfen bütün alanları doldurun'))
 
     try {
         dispatch(signInStart())
-  const res=  await fetch('/api/auth/sign-in',{
+  const res= await fetch('/api/auth/sign-in',{
         method:"POST",
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(formdata)
@@ -36,8 +36,9 @@ if(data.success===false){
 }
 
 if(res.ok){
+   
     dispatch(signInSuccess(data))
-    navigate(currentUser.isAdmin ? '/admin ': '/')
+    navigate('/admin ')
 }
 } catch (error) {
     dispatch(signInFailure(toast.error(error)))
@@ -60,7 +61,7 @@ if(res.ok){
      
             </div>
             <div className="w-1/2 h-[400px] p-10  flex flex-col items-center justify-center ">
-                <form className='flex  flex-col h-full  justify-evenly w-2/3 gap-5  shadow-gray-400 p-5 rounded-lg bg-gray-100' >
+                <form onSubmit={handleSubmit} className='flex  flex-col h-full  justify-evenly w-2/3 gap-5  shadow-gray-400 p-5 rounded-lg bg-gray-100' >
                    
                     <div className='space-y-3'>
                         
@@ -74,7 +75,7 @@ if(res.ok){
                             <input id='password' onChange={handleChange} className='p-3  border-2 rounded-lg bg-gray-100 outline-none w-full' type="password" placeholder='password' />
                         </div>
                     </div>
-                    <button disabled={loading} onClick={handleSubmit} className='bg-gradient-to-br hover:bg-gradient-to-tr font-bold from-green-300 via-teal-500 to-green-900 w-full p-5 rounded-lg  text-white hover:bg-sky-500 transition-all'>
+                    <button type='submit' disabled={loading}  className='bg-gradient-to-br hover:bg-gradient-to-tr font-bold from-green-300 via-teal-500 to-green-900 w-full p-5 rounded-lg  text-white hover:bg-sky-500 transition-all'>
                     {loading ? '...' : 'SignIn '}
                     </button>
                     

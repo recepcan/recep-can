@@ -99,10 +99,10 @@ function Header() {
                         onClick={setMod} >
                         {darkMode 
                         ? 
-                         <BiSolidSun className='text-orange-400 text-3xl'  /> 
+                         <BiSolidSun className='text-orange-400 text-2xl'  /> 
                          : 
-                         <FaMoon className='text-black text-2xl' />}
-                    </button>
+                         <FaMoon className='text-black text-xl' />}
+                      </button>
 
                     <div
                         className=' min-[600px]:hidden text-black dark:text-white' onClick={() => dispatch(toggleMenu())}>
