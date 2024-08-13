@@ -1,15 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { FaFlagCheckered, FaMoon } from "react-icons/fa";
+import { FaFlagCheckered, FaInfoCircle, FaMoon, FaReact } from "react-icons/fa";
 import { changeLanguage, ddAdd, ddremove, toggleMenu, toggledarkMode } from '../store/headerSlice';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { GiMoon } from 'react-icons/gi';
 import { BiSolidSun } from 'react-icons/bi';
 import { motion } from 'framer-motion'
 import Dropdown from './Dropdown';
-import {Links} from '../store/Links.js'
+// import {Links} from '../store/Links.js'
 import { IoMoonSharp } from "react-icons/io5";
+import { GoHomeFill } from "react-icons/go";
+import { FaPhoneFlip } from 'react-icons/fa6';
 function Header() {
   
     
@@ -42,6 +44,50 @@ function Header() {
     };
 
 
+    const Links=[
+        {
+          id: 'Anasayfa',
+          name: 'Anasayfa',
+          to: '/',
+         icon:<GoHomeFill />
+        },
+        {
+          id: 'Hakkinda',
+          name: 'Hakkinda',
+          to: '/Hakkinda',
+          index:true,
+          icon:<FaInfoCircle />
+        },
+        {
+          id: 'Contact',
+          name: 'Contact',
+          to: '/contact',
+          icon:<FaPhoneFlip />
+         
+        },
+        {
+          id: 'admin',
+          name: 'admin',
+          to: '/admin',
+         
+        }
+    
+      ]
+
+
+      const [rotation, setRotation] = useState(0);
+      const handleScroll = () => {
+          const scrollTop = window.scrollY;
+          setRotation(scrollTop % 120);
+        };
+  
+  
+        useEffect(() => {
+          window.addEventListener('scroll', handleScroll);
+          return () => {
+            window.removeEventListener('scroll', handleScroll);
+          };
+        }, []);
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -54,7 +100,7 @@ function Header() {
 
             <Link to="/">
                 <div className='flex items-center'>
-                    <h1 className='bg-gradient-to-br from-green-300 via-teal-500 to-green-900  text-white p-3 rounded-2xl text-3xl font-bold font-sans'>Recep Can's</h1><span className='font-bold text-4xl font-sans dark:text-white text-black'> Blog</span>
+                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-3 rounded-2xl text-3xl font-bold font-sans'>Recep Can</h1>
                 </div>
             </Link>
 
@@ -74,8 +120,9 @@ function Header() {
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     <NavLink id={item.id} to={item.to} >
-                                        <div className="p-2 box-border h-full transition-colors duration-300 font-extrabold text-md font-mono"  >
-                                            {item.name}
+                                        <div className="p-2 items-center justify-between  space-x-1 flex box-border h-full transition-colors duration-300 font-extrabold text-md font-mono"  >
+                                           <h2> {item.name} </h2>
+                                           <div> {item.icon}</div>
                                         </div>
                                     </NavLink>
 
@@ -110,9 +157,15 @@ function Header() {
                     </div>
                    
                      </div>
-
-
+                     <FaReact className='text-sky-600 w-8 h-8 ml-10 '
+                     style={{
+           
+                       transform: `rotate(${rotation}deg)`,
+                       transformOrigin: 'center' // Dönüşüm merkezini ortalıyoruz
+                     }} />
             </div>
+            
+            
         </motion.div>
     )
 }

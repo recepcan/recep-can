@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+
 import { motion } from 'framer-motion'
-import Form from '../Components/Form'
+
 import Connect from '../Components/Connect'
 
 function Contact() {
@@ -13,7 +13,7 @@ function Contact() {
       animate={{ opacity: 1 }}
       transition={{ duration: .5 }}
       exit={{ opacity: 0 }}
-      className='  dark:text-white  transition-colors duration-500 w-full
+      className='  dark:text-white relative  transition-colors duration-500 w-full
      flex items-center justify-center min-h-screen dark:bg-gray-900  pt-20'>
      
         <div className=''>

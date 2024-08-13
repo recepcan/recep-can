@@ -17,8 +17,8 @@
 
 }
 ::-webkit-scrollbar {
-    width: 10px;
-    background-color: white;  
+    width: 8px;
+    background-color: #f4f4f5;
 
 }
 .dark::-webkit-scrollbar {
@@ -27,7 +27,7 @@
 }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #3aafa9 ;
+    background-color: #64a8fa ;
     border-radius: 20px;
 
 }
@@ -40,7 +40,7 @@
 .custom-scrollbar {
   scrollbar-width: thin;  /* Firefox */
  
-  scrollbar-color: #3aafa9 #090909;  /* scrollbar thumb color and track color */
+  scrollbar-color: blue transparent;  /* scrollbar thumb color and track color */
 }
 
 .custom-scrollbar::-webkit-scrollbar {

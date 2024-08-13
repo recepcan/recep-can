@@ -124,8 +124,8 @@ export default function DashPosts() {
               </div>
             </div>
             {data?.posts?.map((post,index) => (
-              <div key={index} className='divide-y '>
-                <div className='bg-white items-center border-b  border-gray-300 grid grid-cols-6 h-32 justify-center dark:border-gray-700 dark:bg-gray-800'>
+              <div key={index} className=''>
+                <div className='bg-white items-center border-b  border-gray-300 grid grid-cols-6 h-32 justify-center dark:border-gray-700 dark:bg-gray-800 '>
                   <div className=' h-24  border-black flex items-center justify-center'>
                     {new Date(post.updatedAt).toLocaleDateString()}
                   </div>
@@ -140,7 +140,7 @@ export default function DashPosts() {
                   </div>
                   <div className='h-24   border-black flex items-center justify-center'>
                     <Link
-                      className='font-medium text-gray-900 dark:text-white  overflow-hidden  border-black'
+                      className='font-medium text-gray-900 dark:text-white line-clamp-2 overflow-hidden  border-black'
                       to={`/post/${post.slug}`}
                     >
                       {post.title}

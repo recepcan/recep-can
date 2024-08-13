@@ -23,14 +23,19 @@ import Text from '../Pages/CreateText'
 import ForgotPassword from '../Pages/ForgotPassword'
 import ResetPassword from '../Pages/ResetPassword'
 import Contact from '../Pages/Contact'
+import Loading from './Loading'
 function Layout() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
     const { currentUser } = useSelector(state => state.user)
     const location = useLocation()
+
     return (
 
-        <div >
+        <div className='relative'>
+
+
+
             {
                 location.pathname !== '/admin' && location.pathname !== '/sign-in' && location.pathname !== '/sign-up' &&  <Header />
             }

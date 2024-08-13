@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ReCAPTCHA from "react-google-recaptcha";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTextById } from '../store/textsSlice';
+import Loading from './Loading';
+
 function Connect() {
   function onChange(value) {
     console.log("Captcha value:", value);
@@ -54,9 +58,23 @@ function Connect() {
 
 
 
+  const {textByIdError,textByIdLoading,textById}=useSelector(state=>state.texts)
+  const {currentUser}=useSelector(state=>state.user)
+  const dispatch=useDispatch()
+ 
+const textId='66bb4c90f85daded200e6e75'
+  useEffect(() => {
+    if (textId) {
+        dispatch(fetchTextById(textId)); // Thunk'ı dispatch ediyoruz
+    }
+}, [dispatch, textId]);
+
+if (textByIdLoading) return <Loading/>
+if (textByIdError) return <div>Error: {textByIdError}</div>;
+
   return (
-    <div className='w-full min-h-[800px]  flex flex-col items-center bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
-      <h1 className='text-7xl font-sans tracking-wide leading-tight from-[#0c0b10]  via-[#3aafa9] to-sky-300 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
+    <div className='w-full min-h-[800px]  flex flex-col items-center bg-gradient-to-b from-gray-100 via-sky-200 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
+      <h1 className='text-7xl font-inter -tracking-[1px] leading-tight from-blue-800 via-blue-600 to-purple-500 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
         Let's Connect</h1>
       <hr className='w-[90%] my-10 dark:border-green-500 border-black' />
       <div className=' w-[90%] h-full flex space-x-2'>
@@ -64,23 +82,23 @@ function Connect() {
         <div className='w-1/2 h-full p-5 flex flex-col space-y-10 rounded-xl text-start   border-gray-400'>
 
          
-            <h1 className='text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter text-[#101010]
+            <h1 className='text-5xl  -tracking-[1px] leading-tight font-extrabold bg-clip-text bg-gradient-to-b text-transparent font-inter from-blue-800 via-blue-600 to-purple-500
            dark:text-white'>
-             GET IN TOUCH WITH US
+             {textById?.title}
              </h1>
 
             <p className='text-lg font-mono font-semibold'>
-            Feel free to contact us for collaboration opportunities or freelance work. We're open to exciting projects and look forward to hearing from you!Feel free to contact us for collaboration opportunities or freelance work. We're open to exciting projects and look forward to hearing from you!
-            I'm always open to new opportunities and collaborations. If you have a project in mind or want to discuss how I can contribute to your team, please don't hesitate to reach out.
+           {textById?.content}
             </p>
 
         </div>
 
 
-        <div className='w-1/2 h-full  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-400 hover:shadow-gray-600 transition-all dark:border border-green-500 bg-white dark:bg-[#17252a] '>
+        <div className='w-1/2 h-full  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-400 hover:shadow-gray-600 
+        transition-all dark:border border-green-500 bg-white dark:bg-[#17252a] '>
 
           
-            <h1 className='text-5xl bg-clip-text dark:text-transparent bg-gradient-to-br from-green-100 via-green-500 to-green-700'>
+            <h1 className='font-inter text-5xl bg-clip-text dark:text-transparent bg-gradient-to-br from-green-100 via-green-500 to-green-700'>
             Send me an email
             </h1>
             <input 
@@ -116,7 +134,7 @@ function Connect() {
             <button 
             disabled={!verified}
             onClick={handleSubmit}
-            className='p-5 text-xl w-1/2 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500 from-green-100 via-teal-500-500 to-green-900 '>
+            className='p-5 text-xl w-1/2 rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500  from-blue-200 via-blue-300 to-blue-400 '>
               Send</button>
               <ReCAPTCHA
               sitekey= "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"

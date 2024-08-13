@@ -46,9 +46,11 @@ function Projects() {
 
 
   return (
-    <div className='min-h-screen pt-20 flex flex-col items-center bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
+    <div className='min-h-screen pt-20 flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
     
-    <h1 className=' m-10 uppercase text-5xl font-sans font-semibold bg-clip-text bg-gradient-to-tr text-transparent from-green-500 via-teal-600 to-teal-800'>{post&& post.title}</h1>
+    <h1 className='text-center m-10 uppercase text-5xl font-sans font-semibold bg-clip-text bg-gradient-to-tr text-transparent from-green-500 via-teal-600 to-teal-800'>
+    {post&& post.title}
+    </h1>
     <div className='w-[900px] m-5 flex items-center justify-center'>
     <img src={post&&post.image} className='rounded-xl' alt="" />
     </div>

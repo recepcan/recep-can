@@ -1,9 +1,11 @@
+
+
    export const Links=[
       {
         id: 'Anasayfa',
         name: 'Anasayfa',
         to: '/',
-      
+       
       },
       {
         id: 'Hakkinda',

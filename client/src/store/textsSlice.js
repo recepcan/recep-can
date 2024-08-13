@@ -3,7 +3,10 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 const initialState = {
     data: [],
     error: '',
-    loading: false
+    loading: false,
+    textById: null, // Yeni eklenen state
+    textByIdLoading: false,
+    textByIdError: ''
 };
 
 export const fetchTexts = createAsyncThunk('fetchTexts', async (currentUser) => {
@@ -16,6 +19,16 @@ export const fetchTexts = createAsyncThunk('fetchTexts', async (currentUser) => 
     return data;
   });
   
+
+
+export const fetchTextById = createAsyncThunk('fetchTextById', async (textId) => {
+  const response = await fetch(`/api/text/getTexts?textId=${textId}`);
+  if (!response.ok) {
+      throw new Error('Network response was not ok');
+  }
+  const data = await response.json();
+  return data.texts[0]; // İlk elemanı döndürüyor
+});
 
   const textsSlice = createSlice({
     name: "texts",
@@ -35,7 +48,21 @@ export const fetchTexts = createAsyncThunk('fetchTexts', async (currentUser) => 
         state.loading = false;
         state.error = "Error fetching texts data";
       });
-    },
+      builder.addCase(fetchTextById.pending, (state) => {
+        state.textByIdLoading = true;
+        state.textByIdError = "";
+    });
+    builder.addCase(fetchTextById.fulfilled, (state, action) => {
+        state.textById = action.payload;
+        state.textByIdLoading = false;
+        state.textByIdError = "";
+    });
+    builder.addCase(fetchTextById.rejected, (state) => {
+        state.textByIdLoading = false;
+        state.textByIdError = "Error fetching text by ID";
+    });
+},
+    
   });
   
 
