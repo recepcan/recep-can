@@ -8,7 +8,7 @@ function Items() {
   return (
     <  >
       {elements.map((element, index) => (
-        <div className='h-52 w-52 group   font-bold   perspective1 group bg-transparent z-20
+        <div className='sm:h-52 sm:w-52  w-32 h-32 group   font-bold   perspective1 group bg-transparent z-20
            flex flex-col items-center justify-center 
          dark:hover:border-purple-500 hover:shadow-none
          dark:hover:bg-transparent transition-all duration-300 '
@@ -16,7 +16,7 @@ function Items() {
           <div className='w-full h-full relative preserve-3d rounded-lg group-hover:my-rotate-y-180
            duration-1000 dark:border border-green-900 dark:bg-gray-900  bg-white  shadow-lg shadow-gray-400 '>
             <div className='absolute w-full h-full backface-hidden flex flex-col items-center justify-center  '> 
-              <div className='group-hover:-translate-y-4 text-9xl transition-all'>
+              <div className='group-hover:-translate-y-4 text-7xl sm:text-9xl transition-all'>
                 {element.icon}
               </div>
               <div>

@@ -1,56 +1,63 @@
 import React, { useEffect, useState } from 'react'
 import Elements from './Elements'
-import { FaReact ,FaEdit} from 'react-icons/fa'
+import { FaReact, FaEdit } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux';
 import { modalAction } from '../store/modalSlice';
 import ContentCard from './ContentCard';
 import { SiReactos } from 'react-icons/si';
 function Hizmetler() {
-    
-    const {currentUser}=useSelector(state=>state.user)
 
-    const dispatch=useDispatch()
+  const { currentUser } = useSelector(state => state.user)
 
-    // const [rotation, setRotation] = useState(0);
-    // const handleScroll = () => {
-    //     const scrollTop = window.scrollY;
-    //     setRotation(scrollTop % 120);
-    //   };
+  const dispatch = useDispatch()
+
+  // const [rotation, setRotation] = useState(0);
+  // const handleScroll = () => {
+  //     const scrollTop = window.scrollY;
+  //     setRotation(scrollTop % 120);
+  //   };
 
 
-    //   useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //       window.removeEventListener('scroll', handleScroll);
-    //     };
-    //   }, []);
-    
+  //   useEffect(() => {
+  //     window.addEventListener('scroll', handleScroll);
+  //     return () => {
+  //       window.removeEventListener('scroll', handleScroll);
+  //     };
+  //   }, []);
+
   return (
-    
-    <div className='dark:bg-gray-900  w-full h-[750px] flex  items-center justify-center  p-3 overflow-hidden'>
-    
-    <div className='w-[90%] h-full flex border-white'>
-      <div className='w-1/2 h-full space-y-5 flex flex-col justify-center text-start border-white  '>
-        
-          <h1 
-             className='dark:text-shadow-lg text-5xl  font-bold bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500 dark:from-green-100 dark:via-green-500 dark:to-green-700'>
-          What I Do
+
+    <div className='dark:bg-gray-900  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
+
+      <div className='w-[90%]   flex flex-col lg:flex-row space-y-5 lg:space-x-5  border-red-500'>
+        <div className='max-md:pt-10  border-red-500 lg:w-1/2 w-full min-h-[850px] space-y-12 
+        flex-1 flex-col items-center justify-evenly text-center lg:text-start  '>
+
+          <h1
+            className='dark:text-shadow-lg text-5xl  font-bold
+              bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500
+               dark:from-green-100 dark:via-green-500 dark:to-green-700'>
+            What I Do
           </h1>
-          <h2 className='dark:text-white font-bold text-xl leading-10 bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-purple-500 to-red-500'>I build exceptional web experiences with Next.js, Tailwind CSS, FireBase, and React, transforming ideas into reality</h2>
+          <h2 className='dark:text-white font-bold text-xl leading-8 lg:leading-10
+          bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-purple-500 to-red-500'>
+            I build exceptional web experiences with Next.js, Tailwind CSS, FireBase, and React, transforming ideas into reality
+          </h2>
 
-        
-       <ContentCard/>
+
+          <ContentCard />
+
+        </div>
+
+
+        <div className='lg:w-1/2 w-full h-[850px] flex items-center justify-center text-center    border-purple-500      '
+
+        >
+          animation
+        </div>
       </div>
 
-
-      <div className='w-1/2 h-full flex items-center justify-center text-center   border-white      '
-
-      >
-        
-      </div>
     </div>
-
-  </div>
 
   )
 }

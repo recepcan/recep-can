@@ -44,9 +44,9 @@ function ContentCard() {
     };
 
     return (
-        <div className="w-[630px] h-[400px]  p-2 pb-10  box-border relative  shadow-xl shadow-gray-400 flex flex-col items-center justify-between space-y-0
+        <div className=" lg:h-[400px] h-[500px] min-w-full  py-3 lg:pb-10  box-border relative  shadow-xl shadow-gray-400 flex flex-col items-center justify-between space-y-0
          hover:shadow-gray-600 dark:border border-green-500 transition-all dark:bg-black bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400  rounded-xl dark:text-white ">
-            <div className="w-[610px] h-[70px] dark:bg-black  p-2  flex  justify-evenly items-center overflow-y-auto custom-scrollbar rounded-lg ">
+            <div className=" w-[95%] h-[70px] dark:bg-black  p-2  flex  justify-evenly items-center overflow-x-auto custom-scrollbar rounded-lg ">
                 {tabs.map((tab, index) => (
                     <button
                         key={index}
@@ -62,7 +62,7 @@ function ContentCard() {
             </div>
 
            
-            <div className="  dark:text-white   h-72 w-[90%] p-8 text-lg  scrollbar-hide overflow-auto custom-scrollbar tracking-wider leading-6">
+            <div className="  dark:text-white items-center justify-center flex-1 lg:h-72 w-[90%] p-3 lg:p-8 text-lg  scrollbar-hide overflow-auto custom-scrollbar tracking-wider leading-6">
                 {tabs.map((tab, index) => (
                     activeTab === tab.title && <div key={index}>{tab.content}</div>
                 ))}

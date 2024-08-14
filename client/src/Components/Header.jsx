@@ -96,18 +96,18 @@ function Header() {
 
             className='w-full  flex  items-center justify-around  h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
             dark:bg-black/30 dark:text-white dark:border-b border-green-500  rounded-b-3xl transition-colors duration-300
-        min-[600px]:fixed max-[600px]:h-[50px]'>
+        md:fixed max-md:h-[50px]'>
 
             <Link to="/">
                 <div className='flex items-center'>
-                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-3 rounded-2xl text-3xl font-bold font-sans'>Recep Can</h1>
+                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
                 </div>
             </Link>
 
 
             <div className='flex items-center'>
 
-                <div className='flex items-center justify-around text-center space-x-5 text-sm max-[600px]:hidden transition-all  duration-300'
+                <div className='flex items-center justify-around text-center space-x-5 text-sm max-md:hidden transition-all  duration-300'
                 >
                     {
 
@@ -152,12 +152,12 @@ function Header() {
                       </button>
 
                     <div
-                        className=' min-[600px]:hidden text-black dark:text-white' onClick={() => dispatch(toggleMenu())}>
+                        className=' md:hidden text-black dark:text-white' onClick={() => dispatch(toggleMenu())}>
                         <AiOutlineMenu size={20} />
                     </div>
                    
                      </div>
-                     <FaReact className='text-sky-600 w-8 h-8 ml-10 '
+                     <FaReact className='text-sky-600 w-8 h-8 ml-10 max-md:hidden'
                      style={{
            
                        transform: `rotate(${rotation}deg)`,

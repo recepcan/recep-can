@@ -19,11 +19,11 @@ function Home() {
       exit={{opacity:0}}
       transition={{ duration: .5 }}
       className='dark:text-white  transition-colors duration-500 w-full  relative  border-black
-     flex flex-col items-center justify-center  dark:bg-gray-900 min-h-screen py-10'
+     flex flex-col items-center justify-center  dark:bg-gray-900 min-h-screen  md:py-20'
     >
 
       <Hizmetler/>
-      <div className='  bg-gradient-to-t  from-gray-100 via-blue-300  to-gray-100 text-center dark:from-gray-900 dark:via-green-950 dark:to-gray-900'>
+      <div className='  bg-gradient-to-t  from-gray-100 via-blue-300  to-gray-100 text-center dark:from-gray-900 dark:via-blue-950 dark:to-gray-900'>
       <h1 className='p-10 text-5xl font-semibold font-mono bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500'>Recent Posts</h1>
       <GetPosts  limit={8}/>
       </div>
