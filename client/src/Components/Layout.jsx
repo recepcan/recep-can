@@ -45,9 +45,10 @@ function Layout() {
             }
 
             {
-                menu && <ToggleMenu />
-            }
-            <Routes>
+                menu ? 
+                <ToggleMenu /> 
+                :
+                <Routes>
                 <Route path='/' element={<Home />} />
 
                 <Route path='/Hakkinda' element={<About />} />
@@ -56,7 +57,7 @@ function Layout() {
 
                 <Route path='/post/:postSlug' element={<Projects />} />
 
-{ /*                <Route path='/sign-up' element={<SignUp />} /> */} 
+
                <Route path='/sign-in' element={<SignIn />} />
                <Route path='/forgot-password' element={<ForgotPassword/>} />
                <Route path='/reset-password/:id/:token' element={<ResetPassword/>} />
@@ -72,6 +73,8 @@ function Layout() {
               </Route>
 
             </Routes>
+            }
+            
             {
                 location.pathname !== '/admin' && location.pathname !== '/sign-in' && location.pathname !== '/sign-up' && <Footer />
             }
@@ -81,3 +84,5 @@ function Layout() {
 }
 
 export default Layout
+
+{ /*                <Route path='/sign-up' element={<SignUp />} /> */} 

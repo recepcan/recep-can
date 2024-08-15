@@ -21,9 +21,9 @@ export const headerSlice = createSlice({
         index:true
       },
       {
-        id: 'İletişim',
-        name: 'İletişim',
-        to: '/İletişim',
+        id: 'contact',
+        name: 'contact',
+        to: '/contact',
        
       },
       {

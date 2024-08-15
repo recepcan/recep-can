@@ -46,7 +46,7 @@ function ContentCard() {
     return (
         <div className=" lg:h-[400px] h-[500px] min-w-full  py-3 lg:pb-10  box-border relative  shadow-xl shadow-gray-400 flex flex-col items-center justify-between space-y-0
          hover:shadow-gray-600 dark:border border-green-500 transition-all dark:bg-black bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400  rounded-xl dark:text-white ">
-            <div className=" w-[95%] h-[70px] dark:bg-black  p-2  flex  justify-evenly items-center overflow-x-auto custom-scrollbar rounded-lg ">
+            <div className=" max-lg:w-[95%] h-[70px] dark:bg-black  p-2  flex  justify-evenly items-center overflow-x-auto custom-scrollbar rounded-lg ">
                 {tabs.map((tab, index) => (
                     <button
                         key={index}

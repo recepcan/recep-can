@@ -94,15 +94,16 @@ function Header() {
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
 
-            className='w-full  flex  items-center justify-around  h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
+            className='w-full  flex  items-center justify-around max-md:justify-between max-md:px-5 max-md:flex-row-reverse  h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
             dark:bg-black/30 dark:text-white dark:border-b border-green-500  rounded-b-3xl transition-colors duration-300
-        md:fixed max-md:h-[50px]'>
+        md:fixed max-md:h-[50px] '>
 
             <Link to="/">
                 <div className='flex items-center'>
                     <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
                 </div>
             </Link>
+            
 
 
             <div className='flex items-center'>
@@ -138,22 +139,22 @@ function Header() {
 
                 </div>
 
-                <div className=' flex items-center justify-center gap-5' >
+                <div className='max-md:flex-row-reverse flex items-center justify-between' >
                  
 
-                    <button   
-                        className=' pl-5    rounded-lg' 
-                        onClick={setMod} >
-                        {darkMode 
-                        ? 
-                         <BiSolidSun className='text-orange-400 text-2xl'  /> 
-                         : 
-                         <FaMoon className='text-black text-xl' />}
-                      </button>
+                  <button   
+            className=' pl-5    rounded-lg' 
+            onClick={setMod} >
+            {darkMode 
+            ? 
+             <BiSolidSun className='text-orange-400 text-2xl'  /> 
+             : 
+             <FaMoon className='text-black text-xl' />}
+          </button>
 
                     <div
-                        className=' md:hidden text-black dark:text-white' onClick={() => dispatch(toggleMenu())}>
-                        <AiOutlineMenu size={20} />
+                        className=' md:hidden text-black dark:text-white text-4xl' onClick={() => dispatch(toggleMenu())}>
+                        <AiOutlineMenu  />
                     </div>
                    
                      </div>
