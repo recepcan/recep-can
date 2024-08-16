@@ -93,9 +93,9 @@ export default function DashPosts() {
   };
  
   return (
-    <div className='flex-1  border-black '>
+    <div className='flex-1  border-black   overflow-hidden overflow-x-auto'>
       {currentUser.isAdmin && data.posts.length > 0 ? (
-        <div className='flex  border-red-500 flex-col   w-full'>
+        <div className='flex   border-red-500 flex-col max-md:min-w-[800px]  md:w-full'>
           <div className='shadow-md flex-1   border-red-500'>
             <div className='flex justify-evenly bg-gray-300 rounded-tl-lg rounded-tr-lg'>
               <div className='p-5 w-1/6 hover:bg-gray-500 hover:text-white 
@@ -140,7 +140,7 @@ export default function DashPosts() {
                   </div>
                   <div className='h-24   border-black flex items-center justify-center'>
                     <Link
-                      className='font-medium text-gray-900 dark:text-white line-clamp-2 overflow-hidden  border-black'
+                      className='font-medium text-gray-900 dark:text-white line-clamp-1 md:line-clamp-2 overflow-hidden  border-black'
                       to={`/post/${post.slug}`}
                     >
                       {post.title}

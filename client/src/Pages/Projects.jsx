@@ -51,7 +51,7 @@ function Projects() {
     <h1 className='text-center m-10 uppercase text-5xl font-sans font-semibold bg-clip-text bg-gradient-to-tr text-transparent from-green-500 via-teal-600 to-teal-800'>
     {post&& post.title}
     </h1>
-    <div className='w-[900px] m-5 flex items-center justify-center'>
+    <div className='lg:w-[900px] w-full  m-5 flex items-center justify-center'>
     <img src={post&&post.image} className='rounded-xl' alt="" />
     </div>
 

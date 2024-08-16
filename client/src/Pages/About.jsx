@@ -1,24 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import headerSlice from '../store/headerSlice'
-import ProfilCard from '../Components/ProfilCard'
-import ToggleMenu from '../Components/ToggleMenu'
+import React from 'react'
+
 import Items from '../Components/İtems'
-import { FaAnglesDown } from 'react-icons/fa6'
+
 import { motion } from 'framer-motion'
-import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa'
-import ThreeDCard from '../Components/ThreeDCard'
-import Elements from '../Components/Elements'
-import Connect from '../Components/Connect'
+
 import AboutCard from '../Components/AboutCard'
-import Text from './CreateText'
-import { fetchTextById } from '../store/textsSlice'
-import Loading from '/src/Components/Loading.jsx';
+
 
 // import Hizmetler from '../Components/Hizmetler'
 
 function About() {
+ 
   // const { Links, LinksEnglish, language, menu, darkMode } = useSelector(state => state.header)
+
+
 
   return (
     <motion.div

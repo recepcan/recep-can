@@ -12,33 +12,41 @@ import AdminContactComponent from './AdminContactComponent';
 import AdminPostsComponent from './AdminPostsComponent';
 import AdminUpdatePostComponent from './UpdatePost';
 import AdminTextsComponent from './AdminTextsComponent';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { IoCloseSharp } from 'react-icons/io5';
 
 
 
 function AdminPage() {
-
+// const [adminMenu, setadminMenu] = useState(false)
   const location = useLocation();
   const dispatch = useDispatch();
-  const { currentUser } = useSelector((state) => state.user);
-  const [tab, setTab] = useState('');
+  const { currentUser,adminMenu } = useSelector((state) => state.user);
+  const [tab, setTab] = useState('home');
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const tabFromUrl = urlParams.get('tab');
     if (tabFromUrl) {
       setTab(tabFromUrl);
-      console.log(tabFromUrl)
+      // console.log(tabFromUrl)
     }
   }, [location.search]);
 
   return (
     <div className='min-h-screen w-full  box-border 
      border-yellow-400 relative bg-gray-100 flex   '>
-     <div className='w-1/5  border-red-400  min-h-screen '>
-      <DashSidebar/>
+     
+
+    {
+     
+      <div 
+      className={`${adminMenu? 'lg:w-1/5 max-md:flex-1' : 'w-14'} transition-all duration-500  border-gray-400  min-h-screen `}>
+      <DashSidebar adminMenu={adminMenu} />
       </div>
+    }
 
 
-      <div className='flex-1  min-h-full box-border p-2 max-h-screen overflow-y-auto bg-white border-black '>
+      <div className={`md:flex-1 ${adminMenu && "max-md:hidden" } w-full min-h-full box-border p-2 max-h-screen overflow-y-auto bg-white border-black`} >
       {tab==='home' &&  (<AdminHomeComponent/>)}
       {tab==='' &&  (<AdminHomeComponent/>)} 
       {tab==='about' && (<AdminAboutComponent/>) } 

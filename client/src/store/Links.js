@@ -8,9 +8,9 @@
        
       },
       {
-        id: 'Hakkinda',
-        name: 'Hakkinda',
-        to: '/Hakkinda',
+        id: 'about',
+        name: 'about',
+        to: '/about',
         index:true
       },
       {

@@ -13,15 +13,15 @@ import { IoMoonSharp } from "react-icons/io5";
 import { GoHomeFill } from "react-icons/go";
 import { FaPhoneFlip } from 'react-icons/fa6';
 function Header() {
-  
-    
-    const {  menu, darkMode, dropdown } = useSelector(state => state.header)
+
+
+    const { menu, darkMode, dropdown } = useSelector(state => state.header)
     const dispatch = useDispatch()
 
     const setMod = () => {
         document.body.classList.toggle('dark');
         dispatch(toggledarkMode())
-        
+
 
     }
     // const itemRefs = Links?.map(() => useRef(null));
@@ -44,50 +44,50 @@ function Header() {
     };
 
 
-    const Links=[
+    const Links = [
         {
-          id: 'Anasayfa',
-          name: 'Anasayfa',
-          to: '/',
-         icon:<GoHomeFill />
+            id: 'Anasayfa',
+            name: 'Anasayfa',
+            to: '/',
+            icon: <GoHomeFill />
         },
         {
-          id: 'Hakkinda',
-          name: 'Hakkinda',
-          to: '/Hakkinda',
-          index:true,
-          icon:<FaInfoCircle />
+            id: 'about',
+            name: 'About',
+            to: '/about',
+            index: true,
+            icon: <FaInfoCircle />
         },
         {
-          id: 'Contact',
-          name: 'Contact',
-          to: '/contact',
-          icon:<FaPhoneFlip />
-         
+            id: 'Contact',
+            name: 'Contact',
+            to: '/contact',
+            icon: <FaPhoneFlip />
+
         },
         {
-          id: 'admin',
-          name: 'admin',
-          to: '/admin',
-         
+            id: 'admin',
+            name: 'admin',
+            to: '/admin',
+
         }
-    
-      ]
+
+    ]
 
 
-      const [rotation, setRotation] = useState(0);
-      const handleScroll = () => {
-          const scrollTop = window.scrollY;
-          setRotation(scrollTop % 120);
-        };
-  
-  
-        useEffect(() => {
-          window.addEventListener('scroll', handleScroll);
-          return () => {
+    const [rotation, setRotation] = useState(0);
+    const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        setRotation(scrollTop % 120);
+    };
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
             window.removeEventListener('scroll', handleScroll);
-          };
-        }, []);
+        };
+    }, []);
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -103,7 +103,7 @@ function Header() {
                     <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
                 </div>
             </Link>
-            
+
 
 
             <div className='flex items-center'>
@@ -111,7 +111,6 @@ function Header() {
                 <div className='flex items-center justify-around text-center space-x-5 text-sm max-md:hidden transition-all  duration-300'
                 >
                     {
-
                         Links?.map((item, index) => {
                             return (
                                 <div className={`hover:text-black shadow-md shadow-gray-400 rounded-lg border-2 border-white dark:hover:text-green-500   transition-all `}
@@ -122,55 +121,47 @@ function Header() {
                                 >
                                     <NavLink id={item.id} to={item.to} >
                                         <div className="p-2 items-center justify-between  space-x-1 flex box-border h-full transition-colors duration-300 font-extrabold text-md font-mono"  >
-                                           <h2> {item.name} </h2>
-                                           <div> {item.icon}</div>
+                                            <h2> {item.name} </h2>
+                                            <div> {item.icon}</div>
                                         </div>
                                     </NavLink>
-
-
                                 </div>
                             )
                         }
                         )
                     }
-
-
-                    
-
                 </div>
 
                 <div className='max-md:flex-row-reverse flex items-center justify-between' >
-                 
-
-                  <button   
-            className=' pl-5    rounded-lg' 
-            onClick={setMod} >
-            {darkMode 
-            ? 
-             <BiSolidSun className='text-orange-400 text-2xl'  /> 
-             : 
-             <FaMoon className='text-black text-xl' />}
-          </button>
+                    <button
+                        className=' pl-5    rounded-lg'
+                        onClick={setMod} >
+                        {darkMode
+                            ?
+                            <BiSolidSun className='text-orange-400 text-2xl' />
+                            :
+                            <FaMoon className='text-black text-xl' />}
+                    </button>
 
                     <div
                         className=' md:hidden text-black dark:text-white text-4xl' onClick={() => dispatch(toggleMenu())}>
-                        <AiOutlineMenu  />
+                        <AiOutlineMenu />
                     </div>
-                   
-                     </div>
-                     <FaReact className='text-sky-600 w-8 h-8 ml-10 max-md:hidden'
-                     style={{
-           
-                       transform: `rotate(${rotation}deg)`,
-                       transformOrigin: 'center' // Dönüşüm merkezini ortalıyoruz
-                     }} />
+
+                </div>
+                <FaReact className='text-sky-600 w-8 h-8 ml-10 max-md:hidden'
+                    style={{
+
+                        transform: `rotate(${rotation}deg)`,
+                        transformOrigin: 'center' // Dönüşüm merkezini ortalıyoruz
+                    }} />
             </div>
-            
-            
+
+
         </motion.div>
     )
 }
 
-export default Header 
-   {/*  <button onClick={() => dispatch(changeLanguage())}> <FaFlagCheckered color='red' size={20} /></button>*/}
-   {/*dropdown && <Dropdown hoveredItem={hoveredItem} />*/}
+export default Header
+{/*  <button onClick={() => dispatch(changeLanguage())}> <FaFlagCheckered color='red' size={20} /></button>*/ }
+{/*dropdown && <Dropdown hoveredItem={hoveredItem} />*/ }

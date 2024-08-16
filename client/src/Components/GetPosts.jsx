@@ -50,9 +50,8 @@ function GetPosts({ limit }) {
     return <Loading />
   }
   
-  if (error) {
-    toast.error(error);
-    return <div>Error: {error}</div>;
+  if (error) { 
+    return  toast.error(error);
   }
 
   return (

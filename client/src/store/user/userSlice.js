@@ -5,6 +5,7 @@ const initialState = {
   error: null,
   loading: false,
   data:[],
+  adminMenu:false,
 
 };
 
@@ -17,6 +18,9 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    setadminMenu:(state)=>{
+       state.adminMenu=!state.adminMenu
+    },
     signInStart: (state) => {
       state.loading = true;
       state.error = null;
@@ -43,7 +47,8 @@ export const {
   signInStart,
   signInSuccess,
   signInFailure,
-  signoutSuccess
+  signoutSuccess,
+  setadminMenu
   
 } = userSlice.actions;
 
