@@ -121,20 +121,38 @@ const {currentUser}=useSelector(state=>state.user)
 
 
     return (
-        <div className='p-3 max-w-3xl mx-auto min-h-screen pt-20'>
-            <h1 className='text-center text-3xl my-7 font-semibold'> Update Post</h1>
+        <div className='p-3 max-w-3xl mx-auto min-h-screen md:pt-20 space-y-5'>
+            <h1 className='text-center text-3xl  font-semibold font-inter'> Update Post</h1>
 
-            <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
+            <form className='flex flex-col gap-4 space-y-10' onSubmit={handleSubmit}>
 
-                <input value={formData.title} onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' className='flex-1 p-2  rounded-lg  font-bold outline-1' />
-                <div className='border-4 gap-4 flex justify-between items-center border-teal-500 border-dotted p-3 '>
-                    <input  onChange={(e)=>setFile(e.target.files[0])} type="file" accept='image/*' className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500' />
-                    <button type='button' onClick={handleUpdloadImage} disabled={imageUploadProgress} className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> {
+                <input 
+                value={formData.title}
+                 onChange={(e)=>setFormData({...formData,title:e.target.value})}
+                  type="text" 
+                  placeholder='Title' 
+                  required 
+                  id='title'
+                   className='flex-1 p-2  rounded-lg  font-bold outline-1' />
+                <div 
+                className='border-4 gap-4 flex md:flex-row flex-col justify-between items-center
+                 border-teal-500 border-dotted p-3 '>
+                    <input  
+                    onChange={(e)=>setFile(e.target.files[0])} 
+                    type="file" accept='image/*' 
+                    className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold 
+                    bg-gradient from-pink-600 via-purple-500 to-blue-500' />
+                    <button
+                     type='button' 
+                     onClick={handleUpdloadImage} 
+                     disabled={imageUploadProgress} 
+                     className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold 
+                     bg-gradient from-pink-600 via-purple-500 to-blue-500'> {
                         imageUploadProgress? (
                             <div className='w-16 h-16'> 
                             <CircularProgressbar value={imageUploadProgress} text={`${imageUploadProgress || 0}%`}/>
                             </div>
-                        ):("upload image")
+                        ):("upload")
                     }</button>
             
                 
@@ -142,16 +160,25 @@ const {currentUser}=useSelector(state=>state.user)
                     {
                         formData.image && (
                             <div className='w-full h-80 flex items-center justify-center bg-sky-100'>
-                            <img src={formData.image} alt='upload' className='w-full h-72 object-cover'/>
+                            <img src={formData.image} alt='upload' 
+                            className='w-full h-52 lg:h-72 object-cover'/>
                       
                             </div>  )
                     }
-                <ReactQuill value={formData.content} theme='snow' placeholder='write on the line' className='h-72 mb-12' onChange={
+                <ReactQuill value={formData.content}
+                 theme='snow' 
+                 placeholder='write on the line' 
+                 className='h-72 ' 
+                 onChange={
                     (value)=>{
                         setFormData({...formData,content:value})
                     }
                 }/>
-                <button  type='submit ' className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> Update</button>
+                <button  type='submit '
+                 className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold
+                  bg-gradient from-pink-600 via-purple-500 to-blue-500'>
+                   Update
+                   </button>
             </form>
         </div>
     )

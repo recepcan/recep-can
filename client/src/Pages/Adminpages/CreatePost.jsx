@@ -88,37 +88,55 @@ function CreatePost() {
 
 
     return (
-        <div className='p-3 max-w-3xl mx-auto min-h-screen pt-20'>
-            <h1 className='text-center text-3xl my-7 font-semibold'> Create a Post</h1>
+        <div className='p-5 max-w-3xl mx-auto min-h-screen lg:pt-20 space-y-5'>
+            <h1 className='text-center  text-3xl lg:text-5xl font-semibold font-inter'> Create a Post</h1>
 
-            <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
+            <form className='flex flex-col gap-4 space-y-10' onSubmit={handleSubmit}>
 
                 <input onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' className='flex-1 p-2  rounded-lg  font-bold outline-1' />
-                <div className='border-4 gap-4 flex justify-between items-center border-teal-500 border-dotted p-3 '>
-                    <input onChange={(e)=>setFile(e.target.files[0])} type="file" accept='image/*' className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500' />
-                    <button type='button' onClick={handleUpdloadImage} disabled={imageUploadProgress} className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> {
+                <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center border-teal-500 border-dotted p-3 '>
+                    <input onChange={(e)=>setFile(e.target.files[0])} 
+                    type="file"
+                     accept='image/*'
+                      className='bg-gradient-to-tr p-2 rounded-lg
+                     text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500' />
+
+                    <button type='button' 
+                    onClick={handleUpdloadImage} 
+                    disabled={imageUploadProgress} 
+                    className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> {
                         imageUploadProgress? (
                             <div className='w-16 h-16'> 
                             <CircularProgressbar value={imageUploadProgress} text={`${imageUploadProgress || 0}%`}/>
                             </div>
-                        ):("upload image")
+                        ):("upload")
                     }</button>
             
                 
                     </div>
                     {
                         formData.image && (
-                            <div className='w-full h-80 flex items-center justify-center bg-sky-100'>
-                            <img src={formData.image} alt='upload' className='w-full h-72 object-cover'/>
+                            <div className='w-full  flex items-center justify-center bg-sky-100'>
+                            <img src={formData.image} alt='upload' className='w-full h-72 object-contain'/>
                       
                             </div>  )
                     }
-                <ReactQuill theme='snow' placeholder='write on the line' className='h-72 mb-12' onChange={
-                    (value)=>{
-                        setFormData({...formData,content:value})
-                    }
-                }/>
-                <button  type='submit ' className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> Publish</button>
+               <div>
+               <ReactQuill 
+               theme='snow'
+                placeholder='write on the line' 
+                className='lg:h-72 h-52'
+                onChange={
+                   (value)=>{
+                       setFormData({...formData,content:value})
+                   }
+               }/>
+               </div>
+                <button 
+                 type='submit '
+                 className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'>
+                 Publish
+                 </button>
             </form>
             
         </div>

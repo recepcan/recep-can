@@ -70,10 +70,11 @@ const navigate=useNavigate()
 
 
   return (
-    <div className='pt-32 bg-gradient-to-t from-gray-100 via-sky-300 to-gray-100 h-screen flex flex-col items-center justify-center text-center'>
-      <div className='w-full flex flex-col space-y-5 items-center justify-center'>
-        <form onSubmit={handleSubmit} className='w-1/2 flex flex-col space-y-5'>
-          <h1 className='text-3xl text-white font-extrabold'>About Card Update Form</h1>
+    <div className='md:pt-32 p-10 bg-gray-100 
+    min-h-screen flex flex-col items-center lg:justify-center text-center'>
+      <div className='w-full flex flex-col  items-center justify-center'>
+        <form onSubmit={handleSubmit} className='lg:w-1/2 w-full flex flex-col space-y-10'>
+          <h1 className='text-3xl font-inter font-extrabold'>Text Content Update Form</h1>
           <textarea
             onChange={handleChange}
             rows="3"

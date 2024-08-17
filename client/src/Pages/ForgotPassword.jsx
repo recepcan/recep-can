@@ -41,8 +41,8 @@ function ForgotPassword() {
     };
 
     return (
-        <div className='w-full flex items-center justify-center min-h-screen pt-20'>
-            <div className='w-1/3 h-52 bg-gray-300 rounded-lg p-5 flex flex-col items-center justify-between '>
+        <div className='w-full flex items-center justify-center min-h-screen p-10 md:pt-20'>
+            <div className='md:w-1/3 w-full space-y-5 bg-gray-300 rounded-lg p-5 flex flex-col items-center justify-between '>
                 <h1 className='text-3xl '>Forgot Password</h1>
                 <input
                     onChange={handleChange}

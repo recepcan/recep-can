@@ -46,12 +46,14 @@ function Projects() {
 
 
   return (
-    <div className='min-h-screen pt-20 flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
+    <div className='min-h-screen p-10 md:pt-20 flex flex-col items-center lg:justify-center space-y-5
+     bg-gradient-to-b from-gray-100 via-teal-100 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
     
-    <h1 className='text-center m-10 uppercase text-5xl font-sans font-semibold bg-clip-text bg-gradient-to-tr text-transparent from-green-500 via-teal-600 to-teal-800'>
+    <h1 className='text-center  uppercase text-3xl lg:text-5xl
+     font-inter font-semibold bg-clip-text bg-gradient-to-tr text-transparent from-green-500 via-teal-600 to-teal-800'>
     {post&& post.title}
     </h1>
-    <div className='lg:w-[900px] w-full  m-5 flex items-center justify-center'>
+    <div className='lg:w-[900px] w-full   flex items-center justify-center'>
     <img src={post&&post.image} className='rounded-xl' alt="" />
     </div>
 

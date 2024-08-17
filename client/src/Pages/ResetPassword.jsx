@@ -42,8 +42,9 @@ function ResetPassword() {
     };
 
     return (
-        <div className='w-full flex items-center justify-center min-h-screen pt-20'>
-            <div className='w-1/3 h-52 bg-gray-300 rounded-lg p-5 flex flex-col items-center justify-between '>
+        <div className='w-full flex items-center md:justify-center min-h-screen p-10 md:pt-20'>
+            <div className='md:w-1/3 w-full  bg-gray-300 rounded-lg p-5 space-y-5
+            flex flex-col items-center md:justify-between '>
                 <h1 className='text-3xl '>Reset Password</h1>
                 <input
                     onChange={handleChange}
