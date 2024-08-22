@@ -60,8 +60,10 @@ function GetPosts({ limit }) {
         data.posts ?
           data?.posts?.map((post, i) => (
             <Link to={`/post/${post.slug}`} key={i}>
-              <div className='w-[300px] min-h-[300px] group relative transition-all hover:scale-105 flex flex-col items-center space-y-5 rounded-lg bg-white dark:bg-gray-900  shadow-lg shadow-gray-400 dark:border border-white'>
-                <img className='w-80 h-52 group-hover:h-[300px] group-hover:rounded-lg duration-700 rounded-t-lg object-cover  transition-all border-b ' src={post.image} alt={post.title} />
+              <div className='w-[300px]   min-h-[300px] group relative transition-all hover:scale-105 
+              flex flex-col items-center space-y-5 rounded-lg
+               bg-white dark:bg-gray-900  shadow-lg shadow-gray-400 dark:border border-white'>
+                <img className='w-80 h-52  group-hover:h-[300px] group-hover:rounded-lg duration-700 rounded-t-lg object-cover  transition-all border-b ' src={post.image} alt={post.title} />
                 <div className='text-2xl font-mono font-semibold line-clamp-1 px-5 absolute bottom-16 
                  bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500 '>
                   {post.title}

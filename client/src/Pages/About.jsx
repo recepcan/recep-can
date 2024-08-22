@@ -22,7 +22,7 @@ function About() {
       transition={{ duration: .5 }}
       exit={{ opacity: 0 }}
       className='flex min-h-screen relative w-full flex-col z-10 items-center justify-center text-center transition-colors duration-300 bg-zinc-100
-    dark:bg-gray-900 dark:text-white dark:z-10 max-lg:pt-0 max-xl:pt-16  border-purple-400 '>
+    dark:bg-gray-900 dark:text-white dark:z-10 max-md:pt-0 max-xl:pt-16  border-purple-400 '>
       
         
           <AboutCard  />
@@ -32,7 +32,7 @@ function About() {
 
           <div className='w-full flex flex-col md:p-10 p-5  border-red-500 items-center space-y-10  min-h-[700px]
            bg-gradient-to-t from-gray-100 via-sky-200 to-gray-100 dark:from-gray-900 dark:via-teal-900 dark:to-gray-900'>
-            <h1 className='lg:text-5xl  text-3xl  bg-clip-text text-transparent  bg-gradient-to-r from-blue-800 via-blue-600 to-purple-800  font-bold font-inter z-10 dark:text-shadow-lg  dark:text-transparent  dark:from-green-100 dark:via-green-500 dark:to-green-700'>
+            <h1 className='lg:text-5xl  text-2xl  bg-clip-text text-transparent  bg-gradient-to-r from-blue-800 via-blue-600 to-purple-800  font-bold font-inter z-10 dark:text-shadow-lg  dark:text-transparent  dark:from-green-100 dark:via-green-500 dark:to-green-700'>
               Technologies I Am Using
             </h1>
 

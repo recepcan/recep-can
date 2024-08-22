@@ -29,17 +29,17 @@ function Hizmetler() {
 
     <div className='dark:bg-gray-900  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
 
-      <div className='w-[90%]   flex flex-col lg:flex-row space-y-5 lg:space-x-5  border-red-500'>
-        <div className='max-md:pt-10  border-red-500 lg:w-1/2 w-full min-h-[850px] space-y-12 
+      <div className='sm:w-[90%]   flex flex-col lg:flex-row space-y-5 lg:space-x-5  border-red-500'>
+        <div className='max-md:pt-10  border-red-500 lg:w-1/2 w-full min-h-[850px] space-y-5 lg:space-y-12 
         flex-1 flex-col items-center justify-evenly text-center lg:text-start  '>
 
           <h1
-            className='dark:text-shadow-lg text-5xl  font-bold
+            className='dark:text-shadow-lg text-3xl md:text-5xl  font-bold font-inter
               bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500
                dark:from-green-100 dark:via-green-500 dark:to-green-700'>
             What I Do
           </h1>
-          <h2 className='dark:text-white font-bold text-xl leading-8 lg:leading-10
+          <h2 className='dark:text-white font-bold font-sans text-sm md:text-xl leading-8 lg:leading-10
           bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-purple-500 to-red-500'>
             I build exceptional web experiences with Next.js, Tailwind CSS, FireBase, and React, transforming ideas into reality
           </h2>

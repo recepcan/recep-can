@@ -11,7 +11,7 @@ function ToggleMenu() {
     return (
 
 
-        <div className='absolute w-full  bg-white dark:bg-[#1a202c] z-50 overflow-none
+        <div className='absolute w-full  bg-white dark:bg-[#1a202c] z-50 overflow-none p-5
          dark:text-white transition-colors duration-300 h-screen text-white
           left-0  top-0 bottom-0 right-0 flex flex-col gap-2 items-center justify-center'>
           <div className='w-10 h-10 absolute right-5 top-5  bg-black  rounded-full text-4xl text-white font-semibold
@@ -21,8 +21,8 @@ function ToggleMenu() {
           </div>
           {
                 Links?.map((item, index) => (
-                    <div key={index} className='h-16 w-96 text-slate-950  dark:text-white border-[1px]  flex mb-1 rounded-lg my-3 text-center items-center justify-center'>
-                        <NavLink to={item.to} className='border-[1px] w-full h-full rounded-lg   flex text-center items-center justify-center' 
+                   
+                        <NavLink key={index} to={item.to} className=' text-slate-950  dark:text-white p-5 border w-full  rounded-lg   flex text-center items-center justify-center' 
                         onClick={() => dispatch(toggleMenu())}>
                            
                                 {
@@ -32,7 +32,7 @@ function ToggleMenu() {
 
                         </NavLink>
 
-                    </div>
+                   
                 ))}
             
 

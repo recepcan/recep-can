@@ -44,9 +44,9 @@ function ContentCard() {
     };
 
     return (
-        <div className=" lg:h-[400px] h-[500px] min-w-full  py-3 lg:pb-10  box-border relative  shadow-xl shadow-gray-400 flex flex-col items-center justify-between space-y-0
+        <div className=" lg:h-[400px] h-[330px] min-w-full  py-3 lg:pb-10  box-border relative  shadow-xl shadow-gray-400 flex flex-col items-center justify-between space-y-0
          hover:shadow-gray-600 dark:border border-green-500 transition-all dark:bg-black bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400  rounded-xl dark:text-white ">
-            <div className=" max-lg:w-[95%] h-[70px] dark:bg-black  p-2  flex  justify-evenly items-center overflow-x-auto custom-scrollbar rounded-lg ">
+            <div className=" w-full h-[70px] dark:bg-black  p-2  flex  justify-evenly items-center overflow-hidden overflow-x-auto custom-scrollbar rounded-lg ">
                 {tabs.map((tab, index) => (
                     <button
                         key={index}
@@ -55,14 +55,18 @@ function ContentCard() {
                             : ' space-x-1 p-2 dark:text-white text-white  rounded-xl hover:border-y-2 cursor-pointer transition-all border-white box-border h-full flex justify-center items-center'}`}
                         onClick={() => handleTabClick(tab.title)}
                     >
-                   <div className={`${activeTab === tab.title ? 'text-white text-2xl' : ' text-2xl text-black'}`}> {tab.icon}</div>
-                        <h1 className='text-xl '>{tab.title}</h1>
+                   <div className={`${activeTab === tab.title ? 'text-white text-2xl max-md:text-4xl' : ' text-2xl max-md:text-4xl text-black'}`}> 
+                   {tab.icon}
+                   </div>
+                        <h1 className='text-lg max-md:hidden '>{tab.title}</h1>
                     </button>
                 ))}
             </div>
 
            
-            <div className="  dark:text-white items-center justify-center flex-1 lg:h-72 w-[90%] p-3 lg:p-8 text-lg  scrollbar-hide overflow-auto custom-scrollbar tracking-wider leading-6">
+            <div className="  dark:text-white items-center justify-center flex-1 lg:h-72 w-[90%] p-3 lg:p-8 
+            text-sm md:text-lg font-sans
+             scrollbar-hide overflow-auto custom-scrollbar tracking-wider leading-6">
                 {tabs.map((tab, index) => (
                     activeTab === tab.title && <div key={index}>{tab.content}</div>
                 ))}
