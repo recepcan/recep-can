@@ -31,8 +31,13 @@ function About() {
           {/*<Hizmetler />  <Text/> */}
 
           <div className='w-full flex flex-col md:p-10 p-5  border-red-500 items-center space-y-10  min-h-[700px]
-           bg-gradient-to-t from-gray-100 via-sky-200 to-gray-100 dark:from-gray-900 dark:via-teal-900 dark:to-gray-900'>
-            <h1 className='lg:text-5xl  text-2xl  bg-clip-text text-transparent  bg-gradient-to-r from-blue-800 via-blue-600 to-purple-800  font-bold font-inter z-10 dark:text-shadow-lg  dark:text-transparent  dark:from-green-100 dark:via-green-500 dark:to-green-700'>
+           bg-gradient-to-t from-gray-100 via-sky-200 to-gray-100
+            dark:from-gray-900 dark:via-blue-950 dark:to-gray-900'>
+            <h1 className='lg:text-5xl  text-2xl  bg-clip-text text-transparent  bg-gradient-to-r 
+            
+            from-blue-600 via-blue-800 to-purple-800
+          dark:bg-gradient-to-r dark:from-blue-100 dark:via-blue-200 dark:to-blue-300
+            font-bold font-inter z-10   '>
               Technologies I Am Using
             </h1>
 

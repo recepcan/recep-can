@@ -45,14 +45,14 @@ function ContentCard() {
 
     return (
         <div className=" lg:h-[400px] h-[330px] min-w-full  py-3 lg:pb-10  box-border relative  shadow-xl shadow-gray-400 flex flex-col items-center justify-between space-y-0
-         hover:shadow-gray-600 dark:border border-green-500 transition-all dark:bg-black bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400  rounded-xl dark:text-white ">
-            <div className=" w-full h-[70px] dark:bg-black  p-2  flex  justify-evenly items-center overflow-hidden overflow-x-auto custom-scrollbar rounded-lg ">
+         hover:shadow-gray-600 dark:border border-blue-300 transition-all dark:from-blue-900 bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400  rounded-xl dark:text-white ">
+            <div className=" w-full h-[70px]    p-2  flex  justify-evenly items-center overflow-hidden overflow-x-auto custom-scrollbar rounded-lg ">
                 {tabs.map((tab, index) => (
                     <button
                         key={index}
                         className={` ${activeTab === tab.title ? 
-                            ' space-x-1  p-2 font-bold bg-gray-100 text-black   border-2 border-gray-100 dark:text-white box-border rounded-xl  cursor-pointer transition-all h-full flex justify-center items-center' 
-                            : ' space-x-1 p-2 dark:text-white text-white  rounded-xl hover:border-y-2 cursor-pointer transition-all border-white box-border h-full flex justify-center items-center'}`}
+                            ' space-x-1  p-2 font-bold bg-gray-100 text-black   border-2 border-gray-100  box-border rounded-xl  cursor-pointer transition-all h-full flex justify-center items-center' 
+                            : ' space-x-1 p-2  text-white  rounded-xl hover:border-y-2 cursor-pointer transition-all border-white box-border h-full flex justify-center items-center'}`}
                         onClick={() => handleTabClick(tab.title)}
                     >
                    <div className={`${activeTab === tab.title ? 'text-white text-2xl max-md:text-4xl' : ' text-2xl max-md:text-4xl text-black'}`}> 

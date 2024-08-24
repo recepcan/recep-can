@@ -78,18 +78,24 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
 
 
   return (
-    <div className='w-full  border-black  flex flex-col items-center bg-gradient-to-b from-gray-100 via-sky-200 to-gray-100 dark:from-gray-900 dark:via-teal-950 dark:to-gray-900 '>
-      <h1 className='text-5xl lg:text-7xl font-inter -tracking-[1px] leading-tight from-blue-800 via-blue-600 to-purple-500 font-extrabold dark:text-shadow-lg bg-clip-text text-transparent bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-700'>
+    <div className='w-full  border-black  flex flex-col items-center
+     bg-gradient-to-b from-gray-100 via-sky-200 to-gray-100
+     dark:from-gray-900 dark:via-blue-950 dark:to-gray-900 '>
+      <h1 className='text-5xl lg:text-7xl font-inter -tracking-[1px] leading-tight font-extrabold 
+       from-blue-800 via-blue-600 to-purple-500 
+        bg-clip-text text-transparent bg-gradient-to-br
+        dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
         Let's Connect</h1>
-      <hr className='w-[90%] my-8 lg:my-16 dark:border-green-500 border-black' />
+      <hr className='w-[90%] my-8 lg:my-16 dark:border-white border-black' />
       <div className=' w-[90%] h-full flex flex-col lg:flex-row max-md:space-y-5 lg:space-x-2 border-yellow-500'>
 
         <div className='w-full lg:w-1/2  min-h-full p-5 flex flex-col space-y-5 lg:space-y-8 rounded-xl text-center   border-gray-400'>
 
          
             <h1 className='text-3xl lg:text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter
-             bg-clip-text bg-gradient-to-b text-transparent  from-blue-800 via-blue-600 to-purple-500
-           dark:text-white'>
+          bg-clip-text text-transparent bg-gradient-to-br
+            from-blue-800 via-blue-600 to-purple-500 
+        dark:from-red-100 dark:via-red-300 dark:to-red-500'>
              {textById?.title}
              </h1>
 
@@ -101,12 +107,13 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
 
 
         <div className="w-full lg:w-1/2 h-full space-y-3  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-400 hover:shadow-gray-600 
-        transition-all dark:border border-green-500 bg-white dark:bg-[#17252a]">
+        transition-all dark:border border-blue-500 bg-white dark:bg-gray-950">
 
           
             <h1 className='text-3xl lg:text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter
-             bg-clip-text bg-gradient-to-b text-transparent  from-blue-800 via-blue-600 to-purple-500
-           dark:text-white'>
+              bg-clip-text text-transparent bg-gradient-to-br
+            from-blue-800 via-blue-600 to-purple-500 
+        dark:from-red-100 dark:via-red-300 dark:to-red-500'>
             Send me an email
             </h1>
             <input 

@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 export default function AdminHomeComponent() {
   return (
     <>
-    <div className='bg-white w-full   min-h-full flex-1  space-y-5 rounded-lg'>
+    <div className=' w-full    min-h-full flex-1  space-y-5 rounded-lg'>
       
       <div className='w-full md:flex-row flex flex-col items-center justify-between  h-full '>
      <div className='flex flex-col space-x-5 w-full md:w-1/2 border-2 border-red-500'>

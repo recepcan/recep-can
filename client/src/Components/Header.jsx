@@ -96,7 +96,7 @@ function Header() {
 
             className='w-full  flex  items-center justify-around max-md:justify-between max-md:px-5 max-md:flex-row-reverse 
              h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
-            dark:bg-black/30 dark:text-white dark:border-b border-green-500   transition-colors duration-300
+            dark:bg-black/30 dark:text-white dark:border-b border-blue-500   transition-colors duration-300
         md:fixed max-md:h-[50px] '>
 
             <Link to="/">

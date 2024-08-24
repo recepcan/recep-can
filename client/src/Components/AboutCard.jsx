@@ -27,14 +27,16 @@ function AboutCard() {
        flex flex-col lg:flex-row min-[650px]:min-h-screen items-center justify-center'>
   
       <div className=' lg:w-2/3 w-full space-y-8 border-blue-500 p-10 rounded-lg 
-       shadow-gray-400 shadow-lg  hover:shadow-gray-700 transition-all dark:bg-[#17252a] 
+       shadow-gray-400 shadow-lg  hover:shadow-gray-700 transition-all dark:bg-gray-950
         flex flex-col items-center text-left justify-center'>
         {/*  <ProfilCard />    
            <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  
   */}
   
         <h1 className=' text-2xl max-sm:text-lg  max-md:text-2xl max-lg:5xl  xl:text-6xl  md:tracking-wide leading-normal md:leading-tight font-extrabold  font-inter
-         bg-gradient-to-b from-blue-600 via-blue-800 to-purple-800  bg-clip-text text-transparent dark:bg-gradient-to-br dark:from-green-100 dark:via-green-500 dark:to-green-900'>
+         bg-gradient-to-b bg-clip-text text-transparent
+          from-blue-600 via-blue-800 to-purple-800
+          dark:bg-gradient-to-t dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
         {textById&&textById.title}
         </h1>
   
