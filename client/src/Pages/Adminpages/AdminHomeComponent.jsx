@@ -7,9 +7,7 @@ export default function AdminHomeComponent() {
   return (
     <>
     <div className='bg-white w-full   min-h-full flex-1  space-y-5 rounded-lg'>
-      <div className='w-full   p-3 bg-[#1a2e44] text-white rounded-sm mb-5 shadow-md shadow-gray-400'>
-        <h1>This is the Home page component. You can manage the home page in here</h1>
-      </div>
+      
       <div className='w-full md:flex-row flex flex-col items-center justify-between  h-full '>
      <div className='flex flex-col space-x-5 w-full md:w-1/2 border-2 border-red-500'>
      <GetPosts limit={1} />

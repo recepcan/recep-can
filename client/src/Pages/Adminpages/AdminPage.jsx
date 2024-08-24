@@ -40,13 +40,18 @@ function AdminPage() {
     {
      
       <div 
-      className={`${adminMenu? 'lg:w-1/5 max-md:flex-1' : 'w-14'} transition-all duration-500  border-gray-400  min-h-screen `}>
+      className={`${adminMenu? 'lg:w-1/5 max-md:flex-1' : 'w-14 '} transition-all duration-500  border-gray-400  min-h-screen `}>
       <DashSidebar adminMenu={adminMenu} />
       </div>
     }
 
 
       <div className={`md:flex-1 ${adminMenu && "max-md:hidden" } w-full min-h-full box-border p-2 max-h-screen overflow-y-auto bg-white border-black`} >
+      
+      <div className='w-full uppercase flex  justify-center  p-3 bg-[#1a2e44] text-white
+       rounded-sm mb-5 shadow-md shadow-gray-400'>
+      Edit {tab} Page
+      </div>
       {tab==='home' &&  (<AdminHomeComponent/>)}
       {tab==='' &&  (<AdminHomeComponent/>)} 
       {tab==='about' && (<AdminAboutComponent/>) } 

@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const headerSlice = createSlice({
   name: 'header',
   initialState: {
-    darkMode: false,
+    theme: 'light',
     language: true,
     menu: false,
     Links:[
@@ -87,8 +87,8 @@ export const headerSlice = createSlice({
     toggleMenu: state => {
       state.menu = !state.menu
     },
-    toggledarkMode: state => {
-      state.darkMode = !state.darkMode
+    toggleTheme: state => {
+      state.theme = state.theme==='light' ? 'dark' : 'light'
     },
     ddAdd: state => {
       state.dropdown = true
@@ -100,7 +100,7 @@ export const headerSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { changeLanguage, changePath, toggleMenu, toggledarkMode, ddAdd,ddremove } = headerSlice.actions
+export const { changeLanguage, changePath, toggleMenu, toggleTheme, ddAdd,ddremove } = headerSlice.actions
 
 export default headerSlice.reducer
 

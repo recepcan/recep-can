@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FaFlagCheckered, FaInfoCircle, FaMoon, FaReact } from "react-icons/fa";
-import { changeLanguage, ddAdd, ddremove, toggleMenu, toggledarkMode } from '../store/headerSlice';
+import { changeLanguage, ddAdd, ddremove, toggleMenu, toggleTheme } from '../store/headerSlice';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { GiMoon } from 'react-icons/gi';
 import { BiSolidSun } from 'react-icons/bi';
@@ -15,15 +15,15 @@ import { FaPhoneFlip } from 'react-icons/fa6';
 function Header() {
 
 
-    const { menu, darkMode, dropdown } = useSelector(state => state.header)
+    const { menu, theme, dropdown } = useSelector(state => state.header)
     const dispatch = useDispatch()
 
-    const setMod = () => {
-        document.body.classList.toggle('dark');
-        dispatch(toggledarkMode())
+    // const setMod = () => {
+    //     document.body.classList.toggle('dark');
+    //     dispatch(toggledarkMode())
 
 
-    }
+    // }
     // const itemRefs = Links?.map(() => useRef(null));
 
     const [hoveredItem, setHoveredItem] = useState({ name: '' });
@@ -94,8 +94,9 @@ function Header() {
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
 
-            className='w-full  flex  items-center justify-around max-md:justify-between max-md:px-5 max-md:flex-row-reverse  h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
-            dark:bg-black/30 dark:text-white dark:border-b border-green-500  rounded-b-3xl transition-colors duration-300
+            className='w-full  flex  items-center justify-around max-md:justify-between max-md:px-5 max-md:flex-row-reverse 
+             h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
+            dark:bg-black/30 dark:text-white dark:border-b border-green-500   transition-colors duration-300
         md:fixed max-md:h-[50px] '>
 
             <Link to="/">
@@ -135,12 +136,12 @@ function Header() {
                 <div className='max-md:flex-row-reverse flex items-center justify-between' >
                     <button
                         className=' pl-5    rounded-lg'
-                        onClick={setMod} >
-                        {darkMode
+                        onClick={()=>dispatch(toggleTheme())} >
+                        {theme=== 'dark'
                             ?
                             <BiSolidSun className='text-orange-400 text-2xl' />
                             :
-                            <FaMoon className='text-black text-xl' />}
+                            <FaMoon className='text-purple-700 text-xl' />}
                     </button>
 
                     <div
