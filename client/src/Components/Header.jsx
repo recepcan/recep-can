@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useParams } from 'react-router-dom'
 import { FaFlagCheckered, FaInfoCircle, FaMoon, FaReact } from "react-icons/fa";
 import { changeLanguage, ddAdd, ddremove, toggleMenu, toggleTheme } from '../store/headerSlice';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -17,7 +17,10 @@ function Header() {
 
     const { menu, theme, dropdown } = useSelector(state => state.header)
     const dispatch = useDispatch()
+    const location = useLocation().pathname;
+    const pathAfterSlash = location.split('/')[1].toLowerCase();
 
+    console.log(pathAfterSlash)
     // const setMod = () => {
     //     document.body.classList.toggle('dark');
     //     dispatch(toggledarkMode())
@@ -114,16 +117,20 @@ function Header() {
                     {
                         Links?.map((item, index) => {
                             return (
-                                <div className={`hover:text-black shadow-md shadow-gray-400 rounded-lg border-2 border-white dark:hover:text-green-500   transition-all `}
+                                <div
                                     key={index}
                                     // ref={itemRefs[index]}
                                     onMouseEnter={handleMouseEnter(index)}
                                     onMouseLeave={handleMouseLeave}
                                 >
-                                    <NavLink id={item.id} to={item.to} >
-                                        <div className="p-2 items-center justify-between  space-x-1 flex box-border h-full transition-colors duration-300 font-extrabold text-md font-mono"  >
-                                            <h2> {item.name} </h2>
-                                            <div> {item.icon}</div>
+                                    <NavLink
+                                        id={item.id}
+                                        to={item.to}
+                                        className={({ isActive }) => isActive ? 'dark:text-sky-300  text-black' : 'hover:text-black dark:hover:text-sky-300 shadow-md shadow-gray-400 rounded-lg'}
+                                    >
+                                        <div className="p-2 items-center lowercase justify-between space-x-1 flex box-border h-full transition-colors duration-300 font-extrabold text-md font-mono">
+                                            <h2>{item.name}</h2>
+                                            <div>{item.icon}</div>
                                         </div>
                                     </NavLink>
                                 </div>
@@ -136,8 +143,8 @@ function Header() {
                 <div className='max-md:flex-row-reverse flex items-center justify-between' >
                     <button
                         className=' pl-5    rounded-lg'
-                        onClick={()=>dispatch(toggleTheme())} >
-                        {theme=== 'dark'
+                        onClick={() => dispatch(toggleTheme())} >
+                        {theme === 'dark'
                             ?
                             <BiSolidSun className='text-orange-400 text-2xl' />
                             :

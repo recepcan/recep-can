@@ -1,18 +1,19 @@
 
 .active{
-    color: black;
+    /* color: black; */
   
-    font-weight: bold;
+    /* font-weight: bold; */
     /* box-shadow: 0px 10px 15px -3px #9ca3af !important; */
-    display: inline-block;
-    border-radius: 6px;
+    /* display: inline-block;
+    border-radius: 6px; */
 }
 .dark *{
   box-shadow: none !important;
 }
 .dark .active{
     /* color:#22c55e; */
-    background-color: transparent;
+    /* color: aqua; */
+    /* background-color: transparent; */
    /* border: 2px solid #22c55e; */
 
 }
@@ -66,7 +67,7 @@
  .active{
   box-shadow :none !important;
   border-radius: none !important;
-  border: 1px solid green;
+  border: 1px solid blue;
   background-color: rgba(0, 128, 0, 0.068);
 }
 }

@@ -19,6 +19,10 @@ import { IoCloseSharp } from 'react-icons/io5';
 
 function AdminPage() {
 // const [adminMenu, setadminMenu] = useState(false)
+
+
+
+
   const location = useLocation();
   const dispatch = useDispatch();
   const { currentUser,adminMenu } = useSelector((state) => state.user);
@@ -40,7 +44,7 @@ function AdminPage() {
     {
      
       <div 
-      className={`${adminMenu? 'lg:w-1/5 max-md:flex-1' : 'w-14 '} transition-all duration-500  border-gray-400  min-h-screen `}>
+      className={`${adminMenu? 'lg:w-1/5 max-md:flex-1' : 'w-14 '} transition-all duration-200  border-gray-400  min-h-screen `}>
       <DashSidebar adminMenu={adminMenu} />
       </div>
     }

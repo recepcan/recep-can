@@ -16,7 +16,7 @@ function DashSidebar({adminMenu}) {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const [tab, setTab] = useState('');
-  const handleSignout = async () => {
+   const handleSignout = async () => {
     try {
       const res = await fetch('/api/auth/sign-out', {
         method: 'POST',
@@ -97,8 +97,9 @@ function DashSidebar({adminMenu}) {
                  flex items-center justify-start text-xl font-extrabold`}
               to={`/admin?tab=${item.title}`}>
               <div className='text-2xl'>{item.icon}</div>
-              <div>{item.title}</div>
-
+             { 
+              <div className={`${adminMenu? 'visible' : 'hidden'}`}>{item.title}</div>
+            }
             </Link>
           ))
         }
