@@ -7,11 +7,13 @@ import postRoutes from './routes/postRoutes.js'
 import TextRoutes from './routes/TextRoutes.js'
 import contactRoutes from './routes/contactRoutes.js'
 import cookieParser from 'cookie-parser'
+import path from 'path'
 const app = express()
 app.use(express.json())
 
 import cors from 'cors'
-
+ 
+const __dirname=path.resolve()
 
 // Tüm istekler için CORS'u etkinleştir
 app.use(cors());
@@ -32,6 +34,11 @@ app.use('/api/post', postRoutes)
 app.use('/api/text', TextRoutes)
 app.use('/api/contact',contactRoutes)
 
+
+app.use(express.static(path.join(__dirname,'/client/dist')))
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'client','dist','index.html'))
+})
 
 
 app.use((err, req, res, next) => {
