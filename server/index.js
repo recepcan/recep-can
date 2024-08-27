@@ -7,10 +7,13 @@ import postRoutes from './routes/postRoutes.js'
 import TextRoutes from './routes/TextRoutes.js'
 import contactRoutes from './routes/contactRoutes.js'
 import cookieParser from 'cookie-parser'
+import path from 'path'
+import cors from 'cors'
+
+
 const app = express()
 app.use(express.json())
 
-import cors from 'cors'
 
 
 // Tüm istekler için CORS'u etkinleştir
@@ -45,13 +48,13 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.use(express.static(path.join(__dirname,"/client/build")));
+app.use(express.static(path.join(__dirname,"/client/dist")));
 
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,'/client/build','index.html'))
 })
 
 
-app.listen(process.env.PORT|| 5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("server is running on port  5000")
 })
