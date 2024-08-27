@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "build": "vite build"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://my-personal-blog-recepcan.onrender.com",
   "dependencies": {
     "@fontsource/inter": "^5.0.20",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",

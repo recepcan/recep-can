@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://my-personal-blog-recepcan.onrender.com',
         changeOrigin: true, // Origin başlığını değiştirir
         secure: false, // HTTPS yerine HTTP kullanıyorsanız
       },
