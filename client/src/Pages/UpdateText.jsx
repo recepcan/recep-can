@@ -70,7 +70,7 @@ const navigate=useNavigate()
 
 
   return (
-    <div className='md:pt-32 p-10 bg-gray-100 
+    <div className='md:pt-32 p-10 bg-gray-100 dark:bg-gray-900 dark:text-white
     min-h-screen flex flex-col items-center lg:justify-center text-center'>
       <div className='w-full flex flex-col  items-center justify-center'>
         <form onSubmit={handleSubmit} className='lg:w-1/2 w-full flex flex-col space-y-10'>
@@ -81,7 +81,7 @@ const navigate=useNavigate()
             placeholder='Title'
             name="title"
             value={text.title || ''}
-            className='p-3 rounded-lg w-full'
+            className='p-3 rounded-lg w-full dark:bg-gray-900 dark:text-white border-2'
           />
           <textarea
             onChange={handleChange}
@@ -89,7 +89,7 @@ const navigate=useNavigate()
             placeholder='Content'
             name='content'
             value={text.content || ''}
-            className='p-3 rounded-lg w-full'
+            className='p-3 rounded-lg w-full dark:bg-gray-900 dark:text-white border-2 '
           />
           <button className='w-full p-3 bg-sky-700 rounded-lg text-white' type='submit'>Update</button>
         </form>
