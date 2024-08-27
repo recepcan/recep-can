@@ -35,11 +35,10 @@ app.use('/api/text', TextRoutes)
 app.use('/api/contact',contactRoutes)
 
 
-const indexPath = path.join(__dirname, 'client', 'dist', 'index.html');
-console.log(`Serving index.html from: ${indexPath}`);
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
 app.get('*', (req, res) => {
-    res.sendFile(indexPath);
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 
 app.use((err, req, res, next) => {
