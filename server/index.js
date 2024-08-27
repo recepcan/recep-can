@@ -35,11 +35,12 @@ app.use('/api/text', TextRoutes)
 app.use('/api/contact',contactRoutes)
 
 
-app.use(express.static(path.join(__dirname,'/client/dist')))
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'client','dist','index.html'))
-})
-
+const indexPath = path.join(__dirname, 'client', 'dist', 'index.html');
+console.log(`Serving index.html from: ${indexPath}`);
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
+app.get('*', (req, res) => {
+    res.sendFile(indexPath);
+});
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
