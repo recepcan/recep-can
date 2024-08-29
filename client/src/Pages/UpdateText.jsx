@@ -81,7 +81,7 @@ const navigate=useNavigate()
             placeholder='Title'
             name="title"
             value={text.title || ''}
-            className='p-3 rounded-lg w-full'
+            className='p-3 rounded-lg w-full dark:bg-gray-900 dark:text-white'
           />
           <textarea
             onChange={handleChange}
@@ -89,9 +89,9 @@ const navigate=useNavigate()
             placeholder='Content'
             name='content'
             value={text.content || ''}
-            className='p-3 rounded-lg w-full'
+            className='p-3 rounded-lg w-full dark:bg-gray-900 dark:text-white'
           />
-          <button className='w-full p-3 bg-sky-700 rounded-lg text-white' type='submit'>Update</button>
+          <button className='w-full p-3 bg-sky-700 rounded-lg text-white ' type='submit'>Update</button>
         </form>
       </div>
     </div>
