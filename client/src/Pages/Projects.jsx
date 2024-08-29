@@ -57,7 +57,7 @@ function Projects() {
     <img src={post&&post.image} className='rounded-xl' alt="" />
     </div>
 
-    <div className='flex justify-between p-3 border-b border-green-600 mx-auto w-full max-w-2xl text-xs'>
+    <div className='flex justify-between p-3 border-b-2 border-blue-600  dark:border-white mx-auto w-full max-w-2xl text-xs'>
     <span>{post&& new Date(post.createdAt).toLocaleDateString()}</span>
     <span className='italic'> {post && (post.content.length / 1000).toFixed(0)} mins read</span>
     </div>
