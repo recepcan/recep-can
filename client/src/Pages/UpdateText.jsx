@@ -70,7 +70,7 @@ const navigate=useNavigate()
 
 
   return (
-    <div className='md:pt-32 p-10 bg-gray-100 
+    <div className='md:pt-32 p-10 bg-gray-100 dark:bg-gray-900 dark:text-white
     min-h-screen flex flex-col items-center lg:justify-center text-center'>
       <div className='w-full flex flex-col  items-center justify-center'>
         <form onSubmit={handleSubmit} className='lg:w-1/2 w-full flex flex-col space-y-10'>
