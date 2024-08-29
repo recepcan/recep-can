@@ -133,7 +133,7 @@ const {currentUser}=useSelector(state=>state.user)
                   placeholder='Title' 
                   required 
                   id='title'
-                   className='flex-1 p-2  rounded-lg  font-bold outline-1' />
+                   className='flex-1 p-2  rounded-lg  font-bold outline-1 dark:bg-gray-900 dark:text-white ' />
                 <div 
                 className='border-4 gap-4 flex md:flex-row flex-col justify-between items-center
                  border-teal-500 border-dotted p-3 '>

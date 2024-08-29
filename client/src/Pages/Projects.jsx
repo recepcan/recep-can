@@ -50,7 +50,7 @@ function Projects() {
      bg-gradient-to-b from-gray-100 via-blue-100 to-gray-100 dark:from-gray-900 dark:via-blue-950 dark:to-gray-900 '>
     
     <h1 className='text-center  uppercase text-3xl lg:text-5xl
-     font-inter font-semibold bg-clip-text bg-gradient-to-tr text-transparent from-blue-500 via-blue-600 to-blue-800'>
+     font-inter font-semibold bg-clip-text bg-gradient-to-tr text-transparent dark:from-blue-100 dark:via-blue-300 dark:to-blue-500 from-blue-600 via-purple-600 to-red-600'>
     {post&& post.title}
     </h1>
     <div className='lg:w-[900px] w-full   flex items-center justify-center'>
