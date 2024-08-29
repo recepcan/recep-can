@@ -121,7 +121,7 @@ const {currentUser}=useSelector(state=>state.user)
 
 
     return (
-        <div className='p-3 max-w-3xl mx-auto min-h-screen md:pt-20 space-y-5'>
+        <div className='p-3 max-w-3xl mx-auto min-h-screen md:pt-20 space-y-5 dark:bg-gray-900 dark:text-white '>
             <h1 className='text-center text-3xl  font-semibold font-inter'> Update Post</h1>
 
             <form className='flex flex-col gap-4 space-y-10' onSubmit={handleSubmit}>
@@ -133,14 +133,14 @@ const {currentUser}=useSelector(state=>state.user)
                   placeholder='Title' 
                   required 
                   id='title'
-                   className='flex-1 p-2  rounded-lg  font-bold outline-1 dark:bg-gray-900 dark:text-white ' />
+                   className='flex-1 p-2  rounded-lg  font-bold outline-1  dark:bg-gray-900 dark:text-white ' />
                 <div 
                 className='border-4 gap-4 flex md:flex-row flex-col justify-between items-center
                  border-teal-500 border-dotted p-3 '>
                     <input  
                     onChange={(e)=>setFile(e.target.files[0])} 
                     type="file" accept='image/*' 
-                    className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold 
+                    className='bg-gradient-to-tr p-1 rounded-lg text-white font-bold 
                     bg-gradient from-pink-600 via-purple-500 to-blue-500' />
                     <button
                      type='button' 
