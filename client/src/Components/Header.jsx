@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink, useLocation, useParams } from 'react-router-dom'
 import { FaFlagCheckered, FaInfoCircle, FaMoon, FaReact } from "react-icons/fa";
@@ -20,7 +20,7 @@ function Header() {
     const location = useLocation().pathname;
     const pathAfterSlash = location.split('/')[1].toLowerCase();
 
-    console.log(pathAfterSlash)
+   useMemo( ()=>console.log(pathAfterSlash,"path"),[location])
     // const setMod = () => {
     //     document.body.classList.toggle('dark');
     //     dispatch(toggledarkMode())

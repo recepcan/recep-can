@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useMemo } from 'react'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import { fetchPost6 } from '../store/postSlice';
@@ -8,39 +8,14 @@ function GetPosts({ limit }) {
   const [recentPosts, setRecentPosts] = useState(null)
   const dispatch = useDispatch()
   const { data, loading, error } = useSelector(state => state.posts);
-  // useEffect(() => {
-  //   try {
-  //     const fetchRecentPosts= async ()=>{
-  //         const res = await fetch(`/api/post/getPosts?limit=3`)
-  //         const data=res.json()
-  //         if(!res.ok){
-  //             toast.error(data.message)
-  //         }
-  //         if(res.ok){
-  //             setRecentPosts(data.posts)
-  //         }
-
-  //     }
-  //     fetchRecentPosts()
-  //   } catch (error) {
-  //     toast.error(error.message)
-  //   }
-
-
-  // }, [])
 
   
 
   useEffect(() => {
     dispatch(fetchPost6(limit))
-
-    // const fetchPosts = async () => {
-    //   const res = await fetch(`/api/post/getPosts?limit=${limit}`);
-    //   const data = await res.json();
-    //   setRecentPosts(data.posts);
-    // };
-    // fetchPosts();
-  }, [dispatch]);
+    console.log("postlar çekildi")
+   
+  }, [dispatch,limit]);
   
   if (data.length === 0) {
     return <div>No posts available</div>;
@@ -87,3 +62,32 @@ function GetPosts({ limit }) {
 export default GetPosts
 
 // <div className='p-3 max-w-2xl mx-auto w-full post-content  line-clamp-6' dangerouslySetInnerHTML={{__html:post&&post.content}}></div>
+
+  // useEffect(() => {
+  //   try {
+  //     const fetchRecentPosts= async ()=>{
+  //         const res = await fetch(`/api/post/getPosts?limit=3`)
+  //         const data=res.json()
+  //         if(!res.ok){
+  //             toast.error(data.message)
+  //         }
+  //         if(res.ok){
+  //             setRecentPosts(data.posts)
+  //         }
+
+  //     }
+  //     fetchRecentPosts()
+  //   } catch (error) {
+  //     toast.error(error.message)
+  //   }
+
+
+  // }, [])
+
+
+   // const fetchPosts = async () => {
+    //   const res = await fetch(`/api/post/getPosts?limit=${limit}`);
+    //   const data = await res.json();
+    //   setRecentPosts(data.posts);
+    // };
+    // fetchPosts();
