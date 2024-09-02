@@ -11,9 +11,9 @@ function ToggleMenu() {
     return (
 
 
-        <div className='absolute w-full  bg-white dark:bg-[#1a202c] z-50 overflow-none p-5
+        <div className='absolute w-full  bg-white dark:bg-[#1a202c] z-50 overflow-none p-5 pt-20
          dark:text-white transition-colors duration-300 min-h-screen text-white
-          left-0  top-0 bottom-0 right-0 flex flex-col gap-2 items-center justify-center'>
+          left-0  top-0 bottom-0 right-0 flex flex-col gap-2 items-center justify-start'>
           <div className='w-10 h-10 absolute right-5 top-5  bg-black  rounded-full text-4xl text-white font-semibold
            flex items-center justify-center' 
           onClick={()=>dispatch(toggleMenu())}>
