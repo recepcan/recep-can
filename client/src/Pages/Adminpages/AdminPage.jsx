@@ -27,7 +27,7 @@ function AdminPage() {
   const dispatch = useDispatch();
   const { currentUser,adminMenu } = useSelector((state) => state.user);
   const [tab, setTab] = useState('home');
-  
+
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const tabFromUrl = urlParams.get('tab');

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -15,7 +15,7 @@ function Connect() {
   const [verified, setverified] = useState(false)
   const navigate = useNavigate();
   const [formdata, setformData] = useState({ email: "",message:"",name:"" });
-  console.log(formdata);
+  useMemo(()=>console.log(formdata),[formdata])
 
   const handleChange = (e) => {
       setformData({ ...formdata, [e.target.id]: e.target.value.trim() });
