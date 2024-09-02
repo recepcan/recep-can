@@ -22,7 +22,8 @@ function ToggleMenu() {
           {
                 Links?.map((item, index) => (
                    
-                        <NavLink key={index} to={item.to} className=' text-slate-950  dark:text-white p-5 border w-full  rounded-lg   flex text-center items-center justify-center' 
+                        <NavLink key={index} to={item.to} className=' text-slate-950  dark:text-white p-5 border w-full  rounded-lg  
+                         flex text-center items-center justify-center' 
                         onClick={() => dispatch(toggleMenu())}>
                            
                                 {

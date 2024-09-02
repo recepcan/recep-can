@@ -1,5 +1,6 @@
 
 .active{
+  
     /* color: black; */
   
     /* font-weight: bold; */
@@ -67,9 +68,11 @@
  .active{
   box-shadow :none !important;
   border-radius: none !important;
-  border: 1px solid blue;
-  background-color: rgba(0, 128, 0, 0.068);
+  
+  color: white !important;
+  background-color: #64a8fa;
 }
+ 
 }
 
 
