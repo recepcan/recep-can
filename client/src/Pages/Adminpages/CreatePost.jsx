@@ -91,9 +91,10 @@ function CreatePost() {
         <div className='p-5 max-w-3xl mx-auto min-h-screen lg:pt-20 space-y-5'>
             <h1 className='text-center  text-3xl lg:text-5xl font-semibold font-inter'> Create a Post</h1>
 
-            <form className='flex flex-col gap-4 space-y-10' onSubmit={handleSubmit}>
+            <form className='flex flex-col gap-4 space-y-5' onSubmit={handleSubmit}>
 
-                <input onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' className='flex-1 p-2  rounded-lg  font-bold outline-1' />
+                <input onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' 
+                className='flex-1 p-2 dark:bg-gray-900 border border-black dark:border-white rounded-lg  font-bold outline-1' />
                 <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center border-teal-500 border-dotted p-3 '>
                     <input onChange={(e)=>setFile(e.target.files[0])} 
                     type="file"
@@ -121,11 +122,11 @@ function CreatePost() {
                       
                             </div>  )
                     }
-               <div>
+               <div className='  border-red-500 lg:h-72 h-72'>
                <ReactQuill 
                theme='snow'
                 placeholder='write on the line' 
-                className='lg:h-72 h-52'
+                className='lg:h-72 h-52 dark:text-white'
                 onChange={
                    (value)=>{
                        setFormData({...formData,content:value})
@@ -134,7 +135,8 @@ function CreatePost() {
                </div>
                 <button 
                  type='submit '
-                 className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'>
+                 className=' p-4 rounded-lg text-white font-bold
+                  bg-gradient-to-tr from-pink-600 via-purple-500 to-blue-500'>
                  Publish
                  </button>
             </form>

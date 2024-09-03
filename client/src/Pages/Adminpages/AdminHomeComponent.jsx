@@ -17,13 +17,8 @@ export default function AdminHomeComponent() {
       
      <div className='md:w-1/2 w-full p-5 space-y-5  rounded-lg h-full shadow-md shadow-gray-400' >
      <div>
-<h1 className='text-2xl uppercase  font-mono'>Yan taraftaki gibi bir post oluşturmak için butona tıkla. bu postlar home page içinde listelenir.</h1>
 </div>
-     <Link to={'/create-post'} className='w-full flex flex-col'>
-        <button className='md:w-72 w-full p-4 rounded-lg  text-white font-extrabold bg-gradient-to-tr from-pink-500 via-purple-500 to-sky-500  '>
-          Create Post
-        </button>
-      </Link>
+     
     
 
 

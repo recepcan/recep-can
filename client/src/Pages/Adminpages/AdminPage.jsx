@@ -51,11 +51,20 @@ function AdminPage() {
     }
 
 
-      <div className={`md:flex-1 ${adminMenu && "max-md:hidden" } w-full min-h-full box-border p-2 max-h-screen overflow-y-auto  dark:bg-gray-900 border-black`} >
+      <div className={`md:flex-1 ${adminMenu && "max-md:hidden" } w-full 
+        min-h-full box-border p-2 max-h-screen overflow-y-auto  dark:bg-gray-900 border-black`} >
       
-      <div className='w-full uppercase flex  justify-center  p-3 bg-[#1a2e44] text-white
+      <div className='w-full uppercase flex items-center justify-around  p-3 bg-[#1a2e44] text-white
        rounded-sm mb-5 shadow-md shadow-gray-400'>
-      Edit {tab} Page
+      <h1>Edit {tab} Page</h1>
+      {
+        tab==="posts" && 
+        <Link to={'/create-post'} className=' flex flex-col'>
+        <button className='md:w-72 w-full p-4 rounded-lg  text-white font-extrabold bg-gradient-to-tr from-pink-500 via-purple-500 to-sky-500  '>
+          Create Post
+        </button>
+      </Link>
+      }
       </div>
       {tab==='home' &&  (<AdminHomeComponent/>)}
       {tab==='' &&  (<AdminHomeComponent/>)} 

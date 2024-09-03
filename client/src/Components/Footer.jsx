@@ -22,17 +22,17 @@ function Footer() {
               dark:text-white text-lg border-white'>
         <h1 className='text-2xl font-bold font-inter'>Bilgi</h1>
         <div className='dark:text-gray-400'>
-          <button className=' flex items-center justify-center  text-lg p-2   w-[300px] hover:text-white     rounded-lg  hover:scale-110 transition-all '>
+          <button className=' flex items-center justify-center  text-lg p-2   w-[300px] text-gray-500 hover:underline dark:hover:text-white     rounded-lg  hover:scale-110 transition-all '>
             Site Tasarlama
           </button>
 
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px] hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px] text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
             Site Yayınlama
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
             Alan Adı Transferi
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
             Güvenlik
           </button>
         </div>
@@ -43,16 +43,16 @@ function Footer() {
           dark:text-white text-lg border-white'>
         <h1 className='text-2xl font-bold font-inter'>Hizmetler</h1>
         <div className='dark:text-gray-400'>
-          <button className=' flex items-center justify-center  text-lg p-2   w-[300px]  hover:text-white    rounded-lg  hover:scale-110 transition-all '>
+          <button className=' flex items-center justify-center  text-lg p-2   w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all '>
             Web Tasarım
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]    hover:text-white  rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px]    text-gray-500 hover:underline dark:hover:text-white  rounded-lg  hover:scale-110 transition-all'>
             Web Programlama
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  hover:text-white   rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white   rounded-lg  hover:scale-110 transition-all'>
             Hosting
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
             Domain-Alan Adı
           </button>
         </div>
@@ -63,16 +63,16 @@ function Footer() {
       dark:text-white text-lg border-white'>
         <h1 className='text-2xl font-bold font-inter'>Sosyal Medya</h1>
         <div className='dark:text-gray-400'>
-          <button className=' flex items-center justify-center  text-lg p-2 hover:text-white  w-[300px]     rounded-lg  hover:scale-110 transition-all '>
+          <button className=' flex items-center justify-center  text-lg p-2 text-gray-500 hover:underline dark:hover:text-white  w-[300px]     rounded-lg  hover:scale-110 transition-all '>
             İnstagram <FaInstagram className='text-xl text-red-400' />
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
             Linked <FaLinkedin className='text-xl text-sky-400' />
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px] hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px] text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
             Github <FaGithub className='text-xl text-purple-500' />
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
             Whatsapp <FaWhatsapp className='text-xl text-green-400' />
           </button>
         </div>
