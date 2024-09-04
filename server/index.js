@@ -18,6 +18,7 @@ app.use(express.json())
 
 app.use(cors());
 
+
 dotenv.config()
 app.use(cookieParser())
 mongoose.connect(process.env.MONGO_URI).then(
