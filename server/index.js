@@ -7,14 +7,14 @@ import postRoutes from './routes/postRoutes.js'
 import TextRoutes from './routes/TextRoutes.js'
 import contactRoutes from './routes/contactRoutes.js'
 import cookieParser from 'cookie-parser'
-import path from 'path'
+
 import cors from 'cors'
 
 
 const app = express()
 app.use(express.json())
 
-const __dirname=path.resolve()
+
 
 app.use(cors({
   origin: 'https://my-personal-blog-client-one.vercel.app/', 
@@ -52,11 +52,7 @@ app.use((err, req, res, next) => {
 })
 
 
-app.use(express.static(path.join(__dirname, '/client/dist')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-});
 app.get("/", (req, res) => {
     res.json("Hello world");
 })
