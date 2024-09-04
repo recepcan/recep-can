@@ -1,14 +1,19 @@
 {
   "version": 2,
-  "builds": [
+  "rewrites": [
+    { "source": "/old-path", "destination": "/new-path" }
+  ],
+  "redirects": [
+    { "source": "/old-url", "destination": "/new-url", "statusCode": 301 }
+  ],
+  "headers": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; media-src 'self' data:;" }
+      ]
     }
   ],
-  "routes": [],
-  "rewrites": [],
-  "redirects": [],
-  "headers": [],
-  "env": {}
+  "cleanUrls": true,
+  "trailingSlash": false
 }
