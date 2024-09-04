@@ -35,7 +35,9 @@ app.use('/api/post', postRoutes)
 app.use('/api/text', TextRoutes)
 app.use('/api/contact',contactRoutes)
 
-
+app.get("/", (req, res) => {
+    res.json("Hello");
+})
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
