@@ -16,8 +16,11 @@ app.use(express.json())
 
 
 
-// Tüm istekler için CORS'u etkinleştir
-app.use(cors());
+app.use(cors({
+  origin: 'https://my-personal-blog-client-46ykqrc9v-recep-cans-projects-708fffa6.vercel.app/', // Frontend'inizin domain'i
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 dotenv.config()
 app.use(cookieParser())
