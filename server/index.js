@@ -17,7 +17,7 @@ app.use(express.json())
 const __dirname=path.resolve()
 
 app.use(cors({
-  origin: 'https://my-personal-blog-client-46ykqrc9v-recep-cans-projects-708fffa6.vercel.app/', 
+  origin: 'https://my-personal-blog-client-one.vercel.app/', 
   methods: ['GET', 'POST', 'PUT','PATCH', 'DELETE'],
   credentials: true
 }));
@@ -58,7 +58,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 app.get("/", (req, res) => {
-    res.json("Hello");
+    res.json("Hello world");
 })
 
 app.listen(process.env.PORT || 5000, () => {
