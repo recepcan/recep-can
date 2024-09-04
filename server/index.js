@@ -14,7 +14,7 @@ import cors from 'cors'
 const app = express()
 app.use(express.json())
 
-
+const __dirname=path.resolve()
 
 app.use(cors({
   origin: 'https://my-personal-blog-client-46ykqrc9v-recep-cans-projects-708fffa6.vercel.app/', 
@@ -52,6 +52,11 @@ app.use((err, req, res, next) => {
 })
 
 
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 
 app.listen(process.env.PORT || 5000, () => {
