@@ -8,7 +8,7 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:5000/',
         changeOrigin: true, // Origin başlığını değiştirir
-        secure: false, // HTTPS yerine HTTP kullanıyorsanız
+        secure: true, // HTTPS yerine HTTP kullanıyorsanız
       },
     },
   },
