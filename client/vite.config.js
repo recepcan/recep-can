@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://my-personal-blog-api-xi.vercel.app/',
+        target: 'http://localhost:5000/',
         changeOrigin: true, // Origin başlığını değiştirir
         secure: false, // HTTPS yerine HTTP kullanıyorsanız
       },
