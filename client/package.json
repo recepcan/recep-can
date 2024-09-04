@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://my-personal-blog-1x6y.vercel.app/",
   "dependencies": {
     "@fontsource/inter": "^5.0.20",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
