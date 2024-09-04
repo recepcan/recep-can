@@ -1,12 +1,19 @@
 {
-    "version":2,
-    "builds": [
-      { "src": "*.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "/"
-        }
-    ]
-  }
+  "version": 2,
+  "rewrites": [
+    { "source": "/old-path", "destination": "/new-path" }
+  ],
+  "redirects": [
+    { "source": "/old-url", "destination": "/new-url", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; media-src 'self' data:;" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
