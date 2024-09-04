@@ -6,9 +6,5 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [],
-  "rewrites": [],
-  "redirects": [],
-  "headers": [],
-  "env": {}
+  
 }
