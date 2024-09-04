@@ -18,7 +18,7 @@ app.use(express.json())
 
 app.use(cors({
   origin: 'https://my-personal-blog-client-46ykqrc9v-recep-cans-projects-708fffa6.vercel.app/', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT','PATCH', 'DELETE'],
   credentials: true
 }));
 
