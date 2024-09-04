@@ -8,7 +8,7 @@ export default defineConfig({
       '/api': {
         target: 'https://my-personal-blog-api-xi.vercel.app/',
         changeOrigin: true, // Origin başlığını değiştirir
-        secure: false, // HTTPS yerine HTTP kullanıyorsanız
+        secure: true, // HTTPS yerine HTTP kullanıyorsanız
       },
     },
   },
