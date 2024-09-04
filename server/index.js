@@ -16,16 +16,12 @@ app.use(express.json())
 
 
 
-app.use(cors({
-  origin: 'https://my-personal-blog-client-one.vercel.app/', 
-  methods: ['GET', 'POST', 'PUT','PATCH', 'DELETE'],
-  credentials: true
-}));
+app.use(cors());
 
 dotenv.config()
 app.use(cookieParser())
 mongoose.connect(process.env.MONGO_URI).then(
-    () => { console.log("mongodb is connected") }
+    () => { console.log("mongodb is connected again") }
 ).catch((e) => {
     console.log(e)
 })
@@ -53,9 +49,6 @@ app.use((err, req, res, next) => {
 
 
 
-app.get("/", (req, res) => {
-    res.json("Hello world");
-})
 
 app.listen(process.env.PORT || 5000, () => {
     console.log("server is running on port  5000")
