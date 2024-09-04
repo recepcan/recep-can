@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://personal-website-recepcan-d4573b70e262.herokuapp.com/',
+        target: 'https://my-personal-blog-server.vercel.app/',
         changeOrigin: true, // Origin başlığını değiştirir
         secure: false, // HTTPS yerine HTTP kullanıyorsanız
       },
