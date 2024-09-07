@@ -17,10 +17,10 @@ app.use(express.json())
 
 
 app.use(cors({
-    origin:["https://my-personal-blog-client-one.vercel.app/"],
+    origin: "https://my-personal-blog-client-one.vercel.app", // Sonundaki / kaldırıldı
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true
-}))
+  }));
 
 
 dotenv.config()
