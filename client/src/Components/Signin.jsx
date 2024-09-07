@@ -27,7 +27,8 @@ function SignIn() {
             const res = await fetch('https://my-personal-blog-onvercel-api.vercel.app/api/auth/sign-in', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formdata)
+                body: JSON.stringify(formdata),
+                credentials: 'include'// Kimlik bilgilerini (cookie'leri) cross-origin isteklerde gönderir
 
             })
             const data = await res.json()
