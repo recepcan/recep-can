@@ -17,20 +17,20 @@ app.use(express.json())
 
 
 app.use(cors({
-    origin: "https://my-personal-blog-client-one.vercel.app", // Sonundaki / kaldırıldı
+    origin: "https://my-personal-blog-onvercel.vercel.app", // Frontend URL'nizi buraya yazın
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-   credentials: true
+    credentials: true // Cookie'lerin cross-origin isteklerde gönderilmesini sağlar
   }));
 
   app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://my-personal-blog-client-one.vercel.app');
+    res.header('Access-Control-Allow-Origin', 'https://my-personal-blog-onvercel.vercel.app');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH');
     next();
   });
 
   app.options('*', cors({
-    origin: "https://my-personal-blog-client-one.vercel.app",
+    origin: "https://my-personal-blog-onvercel.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true
   }));
