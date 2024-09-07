@@ -16,7 +16,11 @@ app.use(express.json())
 
 
 
-app.use(cors())
+app.use(cors({
+    origin:["https://my-personal-blog-client-one.vercel.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    credentials: true
+}))
 
 
 dotenv.config()
