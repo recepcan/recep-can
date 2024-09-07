@@ -18,7 +18,6 @@ export const fetchPosts = createAsyncThunk('fetchPosts', async (currentUser) => 
   });
   
 
-
  export  const fetchPost6 = createAsyncThunk('fetchPost6',async(limit) => {
     const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/post/getPosts?limit=${limit}`);
     if (!res.ok) {
