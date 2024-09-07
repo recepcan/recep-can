@@ -20,7 +20,7 @@ function ForgotPassword() {
         }
 
         try {
-            const res = await fetch('/api/auth/forgot-password', {
+            const res = await fetch('https://my-personal-blog-onvercel-api.vercel.app/api/auth/forgot-password', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formdata)

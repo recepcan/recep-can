@@ -30,7 +30,7 @@ function Connect() {
     }
   
     try {
-      const res = await fetch('/api/contact/message', {
+      const res = await fetch('https://my-personal-blog-onvercel-api.vercel.app/api/contact/message', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formdata)

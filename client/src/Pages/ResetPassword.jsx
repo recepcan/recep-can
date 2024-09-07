@@ -21,7 +21,7 @@ function ResetPassword() {
         }
 
         try {
-            const res = await fetch(`/api/auth/reset-password/${id}/${token}`, {
+            const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/auth/reset-password/${id}/${token}`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formdata)

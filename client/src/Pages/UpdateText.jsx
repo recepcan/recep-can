@@ -11,7 +11,7 @@ const navigate=useNavigate()
     useEffect(() => {
         const fetchPosts = async () => {
           try {
-            const res = await fetch(`/api/text/getTexts?textId=${textId}`);
+            const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/text/getTexts?textId=${textId}`);
             const data = await res.json();
             if (res.ok) {
               setText(data.texts[0]);
@@ -38,7 +38,7 @@ const navigate=useNavigate()
     e.preventDefault();
     
     try {
-      const res = await fetch(`/api/text/update/${text._id}/${currentUser._id}`, {
+      const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/text/update/${text._id}/${currentUser._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

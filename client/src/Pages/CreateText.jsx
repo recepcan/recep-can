@@ -17,7 +17,7 @@ const currentUser =useSelector(state=>state.user)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`/api/text/create`, {
+      const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/text/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

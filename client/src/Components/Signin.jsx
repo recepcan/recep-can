@@ -24,7 +24,7 @@ function SignIn() {
 
         try {
             dispatch(signInStart())
-            const res = await fetch('/api/auth/sign-in', {
+            const res = await fetch('https://my-personal-blog-onvercel-api.vercel.app/api/auth/sign-in', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formdata)

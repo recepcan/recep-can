@@ -11,7 +11,7 @@ function Projects() {
         const fetchPost = async () => {
           try {
             
-            const res = await fetch(`/api/post/getposts?slug=${postSlug}`);
+            const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/post/getposts?slug=${postSlug}`);
             const data = await res.json();
             if (!res.ok) {
                 toast.error(data.message)
@@ -32,7 +32,7 @@ function Projects() {
       useEffect(() => {
         try {
           const fetchRecentPosts = async () => {
-            const res = await fetch(`/api/post/getposts?limit=3`);
+            const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/post/getposts?limit=3`);
             const data = await res.json();
             if (res.ok) {
               setRecentPosts(data.posts);
