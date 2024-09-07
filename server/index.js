@@ -21,13 +21,19 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true
   }));
-  
+
   app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://my-personal-blog-client-one.vercel.app');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH');
     next();
   });
+
+  app.options('*', cors({
+    origin: "https://my-personal-blog-client-one.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    credentials: true
+  }));
 
 dotenv.config()
 app.use(cookieParser())
