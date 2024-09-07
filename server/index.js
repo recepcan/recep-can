@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(cors({
     origin: "https://my-personal-blog-client-one.vercel.app", // Sonundaki / kaldırıldı
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    credentials: true
+   credentials: 'include'
   }));
 
   app.use((req, res, next) => {
