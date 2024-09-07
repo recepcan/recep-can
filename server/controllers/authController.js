@@ -54,7 +54,7 @@ export const signIn = async (req, res, next) => {
          id: validUser._id, 
          isAdmin: validUser.isAdmin },
       process.env.JWT_SECRET,
-      {expiresIn:'1h'}
+      {expiresIn:'1d'}
     );
 
     const { password: pass, ...rest } = validUser._doc;
@@ -62,7 +62,11 @@ export const signIn = async (req, res, next) => {
     res
       .status(200)
       .cookie('access_token', token, {
-        httpOnly: true,
+       httpOnly: true, // Ensures cookie can't be accessed via JavaScript
+        secure: process.env.NODE_ENV === 'production', // Ensures cookie is sent over HTTPS in production
+        sameSite: 'none', // Allows cross-site cookies
+        expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // Cookie expiration
+     
       })
       .json(rest)
       
@@ -79,7 +83,7 @@ export const google = async (req, res, next) => {
       const token = jwt.sign(
         { id: user._id, isAdmin: user.isAdmin },
         process.env.JWT_SECRET,
-        {expiresIn:'1m'}
+        {expiresIn:'1d'}
       );
       const { password, ...rest } = user._doc;
       res
