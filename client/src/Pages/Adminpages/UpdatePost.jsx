@@ -29,7 +29,7 @@ const {currentUser}=useSelector(state=>state.user)
   useEffect(() => {
     try {
       const fetchPost = async () => {
-        const res = await fetch(`/api/post/getposts?postId=${postId}`);
+        const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/post/getposts?postId=${postId}`);
         const data = await res.json();
         if (!res.ok) {
           
@@ -96,7 +96,7 @@ const {currentUser}=useSelector(state=>state.user)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
+      const res = await fetch(`https://my-personal-blog-onvercel-api.vercel.app/api/post/updatepost/${formData._id}/${currentUser._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

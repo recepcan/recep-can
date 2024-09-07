@@ -18,7 +18,7 @@ function DashSidebar({adminMenu}) {
   const [tab, setTab] = useState('');
    const handleSignout = async () => {
     try {
-      const res = await fetch('/api/auth/sign-out', {
+      const res = await fetch('https://my-personal-blog-onvercel-api.vercel.app/api/auth/sign-out', {
         method: 'POST',
       });
       const data = await res.json();
