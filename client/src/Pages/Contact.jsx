@@ -14,7 +14,7 @@ function Contact() {
       transition={{ duration: .5 }}
       exit={{ opacity: 0 }}
       className='  border-red-500  dark:text-white relative  transition-colors duration-500 w-full
-     flex items-center justify-center min-h-screen dark:bg-gray-900 py-5 md:py-20'>
+     flex items-center justify-center min-h-screen dark:bg-[#030620] py-5 md:py-20'>
      
        
         <Connect />

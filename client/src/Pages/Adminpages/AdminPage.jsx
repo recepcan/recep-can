@@ -52,9 +52,9 @@ function AdminPage() {
 
 
       <div className={`md:flex-1 ${adminMenu && "max-md:hidden" } w-full 
-        min-h-full box-border p-2 max-h-screen overflow-y-auto  dark:bg-gray-900 border-black`} >
+        min-h-full box-border p-2 max-h-screen overflow-y-auto  dark:bg-[#030620] border-black`} >
       
-      <div className='w-full uppercase flex items-center justify-around  p-3 bg-[#1a2e44] text-white
+      <div className='w-full uppercase flex items-center justify-around  p-3 bg-[#1a2e44]  text-white
        rounded-sm mb-5 shadow-md shadow-gray-400'>
       <h1>Edit {tab} Page</h1>
       {

@@ -10,11 +10,14 @@ import { MdContentPaste, MdCreateNewFolder } from "react-icons/md";
 import { PiPhoneDisconnectThin } from "react-icons/pi";
 import { IoCloseSharp, IoDocumentText } from "react-icons/io5";
 import { FaPhoneFlip } from 'react-icons/fa6';
-import { FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle, FaMoon } from 'react-icons/fa';
+import { BiSolidSun } from 'react-icons/bi';
+import {toggleTheme} from '../../store/headerSlice'
 function DashSidebar({adminMenu}) {
   const location = useLocation();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
+  const { theme } = useSelector((state) => state.header);
   const [tab, setTab] = useState('');
    const handleSignout = async () => {
     try {
@@ -75,7 +78,7 @@ function DashSidebar({adminMenu}) {
   // console.log(currentUser.isAdmin)
   return (
     <div className='w-full min-h-screen pt-14
-         flex  flex-col justify-between bg-[#1a2e44]  space-y-5    shadow-lg shadow-gray-400'>
+         flex  flex-col justify-between bg-black space-y-5    shadow-lg shadow-gray-400'>
 
 
       <div className='flex flex-col  '>
@@ -103,11 +106,23 @@ function DashSidebar({adminMenu}) {
             </Link>
           ))
         }
-
+        <button
+        className='  w-full
+               rounded-none p-4 space-x-5     hover:bg-[#38445e] text-gray-400
+                 flex items-center justify-start text-xl font-extrabold'
+        onClick={() => dispatch(toggleTheme())} >
+        
+        {theme === 'dark'
+            ?
+            <BiSolidSun className='text-orange-400 text-2xl' />
+            :
+            <FaMoon className='text-purple-500 text-2xl' />} <h3 className={`${adminMenu? 'visible' : 'hidden'}`}>Theme</h3>
+           
+    </button>
 
       </div>
 
-      <div className={`flex ${adminMenu? 'flex-row':'flex-col space-y-3'} items-center justify-between text-white bg-slate-700  p-2 shadow-sm shadow-gray-400`}>
+      <div className={`flex ${adminMenu? 'flex-row':'flex-col space-y-3'} items-center justify-between text-white bg-black  p-2 shadow-sm shadow-gray-400`}>
         {location.pathname == '/admin' &&
           <button onClick={handleSignout} className='  text-white  bg-red-500  font-semibold p-1 rounded-full'>
             <AiFillLeftCircle className='text-3xl ' />

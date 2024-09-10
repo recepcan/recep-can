@@ -78,9 +78,9 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
 
 
   return (
-    <div className='w-full  border-black  flex flex-col items-center
-     bg-gradient-to-b from-gray-100 via-sky-200 to-gray-100
-     dark:from-gray-900 dark:via-blue-950 dark:to-gray-900 '>
+    <div className='w-full  border-black  flex flex-col items-center 
+     bg-gray-100
+     dark:bg-[#030620] '>
       <h1 className='text-5xl lg:text-7xl font-inter -tracking-[1px] leading-tight font-extrabold 
        from-blue-800 via-blue-600 to-purple-500 
         bg-clip-text text-transparent bg-gradient-to-br
@@ -106,8 +106,8 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
         </div>
 
 
-        <div className="w-full lg:w-1/2 h-full space-y-3  p-5 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-gray-400 hover:shadow-gray-600 
-        transition-all dark:border border-blue-500 bg-white dark:bg-gray-950">
+        <div className="w-full lg:w-1/2 h-full space-y-3  p-5 rounded-lg flex items-center justify-center flex-col  
+        transition-all  border-blue-500 bg-transparent">
 
           
             <h1 className='text-3xl lg:text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter
@@ -122,7 +122,7 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
              name='name'
               id='name'
              placeholder='Name&Surname'
-              className='w-full p-5  rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
+              className='w-full p-5  rounded-lg  font-bold bg-gray-100 dark:bg-[#030620] border border-black  dark:border-white dark:text-white ' />
 
             <input 
             onChange={handleChange}
@@ -130,7 +130,7 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
             name="email"
             id="email"
             placeholder='email' 
-            className='w-full p-5  rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100' />
+            className='w-full p-5  rounded-lg  font-bold bg-gray-100 dark:bg-[#030620] border border-black  dark:border-white dark:text-white ' />
            
             <textarea 
             type='text'
@@ -138,7 +138,7 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
             id='message'
             onChange={handleChange}
              placeholder='Your Message' 
-             className='w-full p-5  rounded-lg text-white font-bold bg-gray-300 dark:bg-green-100'>
+             className='w-full p-5  rounded-lg  font-bold bg-gray-100 dark:bg-[#030620] border border-black  dark:border-white dark:text-white '>
             </textarea>
            
             <div className='flex flex-col sm:flex-row w-full sm:space-x-5 items-center justify-center '>
@@ -151,7 +151,9 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
             <button 
             disabled={!verified}
             onClick={handleSubmit}
-            className='p-5 text-xl w-full  rounded-lg bg-gradient-to-b hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500  from-blue-200 via-blue-300 to-blue-400 '>
+            className='p-5 text-xl w-full  rounded-lg hover:scale-105 text-white font-inter font-semibold 
+             bg-gradient-to-b  hover:bg-gradient-to-l transition-all  duration-500 
+               from-green-700 via-green-600 to-green-400  '>
               Send
               
               </button>

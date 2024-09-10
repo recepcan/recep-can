@@ -27,7 +27,7 @@ function Hizmetler() {
 
   return (
 
-    <div className='dark:bg-gray-900  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
+    <div className='dark:bg-dark:bg-[#030620]  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
 
       <div className='sm:w-[90%]   flex flex-col lg:flex-row space-y-5 lg:space-x-5  border-red-500'>
         <div className='max-md:pt-10  border-red-500 lg:w-1/2 w-full min-h-[850px] space-y-5 lg:space-y-12 
@@ -35,7 +35,7 @@ function Hizmetler() {
 
           <h1
             className=' text-3xl md:text-5xl  font-bold font-inter
-              bg-clip-text text-transparent  bg-gradient-to-r
+              bg-clip-text text-transparent bg-gradient-to-r
                from-sky-500 via-purple-500 to-red-500
                dark:from-sky-100 dark:via-sky-300 dark:to-sky-500 '>
             What I Do 
