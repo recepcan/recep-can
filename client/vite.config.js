@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://my-personal-blog-onvercel-api.vercel.app/',
+        target: 'https://my-personal-blog-onvercel-api.vercel.app',
         changeOrigin: true, // Origin başlığını değiştirir
-        secure: true, // HTTPS yerine HTTP kullanıyorsanız
+        secure: false, 
       },
     },
   },
