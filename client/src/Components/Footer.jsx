@@ -42,7 +42,7 @@ function Footer() {
       <div className='  max-lg:w-full flex-wrap flex flex-col items-center justify-center 
           dark:text-white text-lg border-white'>
         <h1 className='text-2xl font-bold font-inter'>Hizmetler</h1>
-        <div className='dark:text-gray-400'>
+        <div className='dark:text-gray-400 '>
           <button className=' flex items-center justify-center  text-lg p-2   w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all '>
             Web Tasarım
           </button>
@@ -62,18 +62,18 @@ function Footer() {
       <div className='  max-lg:w-full flex-wrap flex flex-col items-center justify-center 
       dark:text-white text-lg border-white'>
         <h1 className='text-2xl font-bold font-inter'>Sosyal Medya</h1>
-        <div className='dark:text-gray-400'>
-          <button className=' flex items-center justify-center  text-lg p-2 text-gray-500 hover:underline dark:hover:text-white  w-[300px]     rounded-lg  hover:scale-110 transition-all '>
-            İnstagram <FaInstagram className='text-xl text-red-400' />
+        <div className='dark:text-gray-400 '>
+          <button className=' flex items-center justify-start pl-24 space-x-2   text-lg p-2 text-gray-500 hover:underline dark:hover:text-white  w-[300px]     rounded-lg  hover:scale-110 transition-all '>
+             <FaInstagram className='text-xl text-red-400' /> <h1>İnstagram</h1>
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
-            Linked <FaLinkedin className='text-xl text-sky-400' />
+          <button className='flex items-center justify-start pl-24 space-x-2   text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+             <FaLinkedin className='text-xl text-sky-400' /><h1>Linkedin</h1>
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px] text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
-            Github <FaGithub className='text-xl text-purple-500' />
+          <button className='flex items-center justify-start pl-24 space-x-2   text-lg p-2  w-[300px] text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+             <FaGithub className='text-xl text-purple-500' /><h1>Github</h1>
           </button>
-          <button className='flex items-center justify-center  text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
-            Whatsapp <FaWhatsapp className='text-xl text-green-400' />
+          <button className='flex items-center justify-start pl-24 space-x-2   text-lg p-2  w-[300px]  text-gray-500 hover:underline dark:hover:text-white    rounded-lg  hover:scale-110 transition-all'>
+             <FaWhatsapp className='text-xl text-green-400' /><h1>Whatsapp</h1>
           </button>
         </div>
         
