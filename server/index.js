@@ -15,8 +15,16 @@ import cors from 'cors'
  
 const __dirname=path.resolve()
 
-// Tüm istekler için CORS'u etkinleştir
-app.use(cors());
+// Tüm istekler için CORS'u etkinleştir,
+
+
+
+app.options('*', cors({
+    origin: 'https://my-personal-blog-recepcan.onrender.com',
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    credentials: true
+  }));
+  
 
 dotenv.config()
 app.use(cookieParser())
