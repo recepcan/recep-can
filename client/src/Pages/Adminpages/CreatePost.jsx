@@ -122,7 +122,7 @@ function CreatePost() {
                       
                             </div>  )
                     }
-               <div className='  border-red-500 lg:h-72 h-72'>
+               <div className='  border-red-500 lg:h-80 h-72'>
                <ReactQuill 
                theme='snow'
                 placeholder='write on the line' 
