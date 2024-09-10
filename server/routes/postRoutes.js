@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/create', [verifyToken,verifyAdmin], create)
 router.get('/getposts', getposts)
-router.delete('/deletepost/:postId/:userId', [verifyAdmin], deletepost)
+router.delete('/deletepost/:postId/:userId',  deletepost)
 router.patch('/updatepost/:postId/:userId', [verifyToken,verifyAdmin], updatepost)
 
 
