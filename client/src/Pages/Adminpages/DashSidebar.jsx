@@ -77,14 +77,14 @@ function DashSidebar({adminMenu}) {
 
   // console.log(currentUser.isAdmin)
   return (
-    <div className='w-full min-h-screen pt-14
-         flex  flex-col justify-between bg-black space-y-5    shadow-lg shadow-gray-400'>
+    <div className='w-full min-h-screen md:border-r
+         flex  flex-col justify-between bg-[#030620] space-y-5    shadow-lg shadow-gray-400'>
 
 
-      <div className='flex flex-col  '>
+      <div className='flex flex-col  relative pt-14'>
       <div
       onClick={()=>dispatch(setadminMenu())} 
-      className='bg-gray-300 z-50 bg-gradient-to-t from-sky-300 via-blue-500 to-purple-600 text-white flex  items-center justify-center rounded-lg text-4xl w-10 h-10 absolute top-2 left-2 '>
+      className=' text-white flex  items-center justify-center rounded-lg text-4xl w-10 h-10 absolute top-2 right-2 '>
       {
         adminMenu  ? 
        <IoCloseSharp />
@@ -96,8 +96,8 @@ function DashSidebar({adminMenu}) {
         {
           tabs.map((item, index) => (
             <Link key={index} className={`${tab === item.title && 'text-white font-extrabold'} w-full
-               rounded-none p-4 space-x-5  shadow-sm   hover:bg-[#38445e] text-gray-400
-                 flex items-center justify-start text-xl font-extrabold`}
+               rounded-none p-4 space-x-5  shadow-sm   md:hover:bg-[#38445e] text-gray-400
+                 flex items-center justify-start  text-xl font-extrabold`}
               to={`/admin?tab=${item.title}`}>
               <div className='text-2xl'>{item.icon}</div>
              { 
@@ -108,7 +108,7 @@ function DashSidebar({adminMenu}) {
         }
         <button
         className='  w-full
-               rounded-none p-4 space-x-5     hover:bg-[#38445e] text-gray-400
+               rounded-none p-4 space-x-5     md:hover:bg-[#38445e] text-gray-400
                  flex items-center justify-start text-xl font-extrabold'
         onClick={() => dispatch(toggleTheme())} >
         
@@ -122,7 +122,7 @@ function DashSidebar({adminMenu}) {
 
       </div>
 
-      <div className={`flex ${adminMenu? 'flex-row':'flex-col space-y-3'} items-center justify-between text-white bg-black  p-2 shadow-sm shadow-gray-400`}>
+      <div className={`flex ${adminMenu? 'flex-row':'flex-col space-y-3'} items-center justify-between text-white   p-2 shadow-sm shadow-gray-400`}>
         {location.pathname == '/admin' &&
           <button onClick={handleSignout} className='  text-white  bg-red-500  font-semibold p-1 rounded-full'>
             <AiFillLeftCircle className='text-3xl ' />

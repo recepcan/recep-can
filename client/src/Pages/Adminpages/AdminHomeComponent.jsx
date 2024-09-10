@@ -6,24 +6,9 @@ import { Outlet } from 'react-router-dom'
 export default function AdminHomeComponent() {
   return (
     <>
-    <div className=' w-full    min-h-full flex-1  space-y-5 rounded-lg relative '>
+    <div className=' w-full   min-h-full flex-1  space-y-5 rounded-lg relative '>
       
-      <div className='w-full md:flex-row flex flex-col items-center justify-between  h-full '>
-     {/*<div className='flex flex-col space-x-5 w-full md:w-1/2  border-red-500'>
-     <GetPosts limit={1} />
-     
-     
-     </div>*/}
-      
-     <div className='md:w-1/2 w-full p-5 space-y-5  rounded-lg h-full shadow-md shadow-gray-400' >
-     <div>
-</div>
-     
-    
-
-
-      </div>
-      </div>
+  Admin Home Component
      
     </div>
  
