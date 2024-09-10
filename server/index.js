@@ -18,9 +18,11 @@ app.use(express.json())
 
 app.use(cors({
     origin: 'https://my-personal-blog-client-one.vercel.app', // Frontend URL'nizi buraya yazın
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     credentials: true // Cookie'lerin cross-origin isteklerde gönderilmesini sağlar
   }));
+
+  
 
 dotenv.config()
 app.use(cookieParser())
