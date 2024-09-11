@@ -24,6 +24,7 @@ import ForgotPassword from '../Pages/ForgotPassword'
 import ResetPassword from '../Pages/ResetPassword'
 import Contact from '../Pages/Contact'
 import Loading from './Loading'
+import ScrollToTop from './ScrollToTop'
 function Layout() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
@@ -33,7 +34,7 @@ function Layout() {
     return (
 
         <div className='relative'>
-
+        <ScrollToTop/>
 
 
             {
