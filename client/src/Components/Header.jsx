@@ -142,7 +142,7 @@ function Header() {
 
                 <div className='max-md:flex-row-reverse flex items-center justify-between' >
                     <button
-                        className=' pl-5    rounded-lg'
+                        className=' pl-5  max-md:hidden rounded-lg'
                         onClick={() => dispatch(toggleTheme())} >
                         {theme === 'dark'
                             ?

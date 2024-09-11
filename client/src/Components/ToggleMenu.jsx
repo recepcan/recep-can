@@ -1,48 +1,103 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { changeLanguage, toggleMenu } from '../store/headerSlice'
-import { FaFlagCheckered } from 'react-icons/fa'
-import { Links } from '../store/Links.js'
+import { changeLanguage, toggleMenu, toggleTheme } from '../store/headerSlice'
+import { FaFlagCheckered, FaInfoCircle, FaMoon } from 'react-icons/fa'
+// import { Links } from '../store/Links.js'
 import { IoCloseSharp } from 'react-icons/io5'
 import { motion } from 'framer-motion'
+import { BiSolidSun } from 'react-icons/bi'
+import { FaPhoneFlip } from 'react-icons/fa6'
+import { GoHomeFill } from 'react-icons/go'
+import { MdManageAccounts, MdOutlineManageAccounts } from 'react-icons/md'
 function ToggleMenu() {
-    const { menu, language } = useSelector(state => state.header)
+    const { menu, language, theme } = useSelector(state => state.header)
     const dispatch = useDispatch()
+
+    const Links = [
+        {
+            id: 'Anasayfa',
+            name: 'Anasayfa',
+            to: '/',
+            icon: <GoHomeFill />
+        },
+        {
+            id: 'about',
+            name: 'About',
+            to: '/about',
+            index: true,
+            icon: <FaInfoCircle />
+        },
+        {
+            id: 'Contact',
+            name: 'Contact',
+            to: '/contact',
+            icon: <FaPhoneFlip />
+
+        },
+        {
+            id: 'admin',
+            name: 'Admin',
+            to: '/admin',
+            icon: <MdManageAccounts />
+
+
+        }
+
+    ]
     return (
 
-            <motion.div
-                initial={{ top: -400 }}
-                animate={{ top: 0 }}
-                exit={{ top: -400 }}
-                transition={{ duration: .3 }}
-                className='absolute w-full  bg-white dark:bg-[#030620] z-50 overflow-none p-5 pt-20
+        <motion.div
+            initial={{ top: -400 }}
+            animate={{ top: 0 }}
+            exit={{ top: -400 }}
+            transition={{ duration: .3 }}
+            className='absolute w-full  bg-white dark:bg-[#030620] z-50 overflow-none p-5 pt-20
          dark:text-white transition-colors duration-300 min-h-screen text-white
           left-0  top-0 bottom-0 right-0 flex flex-col gap-2 items-center justify-start'>
-                <div className='w-10 h-10 absolute right-5 top-5  bg-black  rounded-full text-4xl text-white font-semibold
+            <div className='w-10 h-10 absolute right-5 top-5    rounded-full text-4xl text-black dark:text-white font-semibold
            flex items-center justify-center'
-                    onClick={() => dispatch(toggleMenu())}>
-                    <IoCloseSharp />
-                </div>
-                {
-                    Links?.map((item, index) => (
+                onClick={() => dispatch(toggleMenu())}>
+                <IoCloseSharp />
+            </div>
+            {
+                Links?.map((item, index) => (
 
-                        <NavLink key={index} to={item.to} className=' text-slate-950  dark:text-white p-5 border w-full  rounded-lg  
-                         flex text-center items-center justify-center'
-                            onClick={() => dispatch(toggleMenu())}>
-
+                    <NavLink key={index} to={item.to} className=' text-slate-950  dark:text-white p-5 border w-full  rounded-lg  
+                         flex text-center items-center justify-center '
+                        onClick={() => dispatch(toggleMenu())}>
+                        <div className='flex items-center justify-start w-1/3  space-x-3'>
+                        <h1>
                             {
-                                item.name
-                            }
+                                item.icon
+                            }</h1>
+                        <h1>{
+                            item.name
+                        }</h1>
+                        </div>
 
 
-                        </NavLink>
+
+                    </NavLink>
 
 
-                    ))}
+                ))}
+            <button
+                className=' pl-5   text-slate-950  dark:text-white p-5 border w-full  rounded-lg  
+                         flex text-center items-center justify-center '
+                onClick={() => dispatch(toggleTheme())} >
 
+                <div className='flex items-center justify-start w-1/3  space-x-3'>
+                {theme === 'dark'
+                    ?
+                    <BiSolidSun className='text-orange-400 text-2xl' />
+                    :
+                    <FaMoon className='text-purple-700 text-xl' />}
+                <h1>Theme</h1>
+                </div>
+            </button>
 
-            </motion.div>
+        </motion.div>
 
 
     )

@@ -40,7 +40,7 @@ function DashSidebar({adminMenu}) {
     const tabFromUrl = urlParams.get('tab');
     if (tabFromUrl) {
       setTab(tabFromUrl);
-      console.log(tabFromUrl)
+      // console.log(tabFromUrl)
     }
   }, [location.search]);
 
