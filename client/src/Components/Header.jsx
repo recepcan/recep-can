@@ -12,7 +12,7 @@ import Dropdown from './Dropdown';
 import { IoMoonSharp } from "react-icons/io5";
 import { GoHomeFill } from "react-icons/go";
 import { FaPhoneFlip } from 'react-icons/fa6';
-import logo from '../../public/logopng.png'
+import logo from '../../public/logo-production.png'
 function Header() {
 
 
@@ -103,10 +103,12 @@ function Header() {
             dark:bg-black/30 dark:text-white  dark:border-b border-blue-500   transition-colors duration-300
         md:fixed max-md:h-[50px] '>
      <Link to="/">
-                <div className='flex items-center'>
-                <img className='w-52 h-16 object-contain ' src={logo} alt="" />
+                <div className='flex items-center text-3xl font-bold font-inter text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-sky-500 to-sky-300'>
 
-{/*                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
+                   Recep Can
+{/*                 <img className='w-52 h-16 object-contain ' src={logo} alt="" />
+  
+                     <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
 */}                </div>
             </Link>
 
