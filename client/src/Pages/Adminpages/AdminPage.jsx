@@ -56,11 +56,11 @@ function AdminPage() {
       
       <div className='w-full uppercase flex items-center justify-around  p-3 bg-[#1a2e44]  text-white
        rounded-sm mb-5 shadow-md shadow-gray-400'>
-      <h1>Edit {tab} Page</h1>
+      <h1 className='text-xl'>Edit {tab} Page</h1>
       {
         tab==="posts" && 
         <Link to={'/create-post'} className=' flex flex-col'>
-        <button className='md:w-72 w-full p-4 rounded-lg  text-white font-extrabold bg-gradient-to-tr from-pink-500 via-purple-500 to-sky-500  '>
+        <button className='md:w-72 w-full p-3 rounded-lg text-xl text-white font-extrabold bg-gradient-to-tr from-green-700 via-green-500 to-green-300 '>
           Create Post
         </button>
       </Link>

@@ -12,6 +12,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import { MdCloudUpload, MdFileUpload } from 'react-icons/md';
 
 
 
@@ -94,23 +95,25 @@ function CreatePost() {
             <form className='flex flex-col gap-4 space-y-5' onSubmit={handleSubmit}>
 
                 <input onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' 
-                className='flex-1 p-2 dark:bg-gray-900 border border-black dark:border-white rounded-lg  font-bold outline-1' />
-                <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center border-teal-500 border-dotted p-3 '>
+                className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
+                <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center dark:border-white rounded-lg border-black border-dotted p-3 '>
                     <input onChange={(e)=>setFile(e.target.files[0])} 
                     type="file"
                      accept='image/*'
                       className='bg-gradient-to-tr p-2 rounded-lg
-                     text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500' />
+                     text-white font-bold bg-gradient from-blue-700 via-blue-500 to-blue-300' />
 
                     <button type='button' 
                     onClick={handleUpdloadImage} 
                     disabled={imageUploadProgress} 
-                    className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold bg-gradient from-pink-600 via-purple-500 to-blue-500'> {
+                    className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold  
+                     bg-gradient from-green-700 via-green-500 to-green-300'> {
                         imageUploadProgress? (
                             <div className='w-16 h-16'> 
                             <CircularProgressbar value={imageUploadProgress} text={`${imageUploadProgress || 0}%`}/>
                             </div>
-                        ):("upload")
+                        ):(<div className='flex items-center justify-center space-x-3 text-xl'><h1 className=''>upload</h1> <MdCloudUpload  className=' rounded text-white text-2xl'/></div>) 
+
                     }</button>
             
                 
@@ -136,7 +139,7 @@ function CreatePost() {
                 <button 
                  type='submit '
                  className=' p-4 rounded-lg text-white font-bold
-                  bg-gradient-to-tr from-pink-600 via-purple-500 to-blue-500'>
+                  bg-gradient-to-tr from-green-700 via-green-500 to-green-300'>
                  Publish
                  </button>
             </form>

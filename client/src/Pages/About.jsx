@@ -35,7 +35,7 @@ function About() {
             dark:from-[#030620] dark:via-[#030620] dark:to-black'>
             <h1 className='lg:text-5xl  text-2xl  bg-clip-text text-transparent  bg-gradient-to-r 
             
-            from-blue-600 via-blue-800 to-purple-800
+            from-blue-600 via-blue-800 to-purple-800 p-5
           dark:bg-gradient-to-r dark:from-blue-100 dark:via-blue-200 dark:to-blue-300
             font-bold font-inter z-10   '>
               Technologies I Am Using

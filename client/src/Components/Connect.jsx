@@ -93,9 +93,9 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
 
          
             <h1 className='text-3xl lg:text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter
-          bg-clip-text text-transparent bg-gradient-to-br
+          bg-clip-text text-transparent bg-gradient-to-br  p-5
             from-blue-800 via-blue-600 to-purple-500 
-        dark:from-red-100 dark:via-red-300 dark:to-red-500'>
+        dark:from-green-100 dark:via-green-300 dark:to-green-500'>
              {textById?.title}
              </h1>
 
@@ -112,8 +112,8 @@ if (textByIdError) return <div>Error: {textByIdError}</div>;
           
             <h1 className='text-3xl lg:text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter
               bg-clip-text text-transparent bg-gradient-to-br
-            from-blue-800 via-blue-600 to-purple-500 
-        dark:from-red-100 dark:via-red-300 dark:to-red-500'>
+            from-blue-800 via-blue-600 to-purple-500   p-5
+        dark:from-orange-100 dark:via-orange-300 dark:to-orange-500'>
             Send me an email
             </h1>
             <input 

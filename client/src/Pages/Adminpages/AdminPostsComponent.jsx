@@ -97,9 +97,9 @@ export default function DashPosts() {
       {currentUser.isAdmin && data.posts.length > 0 ? (
         <div className='flex   border-red-500 flex-col max-md:min-w-[800px]  md:w-full'>
           <div className='shadow-md flex-1   border-red-500'>
-            <div className='flex justify-evenly bg-gray-300 rounded-tl-lg rounded-tr-lg'>
+            <div className='flex justify-evenly bg-gray-300 rounded-tl-md rounded-tr-md'>
               <div className='p-5 w-1/6 hover:bg-gray-500 dark:bg-gray-500 hover:text-white 
-              transition-all  flex items-center justify-center font-extrabold rounded-tl-lg '>
+              transition-all  flex items-center justify-center font-extrabold rounded-tl-md '>
                 Date updated
               </div>
               <div className='p-5 w-1/6 hover:bg-gray-500 dark:bg-gray-500 hover:text-white
@@ -119,7 +119,7 @@ export default function DashPosts() {
                 Delete
               </div>
               <div className='p-5 w-1/6 bg-sky-700 flex  text-white
-               hover:bg-sky-400 transition-all items-center justify-center font-extrabold rounded-tr-lg '>
+               hover:bg-sky-400 transition-all items-center justify-center font-extrabold rounded-tr-md '>
                 <span>Edit</span>
               </div>
             </div>

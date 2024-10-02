@@ -21,13 +21,14 @@ function GetPosts({ limit }) {
     return <div>No posts available</div>;
   }
 
-  if (loading) {
-    return <Loading />
-  }
   
   if (error) { 
     return  toast.error(error);
   }
+  if (loading) {
+    return <Loading />
+  }
+  
 
   return (
     <div className='w-full flex   items-center justify-center flex-wrap p-5 gap-5'>

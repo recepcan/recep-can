@@ -12,6 +12,7 @@ import Dropdown from './Dropdown';
 import { IoMoonSharp } from "react-icons/io5";
 import { GoHomeFill } from "react-icons/go";
 import { FaPhoneFlip } from 'react-icons/fa6';
+import logo from '../../public/logopng.png'
 function Header() {
 
 
@@ -99,13 +100,14 @@ function Header() {
 
             className='w-full  flex  items-center justify-around max-md:justify-between max-md:px-5 max-md:flex-row-reverse 
              h-[70px] z-50   backdrop-blur-md  bg-white/20 text-[#6666]     
-            dark:bg-black/30 dark:text-white dark:border-b border-blue-500   transition-colors duration-300
+            dark:bg-black/30 dark:text-white  dark:border-b border-blue-500   transition-colors duration-300
         md:fixed max-md:h-[50px] '>
-
-            <Link to="/">
+     <Link to="/">
                 <div className='flex items-center'>
-                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
-                </div>
+                <img className='w-52 h-16 object-contain ' src={logo} alt="" />
+
+{/*                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
+*/}                </div>
             </Link>
 
 
@@ -126,7 +128,10 @@ function Header() {
                                     <NavLink
                                         id={item.id}
                                         to={item.to}
-                                        className={({ isActive }) => isActive ? 'dark:text-sky-300  text-black' : 'hover:text-black dark:hover:text-sky-300 shadow-md shadow-gray-400 rounded-lg'}
+                                        className={({ isActive }) => 
+                                            isActive 
+                                        ? 'dark:text-sky-300  text-black' 
+                                         : 'hover:text-black dark:hover:text-sky-300 shadow-md shadow-gray-400 rounded-lg'}
                                     >
                                         <div className="p-2 items-center lowercase justify-between space-x-1 flex box-border h-full transition-colors duration-300 font-extrabold text-md font-mono">
                                             <h2>{item.name}</h2>

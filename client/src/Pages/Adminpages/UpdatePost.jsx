@@ -13,6 +13,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate ,useParams} from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { MdCloudUpload } from 'react-icons/md';
 
 function UpdatePost() {
   const {postId}=useParams()
@@ -121,7 +122,7 @@ const {currentUser}=useSelector(state=>state.user)
 
 
     return (
-        <div className='p-3 max-w-3xl mx-auto min-h-screen md:pt-20 space-y-5 dark:bg-gray-900 dark:text-white '>
+        <div className='p-3 max-w-3xl mx-auto min-h-screen md:pt-20 space-y-5 dark:bg-[#030620] dark:text-white '>
             <h1 className='text-center text-3xl  font-semibold font-inter'> Update Post</h1>
 
             <form className='flex flex-col gap-4 space-y-10' onSubmit={handleSubmit}>
@@ -134,29 +135,28 @@ const {currentUser}=useSelector(state=>state.user)
                   required 
                   id='title'
                    className='flex-1 p-2  rounded-lg  font-bold outline-1 dark:border dark:border-white  dark:bg-gray-900 dark:text-white ' />
-                <div 
-                className='border-4 gap-4 flex md:flex-row flex-col justify-between items-center
-                 border-teal-500 border-dotted p-3 '>
-                    <input  
-                    onChange={(e)=>setFile(e.target.files[0])} 
-                    type="file" accept='image/*' 
-                    className='bg-gradient-to-tr p-1 rounded-lg text-white font-bold dark:border dark:border-white
-                    bg-gradient from-pink-600 via-purple-500 to-blue-500' />
-                    <button
-                     type='button' 
-                     onClick={handleUpdloadImage} 
-                     disabled={imageUploadProgress} 
-                     className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold 
-                     bg-gradient from-pink-600 via-purple-500 to-blue-500'> {
-                        imageUploadProgress? (
-                            <div className='w-16 h-16'> 
-                            <CircularProgressbar value={imageUploadProgress} text={`${imageUploadProgress || 0}%`}/>
-                            </div>
-                        ):("upload")
-                    }</button>
-            
-                
-                    </div>
+                   <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center dark:border-white rounded-lg border-black border-dotted p-3 '>
+                   <input onChange={(e)=>setFile(e.target.files[0])} 
+                   type="file"
+                    accept='image/*'
+                     className='bg-gradient-to-tr p-2 rounded-lg
+                    text-white font-bold bg-gradient from-blue-700 via-blue-500 to-blue-300' />
+
+                   <button type='button' 
+                   onClick={handleUpdloadImage} 
+                   disabled={imageUploadProgress} 
+                   className='bg-gradient-to-tr p-2 rounded-lg text-white font-bold  
+                    bg-gradient from-green-700 via-green-500 to-green-300'> {
+                       imageUploadProgress? (
+                           <div className='w-16 h-16'> 
+                           <CircularProgressbar value={imageUploadProgress} text={`${imageUploadProgress || 0}%`}/>
+                           </div>
+                       ):(<div className='flex items-center justify-center space-x-3 text-xl'><h1 className=''>upload</h1> <MdCloudUpload  className=' rounded text-white text-2xl'/></div>) 
+
+                   }</button>
+           
+               
+                   </div>
                     {
                         formData.image && (
                             <div className='w-full h-80 flex items-center justify-center bg-sky-100'>
@@ -174,11 +174,12 @@ const {currentUser}=useSelector(state=>state.user)
                         setFormData({...formData,content:value})
                     }
                 }/>
-                <button  type='submit '
-                 className='bg-gradient-to-tr p-4 rounded-lg text-white font-bold
-                  bg-gradient from-pink-600 via-purple-500 to-blue-500'>
-                   Update
-                   </button>
+                <button 
+                 type='submit '
+                 className=' p-4 rounded-lg text-white font-bold
+                  bg-gradient-to-tr from-green-700 via-green-500 to-green-300'>
+                 Update
+                 </button>
             </form>
         </div>
     )

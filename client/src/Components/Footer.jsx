@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaReact, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import logo from '../../public/logopng.png'
 function Footer() {
   return (
     <div className='w-full   bg-white bottom-0 shadow-inner shadow-gray-400 dark:border-t-2 p-5
@@ -9,9 +10,10 @@ function Footer() {
       <div className='lg:w-1/3 w-full space-y-5'>
         <Link to="/">
           <div className='flex items-center justify-center'>
-            <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>
-              Recep Can
-            </h1>
+          <img className='w-52 h-16 object-contain ' src={logo} alt="" />
+
+          {/*                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
+          */}       
           </div>
         </Link>
         <h2> Copyright©2024 Recep Can. All rights reserved.</h2>
