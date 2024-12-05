@@ -25,6 +25,7 @@ import ResetPassword from '../Pages/ResetPassword'
 import Contact from '../Pages/Contact'
 import Loading from './Loading'
 import ScrollToTop from './ScrollToTop'
+import ErrorPage from '../Pages/ErrorPage'
 function Layout() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
@@ -71,6 +72,8 @@ function Layout() {
                 <Route path='/update-post/:postId' element={<UpdatePost />} />
                 <Route path='/update-text/:textId' element={<UpdateText/>} />
                 <Route path='/create-text' element={<Text />} />
+
+                <Route path="*" element={<ErrorPage />} />
               </Route>
 
             </Routes>
