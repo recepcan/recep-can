@@ -4,22 +4,21 @@ import { Link } from 'react-router-dom'
 import logo from '../../public/logopng.png'
 function Footer() {
   return (
-    <div className='w-full   bg-white bottom-0 shadow-inner shadow-gray-400 dark:border-t-2 p-5
-         border-blue-500 rounded-t-3xl text-black flex flex-col  max-lg:space-y-8 lg:flex-row justify-center text-center items-center
+    <div className='w-full   bg-white bottom-0  
+         border-blue-500  text-black flex flex-col  space-y-12   justify-center text-center items-center
         dark:text-white dark:bg-black transition-colors duration-300 dark:z-50 flex-1'>
-      <div className='lg:w-1/3 w-full space-y-5'>
+      <div className=' w-full  flex flex-col items-center justify-center'>
         <Link to="/">
-          <div className='flex items-center justify-center'>
-          <img className='w-52 h-16 object-contain ' src={logo} alt="" />
+          
+          <img className='w-72 h-52 object-contain ' src={logo} alt="" />
 
-          {/*                    <h1 className='bg-gradient-to-br from-blue-300 via-blue-500 to-purple-500  text-white p-2 rounded-2xl text-xl md:text-3xl font-bold font-sans'>Recep Can</h1>
-          */}       
-          </div>
+          
         </Link>
-        <h2> Copyright©2024 Recep Can. All rights reserved.</h2>
-        <hr className='lg:hidden  border-black  dark:border-sky-400 '/>
+        
+        <hr className='border rounded-xl w-[90%] border-black  dark:border-sky-400 '/>
       </div>
 
+      <div className='w-full flex justify-around items-center'>
       <div className='  max-lg:w-full flex-wrap flex flex-col items-center justify-center 
               dark:text-white text-lg border-white'>
         <h1 className='text-2xl font-bold font-inter'>Bilgi</h1>
@@ -80,7 +79,11 @@ function Footer() {
         </div>
         
       </div>
-
+      </div>
+  
+      <div className='bg-gray-100 dark:bg-gray-900 p-3 w-full '>
+      <h2 className='text-xl font-inter'> Copyright©2024 Recep Can. All rights reserved.</h2>
+      </div>
     </div>
   )
 }

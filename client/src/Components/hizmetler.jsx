@@ -27,10 +27,10 @@ function Hizmetler() {
 
   return (
 
-    <div className='dark:bg-dark:bg-[#030620]  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
+    <div className='dark:bg-dark:bg-[#030620]  border-red-200  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
 
-      <div className='sm:w-[90%]   flex flex-col lg:flex-row space-y-5 lg:space-x-5  border-red-500'>
-        <div className='max-md:pt-10  border-red-500 lg:w-1/2 w-full min-h-[850px] space-y-5 lg:space-y-12 
+      <div className='sm:w-[90%]  h-[750px] flex flex-col lg:flex-row space-y-5 lg:space-x-5  border-blue-500'>
+        <div className='max-md:pt-10  border-red-500 lg:w-1/2 w-full min-h-[750px] space-y-5 lg:space-y-12 
         flex-1 flex-col items-center justify-evenly text-center lg:text-start  '>
 
           <h1

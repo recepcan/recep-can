@@ -27,7 +27,7 @@ function AboutCard() {
        flex flex-col lg:flex-row min-[650px]:min-h-screen items-center justify-center'>
   
       <div className=' lg:w-2/3 w-full space-y-8 border-blue-500 p-10 rounded-lg 
-       shadow-gray-400 shadow-lg  hover:shadow-gray-700 transition-all dark:bg-gray-950
+       shadow-gray-400   hover:shadow-gray-700 transition-all dark:bg-gray-950
         flex flex-col items-center text-left justify-center'>
         {/*  <ProfilCard />    
            <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  

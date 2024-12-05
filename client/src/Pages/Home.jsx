@@ -19,11 +19,11 @@ function Home() {
       exit={{opacity:0}}
       transition={{ duration: .5 }}
       className='dark:text-white  transition-colors duration-500 w-full  relative  border-black
-     flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:py-20'
+     flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:pt-20'
     >
 
       <Hizmetler/>
-      <div className='  bg-gradient-to-t  from-gray-100 via-blue-300  to-gray-100 text-center
+      <div className='  dark:bg-gradient-to-t  bg-[#030620] text-center
        dark:from-[#030620] dark:via-[#2f0552] dark:to-[#030620]'>
       <h1 className='p-10 text-5xl font-semibold font-inter 
       bg-clip-text text-transparent bg-gradient-to-r

@@ -103,7 +103,7 @@ function Header() {
             dark:bg-black/30 dark:text-white  dark:border-b border-blue-500   transition-colors duration-300
         md:fixed max-md:h-[50px] '>
      <Link to="/">
-                <div className='flex items-center text-3xl font-bold font-inter text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-sky-500 to-sky-300'>
+                <div className='flex items-center text-3xl font-bold font-inter text-black dark:text-white'>
 
                    Recep Can
 {/*                 <img className='w-52 h-16 object-contain ' src={logo} alt="" />
