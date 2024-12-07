@@ -19,7 +19,7 @@ function About() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: .5 }}
+      transition={{ duration: 1 }}
       exit={{ opacity: 0 }}
       className='flex min-h-screen relative w-full flex-col z-10 items-center justify-center text-center transition-colors duration-300 bg-zinc-100
     dark:bg-[#030620] dark:text-white dark:z-10 max-md:pt-0 max-xl:pt-16  border-purple-400 '>

@@ -11,7 +11,7 @@ function Contact() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: .5 }}
+      transition={{ duration: 1 }}
       exit={{ opacity: 0 }}
       className='  border-red-500  dark:text-white relative  transition-colors duration-500 w-full
      flex items-center justify-center min-h-screen dark:bg-[#030620] py-5 md:py-20'>

@@ -13,6 +13,8 @@ import { IoMoonSharp } from "react-icons/io5";
 import { GoHomeFill } from "react-icons/go";
 import { FaPhoneFlip } from 'react-icons/fa6';
 import logo from '../../public/logo-production.png'
+import { GrProjects } from "react-icons/gr";
+
 function Header() {
 
 
@@ -61,6 +63,13 @@ function Header() {
             to: '/about',
             index: true,
             icon: <FaInfoCircle />
+        },
+        {
+            id: 'projects',
+            name: 'Projects',
+            to: '/projects',
+            index: true,
+            icon: <GrProjects />
         },
         {
             id: 'Contact',

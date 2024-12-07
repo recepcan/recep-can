@@ -26,6 +26,7 @@ import Contact from '../Pages/Contact'
 import Loading from './Loading'
 import ScrollToTop from './ScrollToTop'
 import ErrorPage from '../Pages/ErrorPage'
+import ProjectPage from '../Pages/ProjectPage'
 function Layout() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
@@ -35,11 +36,11 @@ function Layout() {
     return (
 
         <div className='relative'>
-        <ScrollToTop/>
+            <ScrollToTop />
 
 
             {
-                location.pathname !== '/admin' && location.pathname !== '/sign-in' && location.pathname !== '/sign-up' &&  <Header />
+                location.pathname !== '/admin' && location.pathname !== '/sign-in' && location.pathname !== '/sign-up' && <Header />
             }
 
             {
@@ -47,38 +48,38 @@ function Layout() {
             }
 
             {
-                menu ? 
-                <ToggleMenu /> 
-                :
-                <Routes>
-                <Route path='/' element={<Home />} />
+                menu ?
+                    <ToggleMenu />
+                    :
+                    <Routes>
+                        <Route path='/' element={<Home />} />
 
-                <Route path='/about' element={<About />} />
+                        <Route path='/about' element={<About />} />
 
-                <Route path='/contact' element={<Contact />} />
+                        <Route path='/contact' element={<Contact />} />
 
-                <Route path='/post/:postSlug' element={<Projects />} />
+                        <Route path='/post/:postSlug' element={<Projects />} />
+
+                        <Route path='/projects' element={<ProjectPage/>}/>
 
 
-               <Route path='/sign-in' element={<SignIn />} />
-               <Route path='/forgot-password' element={<ForgotPassword/>} />
-               <Route path='/reset-password/:id/:token' element={<ResetPassword/>} />
-                <Route path='/texts/:textId' element={<TextsPage />} />
-                
+                        <Route path='/sign-in' element={<SignIn />} />
+                        <Route path='/forgot-password' element={<ForgotPassword />} />
+                        <Route path='/reset-password/:id/:token' element={<ResetPassword />} />
+                        <Route path='/texts/:textId' element={<TextsPage />} />
 
-                <Route element={<PrivateRoute />}>
-                <Route path='/admin' element={<AdminPage />} />
-                <Route path='/create-post' element={<CreatePost />} />
-                <Route path='/update-post/:postId' element={<UpdatePost />} />
-                <Route path='/update-text/:textId' element={<UpdateText/>} />
-                <Route path='/create-text' element={<Text />} />
 
-                <Route path="*" element={<ErrorPage />} />
-              </Route>
-
-            </Routes>
+                        <Route element={<PrivateRoute />}>
+                            <Route path='/admin' element={<AdminPage />} />
+                            <Route path='/create-post' element={<CreatePost />} />
+                            <Route path='/update-post/:postId' element={<UpdatePost />} />
+                            <Route path='/update-text/:textId' element={<UpdateText />} />
+                            <Route path='/create-text' element={<Text />} />
+                        </Route>
+                        <Route path="*" element={<ErrorPage />} />
+                    </Routes>
             }
-            
+
             {
                 location.pathname !== '/admin' && location.pathname !== '/sign-in' && location.pathname !== '/sign-up' && <Footer />
             }
@@ -89,4 +90,4 @@ function Layout() {
 
 export default Layout
 
-{ /*                <Route path='/sign-up' element={<SignUp />} /> */} 
+{ /*                <Route path='/sign-up' element={<SignUp />} /> */ } 

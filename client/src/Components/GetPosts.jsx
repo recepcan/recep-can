@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom'
 import { fetchPost6 } from '../store/postSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from './Loading';
+
+
 function GetPosts({ limit }) {
   const [recentPosts, setRecentPosts] = useState(null)
   const dispatch = useDispatch()
   const { data, loading, error } = useSelector(state => state.posts);
 
-  
+
 
   useEffect(() => {
     dispatch(fetchPost6(limit))
@@ -30,20 +32,27 @@ function GetPosts({ limit }) {
   }
   
 
+  
+  
+    
+    
+   
+  
+  
   return (
-    <div className='w-full  flex   items-center justify-center flex-wrap p-5 gap-5'>
+    <div className='w-full  border-blue-500  grid grid-cols-3  items-center justify-center  p-5 gap-5'>
       {
         data.posts ?
           data?.posts?.map((post, i) => (
             <Link to={`/post/${post.slug}`} key={i}>
               <div className='w-[350px]    min-h-[500px] group relative transition-all hover:scale-105 
               flex flex-col items-center space-y-5 rounded-lg
-               bg-white dark:bg-gray-900   shadow-gray-400 dark:border border-white'>
+               bg-gray-300  dark:bg-gray-900 shadow-gray-400 dark:border border-white'>
                 <img className='w-full h-80  group-hover:h-[300px] group-hover:rounded-lg duration-700 rounded-t-lg object-cover  transition-all border-b ' src={post.image} alt={post.title} />
-                <div className='text-2xl font-mono font-semibold line-clamp-1 px-5 absolute bottom-16 
-                 bg-clip-text text-transparent bg-gradient-to-br from-sky-500 via-purple-500 to-red-500 '>
+                <div className='bg-white rounded-lg p-2 text-2xl font-mono font-semibold line-clamp-1 px-5 text-blue-600 '>
                   {post.title}
                 </div>
+                
                 <div className='line-clamp-3 absolute text-sm right-4 bottom-4'>
                   {post.category}
                 </div>

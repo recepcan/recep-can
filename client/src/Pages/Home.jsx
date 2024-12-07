@@ -8,7 +8,8 @@ import ContentCard from '../Components/ContentCard'
 import Loading from '../Components/Loading'
 import { fetchPost6 } from '../store/postSlice'
 import { toast } from 'react-toastify'
-
+import { Link } from 'react-router-dom'
+import { FaCaretRight } from "react-icons/fa";
 
 function Home() {
 
@@ -17,23 +18,32 @@ function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{opacity:0}}
-      transition={{ duration: .5 }}
+      transition={{ duration: 1 }}
       className='dark:text-white  transition-colors duration-500 w-full  relative  border-black
-     flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:pt-20'
+     flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:pt-20 pb-10'
     >
 
       <Hizmetler/>
-      <div className='  dark:bg-gradient-to-t  bg-[#030620] text-center
-       dark:from-[#030620] dark:via-[#2f0552] dark:to-[#030620]'>
+      <div className='  dark:bg-gradient-to-t  text-center
+       '>
       <h1 className='p-10 text-5xl font-semibold font-inter 
       bg-clip-text text-transparent bg-gradient-to-r
        from-sky-500 via-purple-500 to-red-500
        dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
        Recent Posts
        </h1>
-      <GetPosts  limit={8}/>
+      <GetPosts  limit={3}/>
+       
+      
       </div>
-
+      <Link 
+      className='p-3 bg-blue-500 group hover:scale-110 transition-all flex items-center justify-center  rounded-lg text-white text-xl font-inter'
+      to='./projects'>
+      Show All
+      <span className='text-xl text-white'>
+      <FaCaretRight/>
+      </span>
+      </Link>
     </motion.div>
   )
 }

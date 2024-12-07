@@ -53,7 +53,7 @@ function Projects() {
      font-inter font-semibold bg-clip-text bg-gradient-to-tr text-transparent dark:from-blue-100 dark:via-blue-300 dark:to-blue-500 from-blue-600 via-purple-600 to-red-600'>
     {post&& post.title}
     </h1>
-    <div className='lg:w-[900px] w-full   flex items-center justify-center'>
+    <div className='lg:w-[900px] w-full  flex items-center justify-center'>
     <img src={post&&post.image} className='rounded-xl' alt="" />
     </div>
 
