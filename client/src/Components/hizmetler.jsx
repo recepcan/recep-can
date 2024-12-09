@@ -11,27 +11,27 @@ function Hizmetler() {
 
   const dispatch = useDispatch()
 
-  // const [rotation, setRotation] = useState(0);
-  // const handleScroll = () => {
-  //     const scrollTop = window.scrollY;
-  //     setRotation(scrollTop % 120);
-  //   };
+  const [rotation, setRotation] = useState(0);
+  const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setRotation(scrollTop % 120);
+  };
 
 
-  //   useEffect(() => {
-  //     window.addEventListener('scroll', handleScroll);
-  //     return () => {
-  //       window.removeEventListener('scroll', handleScroll);
-  //     };
-  //   }, []);
+  useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
 
   return (
 
     <div className='dark:bg-dark:bg-[#030620]  border-red-200  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
 
-      <div className='sm:w-[90%]  h-[750px] flex flex-col lg:flex-row space-y-5 lg:space-x-5  border-blue-500'>
-        <div className='max-md:pt-10  border-red-500 lg:w-1/2 w-full min-h-[750px] space-y-5 lg:space-y-12 
-        flex-1 flex-col items-center justify-evenly text-center lg:text-start  '>
+      <div className='sm:w-[90%]   py-10 flex flex-col lg:flex-row max-lg:space-y-5 lg:space-x-5  border-blue-500'>
+        <div className='max-md:pt-10 border-red-500 lg:w-1/2 w-full   space-y-5 lg:space-y-12 
+         flex-col items-center justify-evenly text-center lg:text-start  '>
 
           <h1
             className=' text-3xl md:text-5xl  font-bold font-inter
@@ -51,10 +51,15 @@ function Hizmetler() {
         </div>
 
 
-        <div className='lg:w-1/2 w-full h-[850px] flex items-center justify-center text-center    border-purple-500      '
+        <div className='lg:w-1/2 w-full  flex items-center justify-center text-center    border-purple-500      '
 
         >
-          animation
+        <FaReact className='text-sky-600 w-80 h-80 lg:ml-10 '
+        style={{
+
+            transform: `rotate(${rotation}deg)`,
+            transformOrigin: 'center' // Dönüşüm merkezini ortalıyoruz
+        }} />
         </div>
       </div>
 

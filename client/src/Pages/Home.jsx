@@ -23,7 +23,7 @@ function Home() {
      flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:pt-20 pb-10'
     >
 
-      <Hizmetler/>
+      
       <div className='  dark:bg-gradient-to-t  text-center
        '>
       <h1 className='p-10 text-5xl font-semibold font-inter 
@@ -37,7 +37,7 @@ function Home() {
       
       </div>
       <Link 
-      className='p-3 w-[354px] border-2 bg-blue-500 group hover:scale-110 transition-all flex items-center justify-center  rounded-lg text-white text-xl font-inter'
+      className='p-3 w-[354px] border-2 bg-blue-500 dark:bg-green-600 group hover:scale-110 transition-all flex items-center justify-center  rounded-lg text-white text-xl font-inter'
       to='./projects'>
       Show All
       <span className='text-xl text-white'>

@@ -27,7 +27,7 @@ function AboutCard() {
        flex flex-col lg:flex-row min-[650px]:min-h-screen items-center justify-center'>
   
       <div className=' lg:w-2/3 w-full space-y-8 border-blue-500 p-10 rounded-lg 
-       shadow-gray-400   hover:shadow-gray-700 transition-all dark:bg-gray-950
+       shadow-gray-400   hover:shadow-gray-700 transition-all 
         flex flex-col items-center text-left justify-center'>
         {/*  <ProfilCard />    
            <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  
@@ -35,18 +35,22 @@ function AboutCard() {
   
         <h1 className=' text-2xl max-sm:text-lg  max-md:text-2xl max-lg:5xl  xl:text-6xl  md:tracking-wide leading-normal md:leading-tight font-extrabold  font-inter
          bg-gradient-to-b bg-clip-text text-transparent
-          from-blue-600 via-blue-800 to-purple-800
+          from-blue-600 via-blue-800 to-purple-800 p-3
           dark:bg-gradient-to-t dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
         {textById&&textById.title}
         </h1>
   
-        <p className='text-sm md:text-xl font-sans font-semibold '>{textById&&textById.content}</p>
+        <p className='text-sm p-3 md:text-xl font-sans font-semibold '>{textById&&textById.content}</p>
   
         <div className='flex text-sm lg:text-xl w-full p-2   space-x-10'>
-          <button className='md:p-5  p-2 w-56 rounded-lg  hover:scale-95 border-2  border-blue-200 hover:bg-gradient-to-l transition-all  duration-500 bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400  '>
-            Get In Touch</button>
-          <button className='md:p-5  box-border p-2 w-56 rounded-lg bg-transparent border-2  border-blue-200  hover:scale-95 hover:bg-gradient-to-l transition-all  duration-500  from-blue-200 via-blue-300 to-blue-400  '>
-            view my works</button>
+          <Link to={'/contact'} className='md:p-5  p-2 w-56 rounded-lg  hover:scale-95 flex items-center justify-center
+           border-2 dark:border-green-200 border-blue-200 hover:bg-gradient-to-l transition-all
+             duration-500 bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 '>
+            Get In Touch</Link>
+          <Link to={'/projects'} className='md:p-5  box-border p-2 w-56 rounded-lg bg-transparent
+           border-2 dark:border-green-200 border-blue-200  hover:scale-95 hover:bg-gradient-to-l 
+           transition-all  duration-500  from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 flex items-center justify-center '>
+            view my works</Link>
             {/*
               currentUser&& currentUser.isAdmin &&<Link to={`/update-text/66b124be8e2076ecbe826a24`}>
               <button className='p-5 bg-sky-500 rounded-lg font-semibold text-white text-xl '>edit</button>

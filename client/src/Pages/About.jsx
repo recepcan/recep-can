@@ -5,6 +5,7 @@ import Items from '../Components/İtems'
 import { motion } from 'framer-motion'
 
 import AboutCard from '../Components/AboutCard'
+import Hizmetler from '../Components/hizmetler'
 
 
 // import Hizmetler from '../Components/Hizmetler'
@@ -27,7 +28,7 @@ function About() {
         
           <AboutCard  />
 
-
+          <Hizmetler/>
           {/*<Hizmetler />  <Text/> */}
 
           <div className='w-full flex flex-col md:p-10 p-5  border-red-500 items-center space-y-10  min-h-[700px]
@@ -43,7 +44,7 @@ function About() {
 
             <hr className='w-[90%]  border-sky-500' />
 
-            <div className='flex w-full flex-wrap  justify-center items-center gap-3 '>
+            <div className='  grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  gap-3   justify-center items-center '>
 
               <Items />
 
