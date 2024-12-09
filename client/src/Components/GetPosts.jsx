@@ -49,16 +49,16 @@ function GetPosts({ limit }) {
               flex flex-col items-center space-y-5 rounded-lg
                bg-gray-300  dark:bg-gray-900 shadow-gray-400 dark:border border-white'>
                 <img className='w-full h-80   group-hover:rounded-lg duration-700 rounded-t-lg object-cover  transition-all border-b ' src={post.image} alt={post.title} />
-                <div className=' rounded-lg p-2 text-2xl font-mono font-semibold line-clamp-1 px-5 text-blue-600 '>
+                <div className=' rounded-lg p-2 text-2xl font-mono font-semibold line-clamp-1 px-5 text-white '>
                   {post.title}
                 </div>
 
                 <Link to={`/post/${post.slug}`}
-                className='w-[90%] p-2 bg-green-600 text-xl text-white font-inter rounded-lg'>
+                className='w-[90%] p-2 bg-blue-600 text-xl text-white font-inter rounded-lg'>
                 wiev
                 </Link>
                 
-                <div className='line-clamp-3 absolute text-sm right-4 bottom-4'>
+                <div className='line-clamp-3 absolute text-xs right-4 bottom-4'>
                   {post.category}
                 </div>
                 <div className='absolute text-xs left-4 bottom-4'>

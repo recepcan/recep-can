@@ -20,7 +20,7 @@ function Items() {
                 {element.icon}
               </div>
               <div className='text-xl'>
-                {element.name}
+                {element.name} 
               </div>
             </div>
          
@@ -28,7 +28,7 @@ function Items() {
              rounded-lg flex flex-col justify-center items-center  '>
              <div className=' rounded-xl absolute  bg-gradient-to-br from-blue-100 via-blue-300 to-blue-500 dark:bg-black p-2 -top-28 delay-500 duration-500 -scale-100
               group-hover:top-5 group-hover:scale-100'>
-             <h2 className='text-xl font-mono text-black '>
+             <h2 className={`text-xl font-mono text-black `} >
               {element.name}
               </h2>
              </div>
