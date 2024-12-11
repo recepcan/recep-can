@@ -85,18 +85,14 @@ function Connect() {
       {/* <hr className='w-[90%] my-8 lg:my-16 dark:border-white border-black '  /> */}
       <div className=' w-[90%] h-full flex flex-col lg:flex-row max-md:space-y-5 lg:space-x-2 border-yellow-500'>
 
-        <div className='w-full  lg:w-1/2   p-5 flex flex-col space-y-5 lg:space-y-8 rounded-xl 
-        text-center   border-gray-400'>
+        <div className='w-full  lg:w-1/2   p-5 flex flex-col justify-between space-y-5 lg:space-y-8 rounded-xl 
+        text-start border-2  border-gray-400'>
 
-          <h1 className='text-5xl lg:text-7xl font-inter -tracking-[1px] leading-tight font-extrabold 
-        from-blue-800 via-blue-600 to-purple-500 
-         bg-clip-text text-transparent bg-gradient-to-br
-         dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
-          </h1>
+          
           <h1 className='text-3xl lg:text-5xl  -tracking-[1px] leading-tight font-extrabold font-inter
           bg-clip-text text-transparent bg-gradient-to-br  p-5
             from-blue-800 via-blue-600 to-purple-500 
-        dark:from-green-100 dark:via-green-300 dark:to-green-500'>
+        dark:from-green-100 dark:via-green-300 dark:to-green-500 text-center'>
             {textById?.title}
           </h1>
 
@@ -106,30 +102,30 @@ function Connect() {
 
           <div className=" w-full border-red-400  flex-wrap flex flex-col items-center justify-center space-y-5
            dark:text-white text-lg">
-            <h1 className="text-2xl font-bold font-inter">Sosyal Medya</h1>
+            
             <div className="dark:text-gray-400 flex items-center justify-center space-x-2 w-full">
-              <button className="flex items-center justify-center  space-x-2 border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
+              <button className="flex items-center justify-center  space-x-2 md:border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
                 <FaInstagram className="text-xl text-red-400" />
-                <h1>Instagram</h1>
+                <h1 className='max-md:hidden'>Instagram</h1>
               </button>
-              <button className="flex items-center justify-center  space-x-2 border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
+              <button className="flex items-center justify-center  space-x-2 md:border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
                 <FaLinkedin className="text-xl text-sky-400" />
-                <h1>LinkedIn</h1>
+                <h1 className='max-md:hidden'>LinkedIn</h1>
               </button>
-              <button className="flex items-center justify-center  space-x-2 border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
+              <button className="flex items-center justify-center  space-x-2 md:border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
                 <FaGithub className="text-xl text-purple-500" />
-                <h1>GitHub</h1>
+                <h1 className='max-md:hidden'>GitHub</h1>
               </button>
-              <button className="flex items-center justify-center  space-x-2 border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
+              <button className="flex items-center justify-center  space-x-2 md:border text-lg p-2 text-gray-500 hover:underline hover:text-black dark:hover:text-white w-[300px] rounded-lg hover:scale-110 transition-all">
                 <FaWhatsapp className="text-xl text-green-400" />
-                <h1>WhatsApp</h1>
+                <h1 className='max-md:hidden'>WhatsApp</h1>
               </button>
             </div>
           </div>
         </div>
 
 
-        <div className="w-full border-2 lg:w-1/2 h-full space-y-3  p-5 rounded-lg flex items-center justify-center flex-col  
+        <div className="w-full  border-2 lg:w-1/2 h-full space-y-3  p-5 rounded-lg flex items-center justify-center flex-col  
         transition-all  border-gray-300 bg-transparent">
 
 

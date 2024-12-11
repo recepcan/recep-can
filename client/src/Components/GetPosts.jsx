@@ -44,28 +44,35 @@ function GetPosts({ limit }) {
       {
         data.posts ?
           data?.posts?.map((post, i) => (
-            <Link to={`/post/${post.slug}`} key={i}>
+            <div  key={i}>
               <div className='w-[350px]    min-h-[500px] group relative transition-all hover:scale-105 
               flex flex-col items-center space-y-5 rounded-lg
-               bg-gray-300  dark:bg-gray-900 shadow-gray-400 dark:border border-white'>
+               bg-white shadow-sm dark:shadow-none dark:bg-gray-900 shadow-gray-400 dark:border border-white'>
+               
                 <img className='w-full h-80   group-hover:rounded-lg duration-700 rounded-t-lg object-cover  transition-all border-b ' src={post.image} alt={post.title} />
-                <div className=' rounded-lg p-2 text-2xl font-mono font-semibold line-clamp-1 px-5 text-white '>
+                <div className=' rounded-lg p-2 text-2xl font-mono font-semibold line-clamp-1 px-5  '>
                   {post.title}
                 </div>
 
-                <Link to={`/post/${post.slug}`}
-                className='w-[90%] p-2 bg-blue-600 text-xl text-white font-inter rounded-lg'>
-                wiev
-                </Link>
+               <div className='flex space-x-5 w-full p-3'>
+               <Link to={`/post/${post.slug}`}
+               className='w-[90%] p-2 bg-blue-600 text-xl text-white font-inter rounded-lg'>
+               wiev
+               </Link>
+               <Link to="https://personal-blog-qe6z.onrender.com/" target="_blank" rel="noopener noreferrer"
+               className='w-[90%] p-2 bg-green-600 text-xl text-white font-inter rounded-lg'>
+               live demo 
+               </Link>
+               </div>
                 
-                <div className='line-clamp-3 absolute text-xs right-4 bottom-4'>
+                <div className='line-clamp-3 absolute text-xs right-2 bottom-2'>
                   {post.category}
                 </div>
-                <div className='absolute text-xs left-4 bottom-4'>
+                <div className='absolute text-xs left-2 bottom-2'>
                   {new Date(post.createdAt).toLocaleDateString()}
                 </div>
               </div>
-            </Link>
+            </div>
           )) : "there is no post yet"
       }
 

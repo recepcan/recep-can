@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function Projects() {
@@ -54,11 +54,21 @@ function Projects() {
     {post&& post.title}
     </h1>
     <div className='lg:w-[900px] w-full  flex items-center justify-center'>
-    <img src={post&&post.image} className='rounded-xl' alt="" />
+    <div className='w-full bg-gray-300 dark:bg-gray-500 h-96  rounded-xl'>
+   
     </div>
+    <img src={post&&post.image} className='rounded-xl' alt="" />
+   
+    </div>
+    
 
-    <div className='flex justify-between p-3 border-b-2 border-blue-600  dark:border-white mx-auto w-full max-w-2xl text-xs'>
+    <div className='flex space-x-20 justify-between p-3 border-b-2 border-blue-600  dark:border-white mx-auto w-full max-w-2xl text-xs'>
     <span>{post&& new Date(post.createdAt).toLocaleDateString()}</span>
+    <Link to={'https://personal-blog-qe6z.onrender.com/'} target="_blank" rel="noopener noreferrer"
+    className='p-2 dark:border-2 w-full text-xl flex items-center justify-center 
+    bg-transparent bg-gradient-to-r from-green-400 to-green-700  text-white rounded-lg font-bold font-inter'>
+    wiev in live
+    </Link>
     <span className='italic'> {post && (post.content.length / 1000).toFixed(0)} mins read</span>
     </div>
 
