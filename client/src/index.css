@@ -25,9 +25,7 @@ margin: 1.5rem 0;
     
 }
 
-.post-content > * {
-    display: none;
-  }
+
   
   .post-content > :first-child {
     display: block;

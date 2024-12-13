@@ -30,7 +30,7 @@ function ProjectPage() {
        dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
         My Works
        </h1>
-      <GetPosts  limit={8}/>
+      <GetPosts  limit={50}/>
       </div>
 
     </motion.div>

@@ -33,9 +33,9 @@ function AboutCard() {
            <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  
   */}
   
-        <h1 className=' text-2xl max-sm:text-lg  max-md:text-2xl max-lg:5xl  xl:text-6xl  md:tracking-wide leading-normal md:leading-tight font-extrabold  font-inter
-         bg-gradient-to-b bg-clip-text text-transparent
-          from-blue-600 via-blue-800 to-purple-800 p-3
+        <h1 className=' text-2xl max-sm:text-lg  max-md:text-2xl max-lg:5xl  xl:text-6xl  md:tracking-wide leading-normal md:leading-tight font-extrabold
+         bg-gradient-to-r bg-clip-text text-transparent p-3 font-inter
+          from-gray-700 via-gray-900 to-black
           dark:bg-gradient-to-t dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
         {textById&&textById.title}
         </h1>
@@ -43,11 +43,11 @@ function AboutCard() {
         <p className='text-sm p-3 md:text-xl font-sans font-semibold '>{textById&&textById.content}</p>
   
         <div className='flex text-sm lg:text-xl w-full p-2   space-x-10'>
-          <Link to={'/contact'} className='md:p-5  p-2 w-56 rounded-lg  hover:scale-95 flex items-center justify-center
+          <Link to={'/contact'} className='md:p-5  p-2 w-56 rounded-lg text-2xl font-bold  hover:scale-95 flex items-center justify-center
            border-2 dark:border-green-200 border-blue-200 hover:bg-gradient-to-l transition-all
              duration-500 bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 '>
             Get In Touch</Link>
-          <Link to={'/projects'} className='md:p-5  box-border p-2 w-56 rounded-lg bg-transparent
+          <Link to={'/projects'} className='md:p-5 text-2xl  font-bold  box-border p-2 w-56 rounded-lg bg-transparent
            border-2 dark:border-green-200 border-blue-200  hover:scale-95 hover:bg-gradient-to-l 
            transition-all  duration-500  from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 flex items-center justify-center '>
             view my works</Link>

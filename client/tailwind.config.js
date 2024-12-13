@@ -47,6 +47,8 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+        playwrite: ['"Playwrite England"', 'cursive'],
+        robotoSlab: ['"Roboto Slab"', 'serif'], 
       },
       colors: {
       dark: {

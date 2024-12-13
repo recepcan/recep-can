@@ -45,14 +45,15 @@ function GetPosts({ limit }) {
         data.posts ?
           data?.posts?.map((post, i) => (
             <div  key={i}>
-              <div className='w-[350px]    min-h-[500px] group relative transition-all hover:scale-105 
-              flex flex-col items-center space-y-5 rounded-lg
+              <div className='w-[325px] min-[400px]:w-[350px] p-5   min-h-[400px] group relative transition-all hover:scale-105 
+              flex flex-col items-center space-y-3 rounded-lg
                bg-white shadow-sm dark:shadow-none dark:bg-gray-900 shadow-gray-400 dark:border border-white'>
                
-                <img className='w-full h-80   group-hover:rounded-lg duration-700 rounded-t-lg object-cover  transition-all border-b ' src={post.image} alt={post.title} />
-                <div className=' rounded-lg p-2 text-2xl font-mono font-semibold line-clamp-1 px-5  '>
+                <img className=' h-52   group-hover:rounded-lg  duration-700 rounded-3xl object-cover  transition-all  '
+                 src={post.image} alt={post.title} />
+                <h1 className=' rounded-lg w-full   text-2xl font-mono font-semibold line-clamp-1    '>
                   {post.title}
-                </div>
+                </h1>
 
                <div className='flex space-x-5 w-full p-3'>
                <Link to={`/post/${post.slug}`}
