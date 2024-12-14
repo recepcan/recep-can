@@ -60,7 +60,7 @@ function GetPosts({ limit }) {
                className='w-[90%] p-2 bg-blue-600 text-xl text-white font-inter rounded-lg'>
                wiev
                </Link>
-               <Link to="https://personal-blog-qe6z.onrender.com/" target="_blank" rel="noopener noreferrer"
+               <Link to={`${post.demo}`} target="_blank" rel="noopener noreferrer"
                className='w-[90%] p-2 bg-green-600 text-xl text-white font-inter rounded-lg'>
                live demo 
                </Link>

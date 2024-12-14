@@ -21,7 +21,12 @@ function CreatePost() {
     const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
 //   const [imageUploadError, setImageUploadError] = useState(null);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ 
+    title: '',
+    demo: '',
+    source: '',
+    content: '',
+    image: '',});
 //   const [publishError, setPublishError] = useState(null);
 
   const navigate = useNavigate();
@@ -64,6 +69,7 @@ function CreatePost() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData)
     try {
       const res = await fetch('/api/post/create', {
         method: 'POST',
@@ -79,7 +85,7 @@ function CreatePost() {
       }
 
       if (res.ok) {
-      
+     
         navigate(`/admin?tab=posts`);
       }
     } catch (error) {
@@ -94,8 +100,24 @@ function CreatePost() {
 
             <form className='flex flex-col gap-4 space-y-5' onSubmit={handleSubmit}>
 
-                <input onChange={(e)=>setFormData({...formData,title:e.target.value})} type="text" placeholder='Title' required id='title' 
+                <input onChange={(e)=>setFormData({...formData,title:e.target.value})}
+                 type="text"
+                  placeholder='Title'
+                    
+                   id='title' 
                 className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
+                <input onChange={(e)=>setFormData({...formData,demo:e.target.value})}
+                 type="text"
+                  placeholder='demo link'
+                   
+                   id='demo' 
+                className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
+                <input onChange={(e)=>setFormData({...formData,source:e.target.value})}
+                 type="text"
+                  placeholder='source code link' 
+                   id='source' 
+                className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
+
                 <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center dark:border-white rounded-lg border-black border-dotted p-3 '>
                     <input onChange={(e)=>setFile(e.target.files[0])} 
                     type="file"

@@ -2,11 +2,12 @@ import Post from '../models/postModel.js';
 import { errorHandler } from '../utils/error.js';
 
 export const create = async (req, res, next) => {
+    console.log("req.body",req.body); // Gelen veriyi kontrol edin
     if (!req.user.isAdmin) {
         return next(errorHandler(403, 'You are not allowed to create a post'));
     }
-    if (!req.body.title || !req.body.content) {
-        return next(errorHandler(400, 'Please provide all required fields'));
+    if ( !req.body.content || !req.body.demo || !req.body.source) {
+        return next(errorHandler(400, 'Please provide all required fields lütfen'));
     }
     const slug = req.body.title
         .split(' ')
@@ -14,13 +15,18 @@ export const create = async (req, res, next) => {
         .toLowerCase()
         .replace(/[^a-zA-Z0-9-]/g, '');
     const newPost = new Post({
-        ...req.body,
+        title: req.body.title,
+        content:req.body.content,
+        demo:req.body.demo,
+        source:req.body.source,
+        image:req.body.image,
         slug,
         userId: req.user.id,
     });
     try {
         const savedPost = await newPost.save();
         res.status(201).json(savedPost);
+        
     } catch (error) {
         next(error);
     }
@@ -86,6 +92,8 @@ export const updatepost = async (req, res, next) => {
                     content: req.body.content,
                     category: req.body.category,
                     image: req.body.image,
+                    source:req.body.source,
+                    demo:req.body.demo,
                 },
             },
             { new: true }
