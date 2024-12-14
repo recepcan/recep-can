@@ -60,12 +60,12 @@ const {loading}=useSelector(state=>state.posts)
 
 
         <div className='w-full flex space-x-4 p-2'>
-          <Link to={`/${post?.demo}`} target="_blank" rel="noopener noreferrer"
+          <Link to={`${post?.demo}`} target="_blank" rel="noopener noreferrer"
             className='p-2 dark:border-2 w-full sm:text-xl flex items-center justify-center 
  bg-transparent bg-gradient-to-r from-green-400 to-green-700  text-white rounded-lg font-bold font-inter'>
             wiev in live
           </Link>
-          <Link to={`/${post?.source}`}  target="_blank" rel="noopener noreferrer"
+          <Link to={`${post?.source}`}  target="_blank" rel="noopener noreferrer"
             className='p-2 dark:border-2 w-full sm:text-xl flex items-center justify-center space-x-3
  bg-transparent bg-gradient-to-r from-purple-400 to-purple-700  text-white rounded-lg
   font-bold font-inter'>
