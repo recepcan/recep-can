@@ -52,21 +52,22 @@ const {loading}=useSelector(state=>state.posts)
      '>
 
 
-      <div className='lg:w-[900px] w-full  lg:sticky top-20  flex flex-col items-start justify-start'>
+      <div className='lg:w-[900px] relative lg:z-50   w-full  lg:sticky lg:top-20  flex flex-col items-start justify-start'>
         {
-          post && post.image ? <img src={post && post.image} className='rounded-xl' alt="" /> :
+          post && post.image ? <img src={post && post.image} 
+          className='rounded-xl transition-all duration-300 border ease-in-out transform lg:hover:scale-[170%]  lg:hover:mx-52 lg:hover:my-32 lg:hover:border backdrop-blur-md ' alt="" /> :
             <div className='w-full bg-gradient-to-r bg-transparent from-gray-300 to-gray-500  h-96 m-5 rounded-xl'></div>
         }
 
 
         <div className='w-full flex space-x-4 p-2'>
           <Link to={`${post?.demo}`} target="_blank" rel="noopener noreferrer"
-            className='p-2 dark:border-2 w-full sm:text-xl flex items-center justify-center 
+            className='p-2 dark:border-2 w-full sm:text-xl flex items-center justify-center hover:scale-105 transition-all
  bg-transparent bg-gradient-to-r from-green-400 to-green-700  text-white rounded-lg font-bold font-inter'>
             wiev in live
           </Link>
           <Link to={`${post?.source}`}  target="_blank" rel="noopener noreferrer"
-            className='p-2 dark:border-2 w-full sm:text-xl flex items-center justify-center space-x-3
+            className='p-2 dark:border-2 w-full sm:text-xl flex items-center justify-center space-x-3 hover:scale-105 transition-all
  bg-transparent bg-gradient-to-r from-purple-400 to-purple-700  text-white rounded-lg
   font-bold font-inter'>
             <span>source code </span>
@@ -78,7 +79,7 @@ const {loading}=useSelector(state=>state.posts)
       <div className=' w-full'>
         {
           post && post.title ?
-            <h1 className='text-center  uppercase text-3xl lg:text-5xl p-3
+            <h1 className='text-center  uppercase text-3xl lg:text-5xl p-10
         font-inter font-semibold bg-clip-text bg-gradient-to-tr text-transparent dark:from-blue-100 dark:via-blue-300 dark:to-blue-500 from-blue-600 via-purple-600 to-red-600'>
               {post && post.title}
             </h1> :
@@ -88,9 +89,9 @@ const {loading}=useSelector(state=>state.posts)
         
         {
           post && post.content ?
-          <div className=' max-w-2xl mx-auto w-full post-content' dangerouslySetInnerHTML={{ __html: post && post.content }}>
+          <div className=' max-w-2xl text-justify text-xl font-bold font-inter tracking-wider leading-10 mx-auto w-full post-content' dangerouslySetInnerHTML={{ __html: post && post.content }}>
 
-          </div>:
+          </div> :
             <div className='w-full bg-gradient-to-r bg-transparent from-gray-300 to-gray-500  h-96 m-5  rounded-xl'></div>
         }
         
