@@ -10,7 +10,7 @@ import { fetchPost6 } from '../store/postSlice'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import { FaCaretRight } from "react-icons/fa";
-
+import shotspng from '../../public/shotspng.png'
 function Home() {
 
   return (
@@ -22,7 +22,24 @@ function Home() {
       className='dark:text-white  transition-colors duration-500 w-full  relative  border-black
      flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:pt-20 pb-10'
     >
-
+  
+ 
+ 
+      <div className='  w-full flex justify-end   text-center items-center'>
+     <div className=' h-full'>
+     <h1 className='p-10 text-7xl font-semibold font-inter 
+     bg-clip-text text-transparent bg-gradient-to-r
+      from-sky-500 via-purple-500 to-red-500
+      dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
+   Hızlı, Modern ve Etkileyici Web Çözümleri!
+   </h1>
+   <h3 className='p-5 text-3xl font-semibold font-inter 
+    '>
+   İhtiyacınıza uygun, kullanıcı dostu ve yaratıcı web siteleriyle dijital dünyada fark yaratın. Size özel çözümlerle işinizi bir adım öteye taşıyoruz!
+   </h3>
+     </div>
+      <img src={shotspng} alt="" className=' w-1/2'/>
+      </div>
       
       <div className='  dark:bg-gradient-to-t  text-center
        '>

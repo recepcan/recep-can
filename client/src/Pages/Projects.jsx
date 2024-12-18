@@ -55,7 +55,7 @@ const {loading}=useSelector(state=>state.posts)
       <div className='lg:w-[900px] relative lg:z-50   w-full  lg:sticky lg:top-20  flex flex-col items-start justify-start'>
         {
           post && post.image ? <img src={post && post.image} 
-          className='rounded-xl transition-all duration-300 border ease-in-out transform lg:hover:scale-[170%]  lg:hover:mx-52 lg:hover:my-32 lg:hover:border backdrop-blur-md ' alt="" /> :
+          className='rounded-xl transition-all duration-300  min-h-[400px] ease-in-out transform lg:hover:scale-[170%]  lg:hover:mx-52 lg:hover:my-32 lg:hover:border backdrop-blur-md ' alt="" /> :
             <div className='w-full bg-gradient-to-r bg-transparent from-gray-300 to-gray-500  h-96 m-5 rounded-xl'></div>
         }
 

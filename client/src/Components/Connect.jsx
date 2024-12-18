@@ -6,7 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTextById } from '../store/textsSlice';
 import Loading from './Loading';
-
+import shotspng from '../../public/shotspng.png'
 function Connect() {
   function onChange(value) {
     console.log("Captcha value:", value);
@@ -83,7 +83,7 @@ function Connect() {
      dark:bg-[#030620] '>
 
       {/* <hr className='w-[90%] my-8 lg:my-16 dark:border-white border-black '  /> */}
-      <div className=' w-[90%] h-full flex flex-col lg:flex-row max-md:space-y-5 lg:space-x-2 border-yellow-500'>
+      <div className=' w-[90%] h-full flex flex-col  lg:flex-row max-md:space-y-5 lg:space-x-2 border-yellow-500'>
 
         <div className='w-full  lg:w-1/2   p-5 flex flex-col justify-between space-y-5 lg:space-y-8 rounded-xl 
         text-start border-2  border-gray-400'>
@@ -123,6 +123,7 @@ function Connect() {
             </div>
           </div>
         </div>
+       
 
 
         <div className="w-full  border-2 lg:w-1/2 h-full space-y-3  p-5 rounded-lg flex items-center justify-center flex-col  
