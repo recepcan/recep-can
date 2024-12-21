@@ -40,7 +40,7 @@ function AboutCard() {
         {textById&&textById.title}
         </h1>
   
-        <p className='text-sm p-3 md:text-xl font-sans font-semibold '>{textById&&textById.content}</p>
+        <p className='text-sm p-3 md:text-xl font-sans font-semibold bg-gradient-to-r bg-clip-text text-transparent dark:from-sky-400 dark:via-purple-400 dark:to-red-400  from-sky-500 via-purple-500 to-red-500'>{textById&&textById.content}</p>
   
         <div className='flex text-sm lg:text-xl w-full p-2   space-x-10'>
           <Link to={'/contact'} className='md:p-5  p-2 w-56 rounded-lg text-2xl font-bold  hover:scale-95 flex items-center justify-center

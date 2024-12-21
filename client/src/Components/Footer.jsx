@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../public/logopng.png'
 function Footer() {
   return (
-    <div className='w-full   bg-white bottom-0  
+    <div className='w-full   bg-white bottom-0 
          border-blue-500  text-black flex flex-col  space-y-12   justify-center text-center items-center
         dark:text-white dark:bg-black transition-colors duration-300 dark:z-50 flex-1'>
       <div className=' w-full  flex flex-col items-center justify-center'>
