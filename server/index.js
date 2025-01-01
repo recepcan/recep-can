@@ -6,6 +6,7 @@ import authRoutes from './routes/authRoutes.js'
 import postRoutes from './routes/postRoutes.js'
 import TextRoutes from './routes/TextRoutes.js'
 import contactRoutes from './routes/contactRoutes.js'
+import footerRoutes from './routes/footerRoutes.js'
 import cookieParser from 'cookie-parser'
 import path from 'path'
 const app = express()
@@ -41,6 +42,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/post', postRoutes)
 app.use('/api/text', TextRoutes)
 app.use('/api/contact',contactRoutes)
+app.use('/api/footer',footerRoutes)
 
 
 app.use(express.static(path.join(__dirname, '/client/dist')));

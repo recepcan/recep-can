@@ -23,14 +23,14 @@ function GetPosts({ limit }) {
     return <div>No posts available</div>;
   }
 
-  
-  if (error) { 
-    return  toast.error(error);
-  }
   if (loading) {
     return <Loading />
   }
-  
+   
+  if (error) { 
+    return  toast.error(error);
+  }
+ 
 
   
   
@@ -74,7 +74,7 @@ function GetPosts({ limit }) {
                 </div>
               </div>
             </div>
-          )) : "there is no post yet"
+          )) : <div>there is no post yet</div> 
       }
 
 
@@ -84,33 +84,3 @@ function GetPosts({ limit }) {
 
 export default GetPosts
 
-// <div className='p-3 max-w-2xl mx-auto w-full post-content  line-clamp-6' dangerouslySetInnerHTML={{__html:post&&post.content}}></div>
-
-  // useEffect(() => {
-  //   try {
-  //     const fetchRecentPosts= async ()=>{
-  //         const res = await fetch(`/api/post/getPosts?limit=3`)
-  //         const data=res.json()
-  //         if(!res.ok){
-  //             toast.error(data.message)
-  //         }
-  //         if(res.ok){
-  //             setRecentPosts(data.posts)
-  //         }
-
-  //     }
-  //     fetchRecentPosts()
-  //   } catch (error) {
-  //     toast.error(error.message)
-  //   }
-
-
-  // }, [])
-
-
-   // const fetchPosts = async () => {
-    //   const res = await fetch(`/api/post/getPosts?limit=${limit}`);
-    //   const data = await res.json();
-    //   setRecentPosts(data.posts);
-    // };
-    // fetchPosts();

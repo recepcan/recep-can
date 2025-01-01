@@ -14,7 +14,11 @@ import shotspng from '../../public/shotspng.png'
 import phone from '../../public/phone.png'
 import mac from '../../public/mac.png'
 import ipad from '../../public/ipad.png'
+import darkmp from '../../public/dark-mockup.png'
+import lightmp from '../../public/light-mockup.png'
+
 function Home() {
+  const {theme} =useSelector(state=>state.header)
 
   return (
     <motion.div
@@ -47,14 +51,18 @@ function Home() {
         <img src={shotspng} alt="" className='max-sm:hidden w-1/2' />
       </div>
 
-      <div className=' w-full h-[600px] flex items-start'>
-        <div className=' w-2/3 relative h-[600px] flex items-center justify-center'>
-          <img src={ipad} alt="" className='max-sm:hidden object-contain  absolute -right-10 w-[450px]' />
-          <img src={mac} alt="" className='max-sm:hidden object-contain  absolute  w-[500px]' />
-          <img src={phone} alt="" className='max-sm:hidden object-contain  absolute left-20  w-[300px]' />
+      <div className=' w-full h-[600px] flex items-start lg:flex-row flex-col'>
+        <div className='w-full lg:w-2/3 relative h-[600px] flex items-center justify-center'>
+          <img src={ipad}  alt="" className='max-xl:hidden object-contain z-10 absolute xl:-right-10 w-[450px]' />
+          <img src={mac} alt="" className='max-xl:hidden object-contain z-0 absolute  w-[500px]' />
+          <img src={phone} alt="" className='max-xl:hidden object-contain z-10 absolute xl:left-20  w-[300px]' />
+          <img src={darkmp} alt="" 
+          className={`xl:hidden ${theme=='light' && 'hidden'} border-2  object-contain z-10 absolute xl:left-20  `} />
+          <img src={lightmp} alt="" 
+          className={`xl:hidden ${theme=='dark' && 'hidden'} object-contain z-10 absolute xl:left-20  `} />
         </div>
 
-        <div className='flex-1 h-full   border-red-300 flex items-center text-start'>
+        <div className='lg:flex-1 w-full h-full   border-red-300 flex items-center text-start'>
         <h1 className='p-10  text-3xl  lg:text-5xl xl:text-7xl font-semibold font-inter 
         bg-clip-text text-transparent bg-gradient-to-r
          from-sky-500 via-purple-500 to-red-500

@@ -1,6 +1,7 @@
 import Text from '../models/TextModels.js'
 import { errorHandler } from '../utils/error.js';
 import mongoose from 'mongoose';  // MongoDB ObjectId doğrulama için
+
 export const create = async (req, res, next) => {
     if (!req.user && !req.user.isAdmin) {
         return next(errorHandler(403, 'You are not allowed to create a post'));

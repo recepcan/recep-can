@@ -27,6 +27,7 @@ import Loading from './Loading'
 import ScrollToTop from './ScrollToTop'
 import ErrorPage from '../Pages/ErrorPage'
 import ProjectPage from '../Pages/ProjectPage'
+import CreateFooterItem from '../Pages/Adminpages/CreateFooterItem'
 function Layout() {
     const { menu } = useSelector(state => state.header)
     const { modal } = useSelector(state => state.modal)
@@ -75,6 +76,8 @@ function Layout() {
                             <Route path='/update-post/:postId' element={<UpdatePost />} />
                             <Route path='/update-text/:textId' element={<UpdateText />} />
                             <Route path='/create-text' element={<Text />} />
+                            <Route path='/create-item' element={<CreateFooterItem />} />
+                            
                         </Route>
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
