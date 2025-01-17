@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import { BiSolidSun } from 'react-icons/bi'
 import { FaPhoneFlip } from 'react-icons/fa6'
 import { GoHomeFill } from 'react-icons/go'
+import { GrProjects } from 'react-icons/gr'
 import { MdManageAccounts, MdOutlineManageAccounts } from 'react-icons/md'
 function ToggleMenu() {
     const { menu, language, theme } = useSelector(state => state.header)
@@ -29,6 +30,13 @@ function ToggleMenu() {
             icon: <FaInfoCircle />
         },
         {
+            id: 'projects',
+            name: 'Projects',
+            to: '/projects',
+            index: true,
+            icon: <GrProjects />
+        },
+        {
             id: 'Contact',
             name: 'Contact',
             to: '/contact',
@@ -37,10 +45,8 @@ function ToggleMenu() {
         },
         {
             id: 'admin',
-            name: 'Admin',
+            name: 'admin',
             to: '/admin',
-            icon: <MdManageAccounts />
-
 
         }
 

@@ -7,34 +7,27 @@ import { SiExpress } from 'react-icons/si';
 function ContentCard() {
     const tabs = [
         {
-            title: "React",
-            content: "React, Facebook tarafından geliştirilen açık kaynaklı bir JavaScript kütüphanesidir. Kullanıcı arayüzleri oluşturmak için bileşen tabanlı bir yaklaşım sunar. Tek yönlü veri akışı ve sanal DOM sayesinde yüksek performanslı ve etkileşimli web uygulamaları geliştirilmesini sağlar. Geniş bir ekosisteme sahip olan React, geliştiricilere esneklik ve güçlü araçlar sunar."
+            title: "Front-end",
+            content: "Front-end, bir web sitesinin kullanıcı tarafından görülen ve etkileşim kurulan kısmını ifade eder. Yani, bir web sitesinde gördüğünüz her şey front-end'in bir parçasıdır. Ben, React kullanarak bu ön yüzü kodluyor ve kullanıcı dostu, şık tasarımlara sahip, optimize edilmiş uygulamalar geliştiriyorum."
             , icon: <FaReact color='blue' />
         },
         {
-            title: "Express",
-            content: "Express.js, Node.js için minimalist ve esnek bir web uygulama çerçevesidir. RESTful API'ler ve web uygulamaları geliştirmek için kullanılır. Basit bir yapı ve geniş bir modül ekosistemi sunarak, hızlı ve verimli uygulama geliştirme süreçlerini destekler. Middleware kullanımı ile istek ve yanıt işleme oldukça özelleştirilebilir."
+            title: "Back-end",
+            content: "Node.js ve Express.js kullanarak bir web sitesinin arka ucunu, yani kullanıcıların doğrudan göremediği kısmını kodluyorum. API'ler oluşturarak veri akışını yönetiyor, kimlik doğrulama işlemlerini gerçekleştiriyor ve diğer arka uç programlama görevlerini yerine getiriyorum."
             , icon: <SiExpress color='gray' />
 
         },
 
         {
-            title: "NodeJS",
-            content: "Node.js, sunucu tarafında JavaScript çalıştırmak için kullanılan açık kaynaklı bir platformdur. Asenkron ve olay tabanlı yapısı sayesinde yüksek performanslı ve ölçeklenebilir uygulamalar geliştirilmesine olanak tanır. NPM (Node Package Manager) ile geniş bir paket ve modül ekosistemine sahiptir, bu da hızlı geliştirme ve entegrasyon sağlar."
-            , icon: <DiNodejs color='green' />
+            title: "UI-UX",
+            content: "Sitenin tasarımı ve kullanıcı deneyimi, bir web sitesinin görsel ve işlevsel olarak kullanıcıya nasıl hissettirdiğini ifade eder. Bu alan her ne kadar yazılımın dışında gibi görünse de, bu konuda da kendimi geliştirmeye devam ediyorum. Basit, estetik ve kullanıcı dostu tasarımlar oluşturarak müşterilere etkileyici deneyimler sunuyorum."
+            
         },
         {
-            title: "Firebase",
-            content: "Firebase, Google tarafından sağlanan bir mobil ve web uygulama geliştirme platformudur. Gerçek zamanlı veritabanı, kimlik doğrulama, bulut depolama ve analiz gibi hizmetler sunar. Firebase, geliştiricilere hızlı bir şekilde ölçeklenebilir ve güvenli uygulamalar oluşturma imkanı tanır. Entegre araçları sayesinde, uygulama geliştirme sürecini basit ve hızlı hale getirir."
+            title: "Security",
+            content: "Firebase kullanarak kimlik doğrulama işlemlerini daha güvenli hale getiriyorum. Yönetim panelinize erişim için bu tür bir kimlik doğrulama sistemi kullanılıyor ve bu, verilerinizin güvenliğini sağlıyor. Bu sayede hem kullanıcıların güvenliği artırılıyor hem de sitenizin güvenilirliği korunuyor."
             ,icon:<BiLogoFirebase color='orange' />
         },
-
-        {
-            title: "MongoDB",
-            content: "MongoDB, belge tabanlı bir NoSQL veritabanıdır. JSON benzeri BSON formatında veri saklar ve yüksek esneklik sunar. Şemalardan bağımsız yapısı sayesinde dinamik veri yapıları ve ölçeklenebilir uygulamalar oluşturulmasına imkan verir. Büyük veri işleme ve hızlı sorgu performansı ile bilinir, özellikle hızlı gelişen uygulamalar için idealdir."
-            , icon: <BiLogoMongodb color='green' />
-        }
-
     ];
 
     const [activeTab, setActiveTab] = useState(tabs[0].title); // Başlangıçta ilk başlık aktif
