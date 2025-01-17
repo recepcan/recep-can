@@ -36,6 +36,12 @@ export const elements=[
         
     },
     {
+        name:"TYPESCRİPT",
+        icon:<TbBrandTypescript  color='blue' />,
+         explain:'JavaScript’in özelliklerini genişleten bir dil. Statik tür desteğiyle hataları önler ve kodu daha güvenilir kılar.',
+        
+    },
+    {
         name:"REACT.JS",
         icon:<FaReact color='blue'  />,
          explain:'Kullanıcı arayüzleri geliştirmek için kullanılan bir JavaScript kütüphanesi. Bileşen tabanlı yapısıyla öne çıkar.',
@@ -65,22 +71,11 @@ export const elements=[
          explain:'NoSQL tabanlı bir veritabanıdır. Esnek yapısıyla JSON benzeri belgelerle veri saklar.',
         
     },
-    {
-        name:"TYPESCRİPT",
-        icon:<TbBrandTypescript  color='blue' />,
-         explain:'JavaScript’in özelliklerini genişleten bir dil. Statik tür desteğiyle hataları önler ve kodu daha güvenilir kılar.',
-        
-    },
+    
     {
         name:"FIREBASE",
         icon:<IoLogoFirebase color='orange'/>,
         explain:'Google’ın sunduğu bir platform. Gerçek zamanlı veritabanı, kimlik doğrulama, depolama ve barındırma hizmetleri sağlar.',
-        
-    },
-    {
-        name:"GİTHUB",
-        icon:<ImGithub  color='purple' />,
-         explain:'Kod depolama ve paylaşım platformu. Açık kaynak projeler ve işbirliği için kullanılır.',
         
     },
     {
@@ -89,4 +84,11 @@ export const elements=[
          explain:'Versiyon kontrol sistemi. Kod değişikliklerini izler, geri alınabilir ve takım çalışmasını kolaylaştırır.',
         
     },
+    {
+        name:"GİTHUB",
+        icon:<ImGithub  color='purple' />,
+         explain:'Kod depolama ve paylaşım platformu. Açık kaynak projeler ve işbirliği için kullanılır.',
+        
+    },
+    
    ]

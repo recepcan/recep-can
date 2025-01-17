@@ -1,23 +1,25 @@
 import React, { useEffect, useState,useMemo } from 'react'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
-import { fetchPost6 } from '../store/postSlice';
+import { fetchPost6, fetchPostctg } from '../store/postSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from './Loading';
 
 
-function GetPosts({ limit }) {
+function GetPosts({ limit ,ctg}) {
   const [recentPosts, setRecentPosts] = useState(null)
   const dispatch = useDispatch()
   const { data, loading, error } = useSelector(state => state.posts);
 
-
-
   useEffect(() => {
-    dispatch(fetchPost6(limit))
-    console.log("postlar çekildi")
-   
-  }, [dispatch,limit]);
+    if (ctg === "all") {
+      dispatch(fetchPost6(limit));
+    } else {
+      dispatch(fetchPostctg(ctg));
+    }
+    console.log("Postlar çekildi:", ctg, limit);
+  }, [dispatch, ctg, limit]);
+  
   
   if (data.length === 0) {
     return <div>No posts available</div>;
@@ -31,13 +33,6 @@ function GetPosts({ limit }) {
     return  toast.error(error);
   }
  
-
-  
-  
-    
-    
-   
-  
   
   return (
     <div className='w-full  border-blue-500 grid md:grid-cols-2 lg:grid-cols-3 items-center justify-center  p-5 gap-5'>
