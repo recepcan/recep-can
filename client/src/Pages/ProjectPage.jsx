@@ -13,7 +13,7 @@ function ProjectPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       className="dark:text-white transition-colors duration-500 w-full relative border-black
-      flex flex-col items-center justify-center dark:bg-[#030620] min-h-screen"
+      flex flex-col items-center justify-start dark:bg-[#030620] min-h-screen md:pt-24"
     >
       <div className="dark:bg-gradient-to-t text-center">
         <h1
@@ -26,18 +26,18 @@ function ProjectPage() {
         </h1>
 
         {/* Kategori Seçim Butonları */}
-        <div className="flex w-full p-5 rounded-lg space-x-5 justify-center">
-          {['all', 'full-stack', 'front-end', 'back-end', 'ui-ux'].map((category) => (
+        <div className="flex flex-wrap w-full p-5 rounded-lg  gap-3 justify-center">
+          {['all','front-end','full-stack','mobil'].map((category) => (
             <button
               key={category}
-              className={`p-3 rounded-md shadow-md shadow-gray-400 border-black ${
+              className={`p-3 text-xl rounded-md shadow-md shadow-gray-400 border-black ${
                 ctg === category
-                  ? 'bg-green-500 text-white' // Aktif kategori vurgulama
-                  : 'bg-white dark:bg-sky-600'
+                  ? 'bg-gradient-to-r from-orange-500  to-red-500 text-white' // Aktif kategori vurgulama
+                  : 'bg-white dark:bg-[#374151]'
               }`}
               onClick={() => setCtg(category)} // Kategori durumunu güncelle
             >
-              {category === 'all' ? 'All Categories' : category}
+              {category}
             </button>
           ))}
         </div>

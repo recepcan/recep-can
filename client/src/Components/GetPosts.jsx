@@ -12,7 +12,7 @@ function GetPosts({ limit ,ctg}) {
   const { data, loading, error } = useSelector(state => state.posts);
 
   useEffect(() => {
-    if (ctg === "all") {
+    if (ctg === "all" && limit ) {
       dispatch(fetchPost6(limit));
     } else {
       dispatch(fetchPostctg(ctg));
@@ -21,8 +21,8 @@ function GetPosts({ limit ,ctg}) {
   }, [dispatch, ctg, limit]);
   
   
-  if (data.length === 0) {
-    return <div>No posts available</div>;
+  if (data.posts.length === 0) {
+    return <div className='min-h-[300px]  flex items-center justify-center text-xl '>No posts available</div>;
   }
 
   if (loading) {

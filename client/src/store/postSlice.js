@@ -16,7 +16,7 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (currentUse
   return data;
 });
 
-export const fetchPost6 = createAsyncThunk('posts/fetchPost6', async (limit) => {
+export  const fetchPost6 = createAsyncThunk('fetchPost6',async(limit) => {
   const res = await fetch(`/api/post/getPosts?limit=${limit}`);
   if (!res.ok) {
     throw new Error('Network response was not ok');
@@ -25,7 +25,6 @@ export const fetchPost6 = createAsyncThunk('posts/fetchPost6', async (limit) => 
   console.log('Fetched data 6:', data);
   return data;
 });
-
 export const fetchPostctg = createAsyncThunk('posts/fetchPostctg', async (ctg) => {
   const res = await fetch(`/api/post/getPosts?category=${ctg}`);
   if (!res.ok) {
