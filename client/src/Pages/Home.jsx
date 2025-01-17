@@ -10,12 +10,12 @@ import { fetchPost6 } from '../store/postSlice'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import { FaCaretRight } from "react-icons/fa";
-import shotspng from '../../public/shotspng.png'
-import phone from '../../public/phone.png'
-import mac from '../../public/mac.png'
-import ipad from '../../public/ipad.png'
-import darkmp from '../../public/dark-mockup.png'
-import lightmp from '../../public/light-mockup.png'
+import shotspng from '/shotspng.png'
+import phone from '/phone.png'
+import mac from '/mac.png'
+import ipad from '/ipad.png'
+import darkmp from '/dark-mockup.png'
+import lightmp from '/light-mockup.png'
 
 function Home() {
   const {theme} =useSelector(state=>state.header)
