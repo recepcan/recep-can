@@ -24,9 +24,9 @@ function AboutCard() {
  
     return (
       <div className='w-full p-5 md:p-10  space-y-5 md:space-x-5  border-yellow-500 
-       flex flex-col lg:flex-row min-[650px]:min-h-screen items-center justify-center'>
+       flex flex-col lg:flex-row min-[650px]:min-h-screen items-center justify-center '>
   
-      <div className=' lg:w-2/3 w-full space-y-8 border-blue-500 p-10 rounded-lg 
+      <div className=' lg:w-2/3 w-full space-y-8  border-blue-500 md:p-10 rounded-lg 
        shadow-gray-400   hover:shadow-gray-700 transition-all 
         flex flex-col items-center text-left justify-center'>
         {/*  <ProfilCard />    

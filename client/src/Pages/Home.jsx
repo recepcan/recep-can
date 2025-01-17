@@ -57,7 +57,7 @@ function Home() {
           <img src={mac} alt="" className='max-xl:hidden object-contain z-0 absolute  w-[500px]' />
           <img src={phone} alt="" className='max-xl:hidden object-contain z-10 absolute xl:left-20  w-[300px]' />
           <img src={darkmp} alt="" 
-          className={`xl:hidden ${theme=='light' && 'hidden'} border-2  object-contain z-10 absolute xl:left-20  `} />
+          className={`xl:hidden ${theme=='light' && 'hidden'}  object-contain z-10 absolute xl:left-20  `} />
           <img src={lightmp} alt="" 
           className={`xl:hidden ${theme=='dark' && 'hidden'} object-contain z-10 absolute xl:left-20  `} />
         </div>
