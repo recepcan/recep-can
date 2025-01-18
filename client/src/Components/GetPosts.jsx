@@ -12,7 +12,7 @@ function GetPosts({ limit ,ctg}) {
   const { data, loading, error } = useSelector(state => state.posts);
 
   useEffect(() => {
-    if (ctg === "all" && limit ) {
+    if (ctg === "all" || !ctg && limit ) {
       dispatch(fetchPost6(limit));
     } else {
       dispatch(fetchPostctg(ctg));
