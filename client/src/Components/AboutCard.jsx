@@ -50,7 +50,8 @@ function AboutCard() {
   
         <div className='  
           dark:p-2 rounded-lg   transition-all   shadow-gray-400 hover:shadow-gray-700'>
-          <img src={avatar} alt="" className='rounded-full w-full md:w-2/3 lg:w-[400px] dark:border-2  border-orange-500 transition-all hover:bg-gradient-to-t from-orange-400 via-orange-600 to-red-600 
+          <img src={avatar} alt="" className='rounded-full w-full md:w-2/3 lg:w-[400px] dark:border-2 
+           border-orange-500 transition-all duration-500 hover:bg-gradient-to-t from-orange-400 via-orange-600 to-red-600 
            shadow-xl shadow-gray-400 object-cover' />
           
           
