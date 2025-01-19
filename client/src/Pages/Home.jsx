@@ -79,7 +79,7 @@ function Home() {
       bg-clip-text text-transparent bg-gradient-to-r
        from-sky-500 via-purple-500 to-red-500
        dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
-          Recent Posts
+          Recent Projects
         </h1>
         <GetPosts limit={3} />
       </div>

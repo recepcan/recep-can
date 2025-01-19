@@ -50,18 +50,19 @@ function AboutCard() {
   
         <div className='  
           dark:p-2 rounded-lg   transition-all   shadow-gray-400 hover:shadow-gray-700'>
-          <img src={avatar} alt="" className='rounded-full w-full md:w-2/3 lg:w-[400px]  border shadow-xl shadow-gray-400 object-cover' />
+          <img src={avatar} alt="" className='rounded-full w-full md:w-2/3 lg:w-[400px] dark:border-2  border-orange-500 bg-gradient- from-orange-400 via-orange-600 to-red-600 
+           shadow-xl shadow-gray-400 object-cover' />
           
           
         </div>
         <div className='flex text-sm lg:text-xl w-full p-2   space-x-10'>
           <Link to={'/contact'} className='  p-2 w-56 rounded-lg text-2xl font-bold  hover:scale-95 flex items-center justify-center
-           border-2 dark:border-green-200 border-blue-200 hover:bg-gradient-to-l transition-all
-             duration-500 bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 '>
+           border-2  hover:bg-gradient-to-l transition-all
+             duration-500 text-white border-orange-400 bg-gradient-to-l  from-orange-400 via-orange-600 to-red-700 '>
             Get In Touch</Link>
           <Link to={'/projects'} className=' text-2xl  font-bold  box-border p-2 w-56 rounded-lg bg-transparent
-           border-2 dark:border-green-200 border-blue-200  hover:scale-95 hover:bg-gradient-to-l 
-           transition-all  duration-500  from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 flex items-center justify-center '>
+           border-2   hover:scale-95 hover:bg-gradient-to-l 
+           transition-all  duration-500 border-orange-400 hover:text-white  from-orange-400 via-orange-600 to-red-700 flex items-center justify-center '>
             view my works</Link>
             {/*
               currentUser&& currentUser.isAdmin &&<Link to={`/update-text/66b124be8e2076ecbe826a24`}>
