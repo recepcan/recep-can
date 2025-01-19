@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import profil from '../../public/profil.jpeg'
+import profil from '/profil.jpeg'
+import avatar from '/png-avatar.png'
 import { toast } from 'react-toastify';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,9 +27,9 @@ function AboutCard() {
       <div className='w-full p-5 md:p-10  space-y-5 md:space-x-5  border-yellow-500 
        flex flex-col lg:flex-row min-[650px]:min-h-screen items-center justify-center '>
   
-      <div className=' lg:w-2/3 w-full space-y-8  border-blue-500 md:p-10 rounded-lg 
+      <div className=' lg:w-2/3 w-full space-y-8 min-h-[600px]   border-blue-500 md:p-10 rounded-lg 
        shadow-gray-400   hover:shadow-gray-700 transition-all 
-        flex flex-col items-center text-left justify-center'>
+        flex flex-col items-center text-left justify-evenly '>
         {/*  <ProfilCard />    
            <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  
   */}
@@ -42,12 +43,23 @@ function AboutCard() {
   
         <p className='text-sm p-3 md:text-xl font-sans font-semibold bg-gradient-to-r bg-clip-text text-transparent dark:from-sky-400 dark:via-purple-400 dark:to-red-400  from-sky-500 via-purple-500 to-red-500'>{textById&&textById.content}</p>
   
+        
+      </div>
+  
+      <div className=' w-full md:w-2/3 lg:w-1/3 h-[600px]    border-blue-500 rounded flex flex-col items-center justify-evenly '>
+  
+        <div className='  
+          dark:p-2 rounded-lg   transition-all   shadow-gray-400 hover:shadow-gray-700'>
+          <img src={avatar} alt="" className='rounded-full w-full md:w-2/3 lg:w-[400px]  border shadow-xl shadow-gray-400 object-cover' />
+          
+          
+        </div>
         <div className='flex text-sm lg:text-xl w-full p-2   space-x-10'>
-          <Link to={'/contact'} className='md:p-5  p-2 w-56 rounded-lg text-2xl font-bold  hover:scale-95 flex items-center justify-center
+          <Link to={'/contact'} className='  p-2 w-56 rounded-lg text-2xl font-bold  hover:scale-95 flex items-center justify-center
            border-2 dark:border-green-200 border-blue-200 hover:bg-gradient-to-l transition-all
              duration-500 bg-gradient-to-l from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 '>
             Get In Touch</Link>
-          <Link to={'/projects'} className='md:p-5 text-2xl  font-bold  box-border p-2 w-56 rounded-lg bg-transparent
+          <Link to={'/projects'} className=' text-2xl  font-bold  box-border p-2 w-56 rounded-lg bg-transparent
            border-2 dark:border-green-200 border-blue-200  hover:scale-95 hover:bg-gradient-to-l 
            transition-all  duration-500  from-blue-200 via-blue-300 to-blue-400 dark:from-green-400 dark:to-green-700 flex items-center justify-center '>
             view my works</Link>
@@ -57,15 +69,7 @@ function AboutCard() {
               </Link>
             */}
         </div>
-      </div>
-  
-      <div className=' w-full md:w-2/3 lg:w-1/3  border-blue-500 rounded flex items-center justify-center '>
-  
-        <div className='bg-gradient-to-tr  from-blue-200 via-blue-300 to-blue-400  
-          dark:p-2 rounded-lg   transition-all shadow-lg  shadow-gray-400 hover:shadow-gray-700'>
-          <img src={profil} alt="" className='w-full md:w-2/3 lg:w-[400px] rounded-lg object-cover' />
-  
-        </div>
+        
       </div>
   
     </div>
