@@ -21,12 +21,7 @@ function CreatePost() {
     const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
 //   const [imageUploadError, setImageUploadError] = useState(null);
-  const [formData, setFormData] = useState({ 
-    title: '',
-    demo: '',
-    source: '',
-    content: '',
-    image: '',});
+  const [formData, setFormData] = useState({});
 //   const [publishError, setPublishError] = useState(null);
 
   const navigate = useNavigate();
@@ -92,7 +87,7 @@ function CreatePost() {
       toast.error(error.message,'Something went wrong');
     }
   };
-
+console.log(formData,"formdata")
 
     return (
         <div className='p-5 max-w-3xl mx-auto min-h-screen lg:pt-20 space-y-5'>
@@ -100,26 +95,40 @@ function CreatePost() {
 
             <form className='flex flex-col gap-4 space-y-5' onSubmit={handleSubmit}>
 
-                <input onChange={(e)=>setFormData({...formData,title:e.target.value})}
+                <input 
+                onChange={(e)=>setFormData({...formData,title:e.target.value})}
                  type="text"
                   placeholder='Title'
                     
                    id='title' 
                 className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
-                <input onChange={(e)=>setFormData({...formData,demo:e.target.value})}
+               
+                <input 
+                onChange={(e)=>setFormData({...formData,category:e.target.value})}
+                 type="text"
+                  placeholder='category'
+                   id='category' 
+                className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
+                
+                <input 
+                onChange={(e)=>setFormData({...formData,demo:e.target.value})}
                  type="text"
                   placeholder='demo link'
                    
                    id='demo' 
                 className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
-                <input onChange={(e)=>setFormData({...formData,source:e.target.value})}
+                
+                <input 
+                onChange={(e)=>setFormData({...formData,source:e.target.value})}
                  type="text"
                   placeholder='source code link' 
                    id='source' 
                 className='flex-1 p-2 dark:bg-[#030620] border border-black dark:border-white rounded-lg  font-bold outline-1' />
 
-                <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center dark:border-white rounded-lg border-black border-dotted p-3 '>
-                    <input onChange={(e)=>setFile(e.target.files[0])} 
+                <div 
+                className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center dark:border-white rounded-lg border-black border-dotted p-3 '>
+                    <input 
+                    onChange={(e)=>setFile(e.target.files[0])} 
                     type="file"
                      accept='image/*'
                       className='bg-gradient-to-tr p-2 rounded-lg

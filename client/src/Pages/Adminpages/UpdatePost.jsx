@@ -135,6 +135,14 @@ const {currentUser}=useSelector(state=>state.user)
                   required 
                   id='title'
                    className='flex-1 p-2  rounded-lg  font-bold outline-1 dark:border dark:border-white  dark:bg-gray-900 dark:text-white ' />
+                   <input 
+                value={formData.category}
+                 onChange={(e)=>setFormData({...formData,category:e.target.value})}
+                  type="text" 
+                  placeholder='category' 
+                  required 
+                  id='category'
+                   className='flex-1 p-2  rounded-lg  font-bold outline-1 dark:border dark:border-white  dark:bg-gray-900 dark:text-white ' />
                    <div className='border-4 gap-4 flex lg:flex-row flex-col justify-between items-center dark:border-white rounded-lg border-black border-dotted p-3 '>
                    <input onChange={(e)=>setFile(e.target.files[0])} 
                    type="file"

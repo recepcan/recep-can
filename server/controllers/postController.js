@@ -6,7 +6,7 @@ export const create = async (req, res, next) => {
     if (!req.user.isAdmin) {
         return next(errorHandler(403, 'You are not allowed to create a post'));
     }
-    if ( !req.body.content || !req.body.demo || !req.body.source) {
+    if ( !req.body.content || !req.body.demo || !req.body.source || !req.body.category) {
         return next(errorHandler(400, 'Please provide all required fields lütfen'));
     }
     const slug = req.body.title
@@ -20,6 +20,7 @@ export const create = async (req, res, next) => {
         demo:req.body.demo,
         source:req.body.source,
         image:req.body.image,
+       category: req.body.category,
         slug,
         userId: req.user.id,
     });

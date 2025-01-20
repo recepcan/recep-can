@@ -30,10 +30,10 @@ function ProjectPage() {
           {['all','front-end','full-stack','mobil'].map((category) => (
             <button
               key={category}
-              className={`p-3 text-xl rounded-md shadow-md shadow-gray-400 border-black ${
+              className={`p-3 text-xl rounded-md shadow-md shadow-gray-400 ${
                 ctg === category
                   ? 'bg-gradient-to-r from-orange-500  to-red-500 text-white' // Aktif kategori vurgulama
-                  : 'bg-white dark:bg-[#374151]'
+                  : 'bg-white dark:bg-[#374151] border hover:border-orange-600 hover:scale-105 hover:shadow-red-500 transition-all'
               }`}
               onClick={() => setCtg(category)} // Kategori durumunu güncelle
             >
@@ -45,6 +45,7 @@ function ProjectPage() {
         {/* GetPosts Bileşeni */}
         <GetPosts limit={50} ctg={ctg} />
       </div>
+      
     </motion.div>
   );
 }
