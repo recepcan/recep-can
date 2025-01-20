@@ -11,6 +11,7 @@ import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import { FaCaretRight } from "react-icons/fa";
 import shotspng from '/shotspng.png'
+import laptopkb from '/laptop-kb.png'
 import phone from '/phone.png'
 import mac from '/mac.png'
 import ipad from '/ipad.png'
@@ -32,23 +33,23 @@ function Home() {
 
 
 
-      <div className=' pb-24 w-full flex justify-end   text-center items-center'>
-        <div className=' h-full'>
-          <h1 className='p-10  text-3xl  lg:text-5xl xl:text-7xl font-semibold font-inter 
-     dark:bg-clip-text dark:text-transparent bg-gradient-to-r
-      text-gray-700
+      <div className=' pb-24 w-full flex justify-end   text-start items-center'>
+        <div className=' h-full flex flex-col justify-between text-center '>
+          <h1 className='p-10  text-3xl  lg:text-5xl xl:text-6xl font-semibold font-inter 
+     
+     
       dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
             Hızlı, Modern ve Etkileyici Web Çözümleri!
           </h1>
           <h3 className='p-5 text-lg md:text-xl  lg:text-2xl xl:text-3xl font-semibold font-inter 
-          bg-clip-text text-transparent bg-gradient-to-r
+         
                from-sky-500 via-purple-500 to-red-500
                 
     '>
             İhtiyacınıza uygun, kullanıcı dostu ve yaratıcı web siteleriyle dijital dünyada fark yaratın. Size özel çözümlerle işinizi bir adım öteye taşıyoruz!
           </h3>
         </div>
-        <img src={shotspng} alt="" className='max-sm:hidden w-1/2' />
+        <img src={laptopkb} alt="" className='max-sm:hidden w-1/2' />
       </div>
 
       <div className=' w-full h-[600px] flex items-start lg:flex-row flex-col'>
@@ -76,7 +77,7 @@ function Home() {
       <div className='  dark:bg-gradient-to-t  text-center
        '>
         <h1 className='p-10 text-5xl font-semibold font-inter 
-      bg-clip-text text-transparent bg-gradient-to-r
+      
        from-sky-500 via-purple-500 to-red-500
        dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
           Recent Projects

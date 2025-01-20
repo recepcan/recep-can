@@ -18,7 +18,7 @@ function ProjectPage() {
       <div className="dark:bg-gradient-to-t text-center">
         <h1
           className="text-5xl font-semibold font-inter p-3
-          bg-clip-text text-transparent bg-gradient-to-r
+          
           from-sky-500 via-purple-500 to-red-500
           dark:from-sky-100 dark:via-sky-300 dark:to-sky-500"
         >

@@ -35,13 +35,13 @@ function Hizmetler() {
 
           <h1
             className=' text-3xl md:text-5xl  font-bold font-inter
-              bg-clip-text text-transparent bg-gradient-to-r
+              
                from-sky-500 via-purple-500 to-red-500
                dark:from-sky-100 dark:via-sky-300 dark:to-sky-500 '>
             What I Do 
           </h1>
           <h2 className=' font-bold font-sans text-sm md:text-xl leading-8 lg:leading-10
-         bg-gradient-to-r bg-clip-text text-transparent dark:from-sky-400 dark:via-purple-400 dark:to-red-400  from-sky-500 via-purple-500 to-red-500'>
+          dark:from-sky-400 dark:via-purple-400 dark:to-red-400  from-sky-500 via-purple-500 to-red-500'>
             I build exceptional web experiences with Next.js, Tailwind CSS, FireBase, and React, transforming ideas into reality
           </h2>
 

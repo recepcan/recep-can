@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { fetchPost6, fetchPostctg } from '../store/postSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from './Loading';
+import Skeleton from 'react-loading-skeleton';
 
 
 function GetPosts({ limit ,ctg}) {
@@ -25,9 +26,9 @@ function GetPosts({ limit ,ctg}) {
     return <div className='min-h-[300px]  flex items-center justify-center text-xl '>No posts available</div>;
   }
 
-  if (loading) {
-    return <Loading />
-  }
+  // if (!loading) {
+  //   return <Skeleton className='w-full h-96 p-20' />
+  // }
    
   if (error) { 
     return  toast.error(error);
@@ -37,7 +38,7 @@ function GetPosts({ limit ,ctg}) {
   return (
     <div className='w-full  border-blue-500 grid md:grid-cols-2 lg:grid-cols-3 items-center justify-center  p-5 gap-5'>
       {
-        data.posts ?
+        loading ? <Skeleton className='w-[325px] min-[400px]:w-[350px]  min-h-[400px] p-20' /> :
           data?.posts?.map((post, i) => (
             <div  key={i}>
               <div className='w-[325px] min-[400px]:w-[350px] p-5   min-h-[400px] group relative transition-all hover:scale-105 
@@ -69,7 +70,7 @@ function GetPosts({ limit ,ctg}) {
                 </div>
               </div>
             </div>
-          )) : <div>there is no post yet</div> 
+          )) 
       }
 
 

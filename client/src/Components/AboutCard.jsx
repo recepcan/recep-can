@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTextById } from '../store/textsSlice';
 import Loading from './Loading';
+import Skeleton from 'react-loading-skeleton';
 function AboutCard() {
   // const textId=useParams()
   const { textByIdError, textByIdLoading, textById } = useSelector(state => state.texts)
@@ -21,7 +22,7 @@ function AboutCard() {
 
  
   if (textByIdError) return <div className='min-h-screen flex items-center justify-center'>Error: {textByIdError}</div>;
-  if (textByIdLoading) return <Loading />
+  // if (textByIdLoading) return <Loading />
  
     return (
       <div className='w-full p-5 md:p-10  space-y-5 md:space-x-5  border-yellow-500 
@@ -35,13 +36,17 @@ function AboutCard() {
   */}
   
         <h1 className=' text-2xl max-sm:text-lg  max-md:text-2xl max-lg:5xl  xl:text-6xl  md:tracking-wide leading-normal md:leading-tight font-extrabold
-         bg-gradient-to-r bg-clip-text text-transparent p-3 font-inter
+          p-3 font-inter w-full h-full
           from-gray-700 via-gray-900 to-black
-          dark:bg-gradient-to-t dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
-        {textById&&textById.title}
+           dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
+           {textByIdLoading ?   <Skeleton className='w-full h-full p-20'/>: textById.title }
+       
         </h1>
   
-        <p className='text-sm p-3 md:text-xl font-sans font-semibold bg-gradient-to-r bg-clip-text text-transparent dark:from-sky-400 dark:via-purple-400 dark:to-red-400  from-sky-500 via-purple-500 to-red-500'>{textById&&textById.content}</p>
+        <p className='text-sm w-full h-full p-3 md:text-xl font-sans font-semibold  dark:from-sky-400 dark:via-purple-400 dark:to-red-400  from-sky-500 via-purple-500 to-red-500'>
+        {textByIdLoading ?  <Skeleton className='w-full h-full p-28'/> :textById.content  }
+        
+        </p>
   
         
       </div>
