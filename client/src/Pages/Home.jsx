@@ -17,6 +17,7 @@ import mac from '/mac.png'
 import ipad from '/ipad.png'
 import darkmp from '/dark-mockup.png'
 import lightmp from '/light-mockup.png'
+import { TypeAnimation } from 'react-type-animation';
 
 function Home() {
   const {theme} =useSelector(state=>state.header)
@@ -34,20 +35,31 @@ function Home() {
 
 
       <div className=' pb-24 w-full flex justify-end   text-start items-center'>
-        <div className=' h-full flex flex-col justify-between text-center '>
-          <h1 className='p-10  text-3xl  lg:text-5xl xl:text-6xl font-semibold font-inter 
+        <div className=' h-96 w-full flex flex-col justify-center items-center  text-center  animate-fadeIn'>
+          <h1 className='p-10  text-3xl  lg:text-5xl xl:text-6xl font-semibold font-robotoSlab 
+           bg-clip-text text-transparent bg-gradient-to-r
+         from-sky-500 via-purple-500 to-red-500
+         dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
+      <TypeAnimation
+      sequence={[
+        'Web site arayüz tasarımı. ', // Yazılacak metin
+        1000,  // 1 saniye bekleme süresi
+        'Mobil cihazlarla uyumlu site.', // Yeni metin
+        1000,
+        'Yönetim Paneli', // Yeni metin
+        1000,
+        'Site yayınlama. ', // Yeni metin
+        1000,
+        'Alan adı transferi.', // Yeni metin
+        1000,
+      ]}
      
-     
-      dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
-            Hızlı, Modern ve Etkileyici Web Çözümleri!
+      wrapper="div" // Metni sarmalayacak HTML etiketi
+      speed={50} // Yazma hızı (milisaniye cinsinden)
+      repeat={Infinity} // Sonsuz döngü
+    />
           </h1>
-          <h3 className='p-5 text-lg md:text-xl  lg:text-2xl xl:text-3xl font-semibold font-inter 
-         
-               from-sky-500 via-purple-500 to-red-500
-                
-    '>
-            İhtiyacınıza uygun, kullanıcı dostu ve yaratıcı web siteleriyle dijital dünyada fark yaratın. Size özel çözümlerle işinizi bir adım öteye taşıyoruz!
-          </h3>
+          
         </div>
         <img src={laptopkb} alt="" className='max-sm:hidden w-1/2' />
       </div>
