@@ -22,7 +22,7 @@ function GetPosts({ limit ,ctg}) {
   }, [dispatch, ctg, limit]);
   
   
-  if (data.posts.length === 0) {
+  if (data?.posts?.length === 0) {
     return <div className='min-h-[300px]  flex items-center justify-center text-xl '>No posts available</div>;
   }
 
