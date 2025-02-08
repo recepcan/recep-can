@@ -12,6 +12,9 @@ import { Link } from 'react-router-dom'
 import { FaCaretRight } from "react-icons/fa";
 import shotspng from '/shotspng.png'
 import laptopkb from '/laptop-kb.png'
+import menagepng from '/menagepng.png'
+import innovation from '/innovation.png'
+import search from '/search.png'
 import phone from '/phone.png'
 import mac from '/mac.png'
 import ipad from '/ipad.png'
@@ -29,17 +32,18 @@ function Home() {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       className='dark:text-white  transition-colors duration-500 w-full  relative  border-black
-     flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:pt-20 pb-10'
+     flex flex-col items-center justify-center  dark:bg-[#030620] min-h-screen  md:pt-20 pb-10 p-5'
     >
 
 
 
       <div className=' pb-24 w-full flex justify-end   text-start items-center'>
-        <div className=' h-96 w-full flex flex-col justify-center items-center  text-center  animate-fadeIn'>
-          <h1 className='p-10  text-3xl  lg:text-5xl xl:text-6xl font-semibold font-robotoSlab 
-           bg-clip-text text-transparent bg-gradient-to-r
-         from-sky-500 via-purple-500 to-red-500
-         dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
+        <div className=' p-5 border-black h-[600px] rounded-2xl  w-full flex flex-col justify-evenly space-y-3 items-start    animate-fadeIn'>
+       <h1 className='px-5 text-xl bg-sky-100 dark:bg-transparent dark:border rounded-2xl'>web dev </h1>
+    
+        <div 
+        className='p-3 border bg-sky-200 dark:bg-sky-800 border-sky-500 rounded-2xl w-full 
+         text-3xl lg:text-5xl  font-semibold font-robotoSlab '>
       <TypeAnimation
       sequence={[
         'Web site arayüz tasarımı. ', // Yazılacak metin
@@ -58,10 +62,13 @@ function Home() {
       speed={50} // Yazma hızı (milisaniye cinsinden)
       repeat={Infinity} // Sonsuz döngü
     />
-          </h1>
-          
+          </div>
+  
+          <div className='p-3 bg-sky-100 tracking-wide leading-8 text-xl font-inter dark:bg-transparent dark:border rounded-2xl h-72 w-full'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla reprehenderit voluptatum earum eligendi consequatur aut laborum corporis eveniet itaque eum quod, in voluptatem ullam nobis nostrum odit, at officiis, hic illo autem harum quaerat voluptatibus sequi? Repellat exercitationem cum accusantium dolor blanditiis ipsa fugiat distinctio unde, atque optio eaque est. </div>
+         
         </div>
-        <img src={laptopkb} alt="" className='max-sm:hidden w-1/2' />
+        <img src={innovation} alt="" className='max-sm:hidden w-1/2 ' />
       </div>
 
       <div className=' w-full h-[600px] flex items-start lg:flex-row flex-col'>

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { modalAction } from '../store/modalSlice';
 import ContentCard from './ContentCard';
 import { SiReactos } from 'react-icons/si';
+import innovationlamp from '/innovationlamp.png'
 function Hizmetler() {
 
   const { currentUser } = useSelector(state => state.user)
@@ -51,15 +52,10 @@ function Hizmetler() {
         </div>
 
 
-        <div className='lg:w-1/2 w-full  flex items-center justify-center text-center    border-purple-500      '
+        <div className='lg:w-1/2 w-full p-20  flex items-center justify-end text-center    -purple-500      '
 
         >
-        <FaReact className='text-sky-600 w-80 h-80 lg:ml-10 '
-        style={{
-
-            transform: `rotate(${rotation}deg)`,
-            transformOrigin: 'center' // Dönüşüm merkezini ortalıyoruz
-        }} />
+        <img src={innovationlamp} className='w-96  ' alt="" />
         </div>
       </div>
 
