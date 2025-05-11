@@ -42,9 +42,11 @@ function About() {
       from-blue-600 via-blue-800 to-purple-800 p-5
     dark: dark:from-blue-100 dark:via-blue-200 dark:to-blue-300
       font-bold font-inter z-10   '>
-    Technologies I Am Using
+    Kullandığım Teknolojiler
   </h1>
+        <div className=''>
         <Timeline/>
+        </div>
 
       </div>
 

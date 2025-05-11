@@ -27,12 +27,13 @@ app.options('*', cors({
   }));
   
 
-dotenv.config()
+dotenv.config({ path: './server/.env' });
 app.use(cookieParser())
 mongoose.connect(process.env.MONGO_URI).then(
     () => { console.log("mongodb is connected") }
 ).catch((e) => {
     console.log(e)
+    console.log(process.env.JWT_SECRET)
 })
 
 

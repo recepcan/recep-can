@@ -32,7 +32,7 @@ export const create = async (req, res, next) => {
         next(error);
     }
 };
-
+ 
 export const getposts = async (req, res, next) => {
     try {
         const startIndex = parseInt(req.query.startIndex) || 0;
