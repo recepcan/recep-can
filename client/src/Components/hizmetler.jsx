@@ -30,8 +30,8 @@ function Hizmetler() {
 
     <div className='dark:bg-dark:bg-[#030620]  border-red-200  w-full h-full flex  items-center justify-center  p-3 overflow-hidden'>
 
-      <div className='sm:w-[90%]   py-10 flex flex-col lg:flex-row max-lg:space-y-5 lg:space-x-5  border-blue-500'>
-        <div className='max-md:pt-10 border-red-500 lg:w-1/2 w-full   space-y-5 lg:space-y-12 
+      <div className='sm:w-[90%]   flex flex-col lg:flex-row max-lg:space-y-5 lg:space-x-5  border-blue-500'>
+        <div className=' border-red-500 lg:w-1/2 w-full   space-y-5 lg:space-y-12 
          flex-col items-center justify-evenly text-center lg:text-start  '>
 
           <h1
@@ -52,7 +52,7 @@ function Hizmetler() {
         </div>
 
 
-        <div className='lg:w-1/2 w-full p-20  flex items-center justify-end text-center    -purple-500      '
+        <div className='lg:w-1/2 w-full p-5 lg:p-20  flex items-center justify-end text-center '
 
         >
         <img src={innovationlamp} className='w-96  ' alt="" />

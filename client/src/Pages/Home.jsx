@@ -64,7 +64,7 @@ function Home() {
     />
           </div>
   
-          <div className='p-3 bg-sky-100 tracking-wide leading-8 text-xl font-inter dark:bg-transparent dark:border rounded-2xl h-72 w-full'>
+          <div className='p-3 bg-sky-100 tracking-wide leading-8 text-xl font-inter dark:bg-transparent dark:border rounded-2xl  w-full'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla reprehenderit voluptatum earum eligendi consequatur aut laborum corporis eveniet itaque eum quod, in voluptatem ullam nobis nostrum odit, at officiis, hic illo autem harum quaerat voluptatibus sequi? Repellat exercitationem cum accusantium dolor blanditiis ipsa fugiat distinctio unde, atque optio eaque est. </div>
          
         </div>

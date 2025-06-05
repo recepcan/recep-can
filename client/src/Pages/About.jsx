@@ -36,16 +36,13 @@ function About() {
 
       
 
-      <div className='w-full min-h-[800px]   border-black pr-5 '>
-      <h1 className='lg:text-5xl  text-2xl   
-            
-      from-blue-600 via-blue-800 to-purple-800 p-5
-    dark: dark:from-blue-100 dark:via-blue-200 dark:to-blue-300
-      font-bold font-inter z-10   '>
+      <div className='w-full min-h-[800px] space-y-10  border-black py-10'>
+      <h1 className='lg:text-5xl  text-2xl 
+      font-bold font-inter z-10  '>
     Kullandığım Teknolojiler
   </h1>
-        <div className=''>
-        <Timeline/>
+        <div className='w-full flex items-center justify-center flex-wrap gap-3'>
+        <Items />
         </div>
 
       </div>

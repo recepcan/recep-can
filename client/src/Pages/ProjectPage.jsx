@@ -15,12 +15,9 @@ function ProjectPage() {
       className="dark:text-white transition-colors duration-500 w-full relative border-black
       flex flex-col items-center justify-start dark:bg-[#030620] min-h-screen md:pt-24"
     >
-      <div className="dark:bg-gradient-to-t text-center">
+      <div className="dark:bg-gradient-to-t text-center py-10">
         <h1
-          className="text-5xl font-semibold font-inter p-3
-          
-          from-sky-500 via-purple-500 to-red-500
-          dark:from-sky-100 dark:via-sky-300 dark:to-sky-500"
+          className="lg:text-5xl text-3xl font-semibold font-inter p-3"
         >
           My Works
         </h1>
@@ -30,7 +27,7 @@ function ProjectPage() {
           {['all','front-end','full-stack','mobil'].map((category) => (
             <button
               key={category}
-              className={`p-3 text-xl rounded-md shadow-md shadow-gray-400 ${
+              className={`md:p-3 md:text-xl text-sm p-1 rounded-md shadow-md shadow-gray-400 ${
                 ctg === category
                   ? 'bg-gradient-to-r from-orange-500  to-red-500 text-white' // Aktif kategori vurgulama
                   : 'bg-white dark:bg-[#374151] border hover:border-orange-600 hover:scale-105 hover:shadow-red-500 transition-all'

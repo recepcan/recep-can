@@ -3,14 +3,15 @@ import { elements } from './itemsarray';
 function Timeline() {
 
     const elementss = [
-        { title: "HTML", description: "Bu, ilk adımdır." },
-        { title: "CSS", description: "İlerleme kaydedildi." },
-        { title: "JAVASCRİPT", description: "Bu, orta adımdır." },
-        { title: "REACTJS", description: "Bu, son adımdır." },
-        { title: "NODEJS", description: "Bu, son adımdır." },
-        { title: "EXPRESSJS", description: "Bu, son adımdır." },
-        { title: "MONGODB", description: "Bu, son adımdır." },
-        { title: "FİREBASE", description: "Bu, son adımdır." },
+        { title: "HTML",
+           description: "HTML, web sayfalarının temel yapısını oluşturmak için kullanılan işaretleme dilidir. Web tarayıcıları, HTML kodlarını okuyarak kullanıcıya görsel olarak anlamlı bir sayfa sunar. Paragraflar, başlıklar, bağlantılar, görseller ve tablolar gibi içeriklerin yapısını tanımlamak için kullanılır. Her öğe etiketler ile belirtilir ve bu etiketler içeriklerin ne olduğunu belirtir. HTML, web geliştirme sürecinin ilk adımıdır ve diğer teknolojilerle birlikte kullanılarak işlevsel siteler oluşturulur. " },
+        { title: "CSS", description: "CSS, HTML ile oluşturulan yapıya stil kazandırmak için kullanılan bir biçimlendirme dilidir. Web sayfalarının renklerini, yazı tiplerini, düzenlerini ve geçiş efektlerini tanımlayarak kullanıcı deneyimini iyileştirir. CSS sayesinde aynı HTML yapısı, farklı görünümlerle sunulabilir. Sayfa düzenlerini daha esnek hale getirmek için Flexbox ve Grid gibi sistemler sunar. Genellikle HTML dosyasına bağlı olarak veya doğrudan içinde kullanılır." },
+        { title: "JAVASCRİPT", description: "JavaScript, web sayfalarına dinamiklik ve etkileşim kazandırmak için kullanılan bir programlama dilidir. Tarayıcı üzerinde çalışarak kullanıcıyla etkileşim kuran formlar, açılır menüler, animasyonlar ve gerçek zamanlı içerikler gibi özellikleri mümkün kılar. Modern JavaScript, modüler yapısı, olay yönetimi ve asenkron işlemleri desteklemesiyle birlikte oldukça güçlü ve esnek bir yapıya sahiptir. Hem frontend hem de backend geliştirmede kullanılabilir." },
+        { title: "REACTJS", description: "React, kullanıcı arayüzleri oluşturmak için kullanılan açık kaynaklı bir JavaScript kütüphanesidir ve Facebook tarafından geliştirilmiştir. React, bileşen (component) tabanlı mimarisi sayesinde uygulamaların parçalarını modüler şekilde geliştirmenizi sağlar. Sanal DOM (Virtual DOM) teknolojisi sayesinde performansı yüksek uygulamalar geliştirilebilir. Geniş eklenti ekosistemi, React Router, Redux gibi yardımcı araçlarla birlikte güçlü bir frontend geliştirme ortamı sunar." },
+        { title: "NODEJS", description: "Node.js, JavaScript’in sunucu tarafında çalışmasını sağlayan bir çalışma ortamıdır. Google’ın V8 JavaScript motorunu kullanır ve asenkron yapısı sayesinde yüksek performanslı web uygulamaları oluşturulmasını mümkün kılar. Node.js, özellikle API geliştirme, gerçek zamanlı uygulamalar ve mikro servis mimarileri için tercih edilir. JavaScript bilen geliştiricilerin backend geliştirme yapmasına olanak tanır." },
+        { title: "EXPRESSJS", description: "Express.js, Node.js üzerinde çalışan minimalist ve esnek bir web uygulama çatısıdır (framework). RESTful API’ler oluşturmayı kolaylaştırır ve middleware (ara katman) mimarisi sayesinde isteklere yanıt verme sürecini kontrol etmeyi sağlar. Geliştiricilere basit bir yapı sunarken aynı zamanda özelleştirmeye de imkan tanır. Express, hızlı bir şekilde sunucu kurmak ve yönlendirmeler (routing) oluşturmak için yaygın olarak kullanılır." },
+        { title: "MONGODB", description: "MongoDB, JSON benzeri dokümanları depolayan NoSQL bir veritabanıdır. Geleneksel tablo yapılı veritabanlarının aksine esnek bir veri modeli sunar, bu da projelere kolayca ölçeklenebilirlik ve esneklik kazandırır. MongoDB, özellikle hızlı geliştirme süreci, büyük veri kümelerini yönetme kabiliyeti ve Node.js ile entegrasyon kolaylığı nedeniyle modern web uygulamalarında sıkça tercih edilir." },
+        { title: "FİREBASE", description: "Firebase, Google tarafından sunulan bulut tabanlı bir uygulama geliştirme platformudur. Gerçek zamanlı veritabanı, kimlik doğrulama, barındırma (hosting), analiz ve bildirim servisleri gibi birçok özelliği içerir. Özellikle mobil ve web uygulamaları için backend altyapısını hızlıca kurmak isteyen geliştiriciler tarafından tercih edilir. Firebase, küçük projelerden büyük ölçekli uygulamalara kadar geniş bir kullanım alanına sahiptir." },
       ];
 
 
@@ -47,14 +48,7 @@ function Timeline() {
       index % 2 === 0 ? 'text-start' : 'text-end'
     }
                    `}
-                   >{element.explain} Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                   Esse eius reiciendis nihil minima quibusdam, consectetur sunt a in dignissimos dolor 
-                   expedita eligendi velit corporis eaque quasi quae optio animi nostrum odio, harum unde
-                    non aspernatur voluptate rerum. Quidem mollitia soluta consequuntur reprehenderit quae
-                     delectus dolores, fuga velit suscipit. Magnam mollitia exercitationem obcaecati facere 
-                     officiis totam quas voluptate accusantium debitis reiciendis. Maxime quam, ab minima 
-                     quia eaque dolore? Delectus, mollitia sunt, quasi velit neque odio voluptas vel 
-                     reiciendis, vero totam error.
+                   >{element.explain} 
                      </p>
                   </div>
   

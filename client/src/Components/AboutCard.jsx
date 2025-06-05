@@ -26,21 +26,19 @@ function AboutCard() {
  
     return (
       <div 
-      className='w-full p-5 md:p-10  space-y-5 md:space-x-5  border-yellow-500 
+      className='w-full p-5 md:p-10  max-lg:space-y-5 md:space-x-5  border-yellow-500 
        flex flex-col lg:flex-row min-[650px]:min-h-screen items-center justify-center '>
   
       <div 
-      className=' lg:w-2/3 w-full space-y-8 min-h-[600px]   border-blue-500 md:p-10 rounded-lg 
+      className=' lg:w-2/3 w-full lg:space-y-8 lg:min-h-[600px] border-2   border-blue-500 md:p-10 rounded-lg 
        shadow-gray-400   hover:shadow-gray-700 transition-all 
         flex flex-col items-center text-left justify-evenly '>
         {/*  <ProfilCard />    
            <FaAnglesDown className='max-[600px]:h-10 z-10 max-[600px]:w-10 max-[600px]:mt-14 max-[600px]:my-5 p-2 rounded-full hover:bg-purple-900 border-2 transition-all border-purple-900  text-purple-600 ' size={64} />  
   */}
   
-        <h1 className=' text-2xl max-sm:text-lg  max-md:text-2xl max-lg:5xl  xl:text-6xl  md:tracking-wide leading-normal md:leading-tight font-extrabold
-          p-3 font-inter w-full h-full
-          from-gray-700 via-gray-900 to-black
-           dark:from-blue-100 dark:via-blue-300 dark:to-blue-500'>
+        <h1 className=' text-2xl max-sm:text-lg  max-md:text-2xl max-lg:5xl   xl:text-6xl  md:tracking-wide leading-normal md:leading-tight font-extrabold
+          p-3 font-inter w-full h-full'>
            {textByIdLoading ?  
              <Skeleton className='w-full h-full p-20'/>
              : textById?.title }
@@ -58,7 +56,7 @@ function AboutCard() {
       </div>
   
       <div 
-      className=' w-full md:w-2/3 lg:w-1/3 h-[600px]    border-blue-500 rounded flex flex-col items-center
+      className=' w-full md:w-2/3 lg:w-1/3 md:h-[600px] border-2 px-5 py-3 rounded-lg  border-orange-600  flex flex-col items-center
        justify-evenly '>
   
         <div 
