@@ -37,22 +37,22 @@ function Home() {
 
 
 
-      <div className=' pb-24 w-full flex justify-end   text-start items-center'>
-        <div className=' p-5 border-black h-[600px] rounded-2xl  w-full flex flex-col justify-evenly space-y-3 items-start    animate-fadeIn'>
-       <h1 className='px-5 text-xl bg-sky-100 dark:bg-transparent dark:border rounded-2xl'>web dev </h1>
+      <div className=' pb-12 w-full flex justify-end   text-start items-center'>
+        <div className=' p-5 border-black min-h-[600px] rounded-2xl  w-full flex flex-col justify-evenly space-y-3 items-start    animate-fadeIn'>
+       <h1 className='flex space-x-2 p-5 text-xl bg-[#171b22] dark:bg-transparent dark:border rounded-2xl'> <h1 className='text-red-700'>const</h1> <h2 className='text-white'>web dev</h2> </h1>
     
         <div 
-        className='p-3 border bg-sky-200 dark:bg-sky-800 border-sky-500 rounded-2xl w-full 
-         text-3xl lg:text-5xl  font-semibold font-robotoSlab '>
+        className='p-3   min-h-24  rounded-2xl w-full flex items-center
+         text-3xl lg:text-5xl  font-semibold font-robotoSlab'>
       <TypeAnimation
       sequence={[
-        'Web site arayüz tasarımı. ', // Yazılacak metin
+        'Web site arayüz tasarımı.', // Yazılacak metin
         1000,  // 1 saniye bekleme süresi
         'Mobil cihazlarla uyumlu site.', // Yeni metin
         1000,
-        'Yönetim Paneli', // Yeni metin
+        'Yönetim Paneli.', // Yeni metin
         1000,
-        'Site yayınlama. ', // Yeni metin
+        'Site yayınlama.', // Yeni metin
         1000,
         'Alan adı transferi.', // Yeni metin
         1000,
@@ -64,17 +64,27 @@ function Home() {
     />
           </div>
   
-          <div className='p-3 bg-sky-100 tracking-wide leading-8 text-xl font-inter dark:bg-transparent dark:border rounded-2xl  w-full'>
+          <div className='p-3 bg-sky-100 shadow-lg shadow-gray-400 tracking-wide leading-8 text-xl font-inter dark:bg-transparent dark:border rounded-2xl  w-full'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla reprehenderit voluptatum earum eligendi consequatur aut laborum corporis eveniet itaque eum quod, in voluptatem ullam nobis nostrum odit, at officiis, hic illo autem harum quaerat voluptatibus sequi? Repellat exercitationem cum accusantium dolor blanditiis ipsa fugiat distinctio unde, atque optio eaque est. </div>
          
         </div>
         <img src={innovation} alt="" className='max-sm:hidden w-1/2 ' />
       </div>
 
-      <div className=' w-full h-[600px] flex items-start lg:flex-row flex-col'>
-        <div className='w-full lg:w-2/3 relative h-[600px] flex items-center justify-center'>
+      <div className=' w-full h-[600px] space-y-5 flex items-center border-blue-400  flex-col justify-center '>
+      
+      <div className='lg:w-[70%] w-full      border-red-300 flex items-center justify-center'>
+        <h1 className='text-center p-3 leading-10 tracking-wider  text-3xl  lg:text-5xl  font-semibold font-inter flex items-center justify-center
+        bg-clip-text text-transparent bg-gradient-to-r
+         from-sky-500 via-purple-500 to-red-500
+         dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
+              Bütün cihazlarla uyumlu arayüz tasarımı sizinle...
+             </h1>
+        </div>
+      
+      <div className='lg:w-[70%] w-full  shadow-lg shadow-gray-400 rounded-lg  relative h-[600px] flex items-center justify-center'>
           <img src={ipad}  alt="" className='max-xl:hidden object-contain z-10 absolute xl:-right-10 w-[450px]' />
-          <img src={mac} alt="" className='max-xl:hidden object-contain z-0 absolute  w-[500px]' />
+          <img src={mac} alt="" className='max-xl:hidden object-contain z-10 absolute  w-[500px]' />
           <img src={phone} alt="" className='max-xl:hidden object-contain z-10 absolute xl:left-20  w-[300px]' />
           <img src={darkmp} alt="" 
           className={`xl:hidden ${theme=='light' && 'hidden'}  object-contain z-10 absolute xl:left-20  `} />
@@ -82,14 +92,7 @@ function Home() {
           className={`xl:hidden ${theme=='dark' && 'hidden'} object-contain z-10 absolute xl:left-20  `} />
         </div>
 
-        <div className='lg:flex-1 w-full h-full   border-red-300 flex items-center text-start'>
-        <h1 className='p-10  text-3xl  lg:text-5xl xl:text-7xl font-semibold font-inter 
-        bg-clip-text text-transparent bg-gradient-to-r
-         from-sky-500 via-purple-500 to-red-500
-         dark:from-sky-100 dark:via-sky-300 dark:to-sky-500'>
-              Bütün cihazlarla uyumlu arayüz tasarımı sizinle...
-             </h1>
-        </div>
+        
       </div>
       {/* recent posts*/}
 

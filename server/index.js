@@ -17,8 +17,13 @@ import cors from 'cors'
 const __dirname=path.resolve()
 
 // Tüm istekler için CORS'u etkinleştir,
-
-
+dotenv.config({ path: './server/.env' });
+mongoose.connect(process.env.MONGO_URI).then(
+    () => { console.log("mongodb is connected") }
+).catch((e) => {
+    console.log(e)
+    console.log(process.env.JWT_SECRET)
+})
 
 app.options('*', cors({
     origin: 'https://my-personal-blog-recepcan.onrender.com',
@@ -27,14 +32,9 @@ app.options('*', cors({
   }));
   
 
-dotenv.config({ path: './server/.env' });
+
 app.use(cookieParser())
-mongoose.connect(process.env.MONGO_URI).then(
-    () => { console.log("mongodb is connected") }
-).catch((e) => {
-    console.log(e)
-    console.log(process.env.JWT_SECRET)
-})
+
 
 
 

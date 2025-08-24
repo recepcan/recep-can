@@ -39,7 +39,7 @@ function About() {
       <div className='w-full min-h-[800px] space-y-10  border-black py-10'>
       <h1 className='lg:text-5xl  text-2xl 
       font-bold font-inter z-10  '>
-    Kullandığım Teknolojiler
+    Tech Stack
   </h1>
         <div className='w-full flex items-center justify-center flex-wrap gap-3'>
         <Items />

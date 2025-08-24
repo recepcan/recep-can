@@ -3,7 +3,7 @@ import { BiLogoFirebase, BiLogoMongodb } from 'react-icons/bi';
 import { DiNodejs } from 'react-icons/di';
 import { FaReact } from 'react-icons/fa';
 import { SiExpress } from 'react-icons/si';
-
+import { IoLogoFigma } from "react-icons/io5";
 function ContentCard() {
     const tabs = [
         {
@@ -21,7 +21,7 @@ function ContentCard() {
         {
             title: "UI-UX",
             content: "Sitenin tasarımı ve kullanıcı deneyimi, bir web sitesinin görsel ve işlevsel olarak kullanıcıya nasıl hissettirdiğini ifade eder. Bu alan her ne kadar yazılımın dışında gibi görünse de, bu konuda da kendimi geliştirmeye devam ediyorum. Basit, estetik ve kullanıcı dostu tasarımlar oluşturarak müşterilere etkileyici deneyimler sunuyorum."
-            
+            , icon: <IoLogoFigma color='black' />
         },
         {
             title: "Security",
